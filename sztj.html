@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="hu" xml:lang="hu">
+<head>
+    <title>20260226 Gyakorló teszt adatbázis tervezésről: (1. oldal / 80 oldal) | Liska Moodle</title>
+    <link rel="shortcut icon" href="https://moodle.sztj-tech.hu/theme/image.php/academi/theme/1765279452/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, 20260226 Gyakorló teszt adatbázis tervezésről: (1. oldal / 80 oldal) | Liska Moodle" />
+<link rel="stylesheet" type="text/css" href="https://moodle.sztj-tech.hu/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://moodle.sztj-tech.hu/theme/styles.php/academi/1765279452_1/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.sztj-tech.hu","apibase":"https:\/\/moodle.sztj-tech.hu\/r.php\/api","homeurl":{},"sesskey":"HnnQ2bEM6n","sessiontimeout":"1800","sessiontimeoutwarning":1200,"themerev":"1765279452","slasharguments":1,"theme":"academi","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1765279453","admin":"admin","svgicons":true,"usertimezone":"Eur\u00f3pa\/Budapest","language":"hu","courseId":387,"courseContextId":35261,"contextid":51056,"contextInstanceId":24347,"langrev":1774064343,"templaterev":"1765279453","siteId":1,"userId":3944,"developerdebug":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":true,"base":"https:\/\/moodle.sztj-tech.hu\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/moodle.sztj-tech.hu\/theme\/yui_combo.php?","combine":true,"filter":"RAW","insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.sztj-tech.hu\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.sztj-tech.hu\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.sztj-tech.hu\/theme\/yui_combo.php?m\/1765279453\/","combine":true,"comboBase":"https:\/\/moodle.sztj-tech.hu\/theme\/yui_combo.php?","ext":false,"root":"m\/1765279453\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":"DEBUG","modules":{"moodle-core-event":{"requires":["event-custom"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.sztj-tech.hu\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.sztj-tech.hu\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1765279453\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.sztj-tech.hu\/lib\/javascript.php\/1765279453\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.sztj-tech.hu\/lib\/javascript.php\/1765279453\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"core_question_flags":{"name":"core_question_flags","fullpath":"https:\/\/moodle.sztj-tech.hu\/lib\/javascript.php\/1765279453\/question\/flags.js","requires":["base","dom","event-delegate","io-base"]},"core_question_engine":{"name":"core_question_engine","fullpath":"https:\/\/moodle.sztj-tech.hu\/lib\/javascript.php\/1765279453\/question\/qengine.js","requires":["node","event"]},"mod_quiz":{"name":"mod_quiz","fullpath":"https:\/\/moodle.sztj-tech.hu\/lib\/javascript.php\/1765279453\/mod\/quiz\/module.js","requires":["base","dom","event-delegate","event-key","core_question_engine"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head><body  id="page-mod-quiz-attempt" class="format-topics limitedwidth  path-mod path-mod-quiz chrome dir-ltr lang-hu yui-skin-sam yui3-skin-sam moodle-sztj-tech-hu pagelayout-incourse course-387 context-51056 cmid-24347 cm-type-quiz category-3 theme uses-drawers theme-based-header theme-container">
+    <div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
+    <div id="page-wrapper" class="d-print-block">
+        <div>
+    <a class="visually-hidden-focusable" href="#maincontent">Tovább a fő tartalomhoz</a>
+</div><script src="https://moodle.sztj-tech.hu/lib/javascript.php/1765279453/lib/polyfills/polyfill.js"></script>
+<script src="https://moodle.sztj-tech.hu/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple.js"></script><script src="https://moodle.sztj-tech.hu/lib/javascript.php/1765279453/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+        
+<nav id="header" class=" fixed-top navbar navbar-light bg-faded navbar-static-top navbar-expand moodle-has-zindex" aria-label="Portálnavigáció">
+    <div class="container-fluid navbar-nav">
+            
+                <nav class="nav navbar-nav hidden-md-down address-head">
+                        <span><i class="fa fa-phone"></i>Elérhetőség : (57) 412-818</span>
+                        <span><i class="fa fa-envelope-o"></i><span>E-mail</span> : <a href="mailto:iskola[kukac]sztj-tech.hu">iskola[kukac]sztj-tech.hu</a></span>
+                </nav>
+
+            
+        <div id="usernavigation" class="navbar-nav">
+            
+            <div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="3944"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin"
+        data-region="popover-region-toggle"
+        aria-controls="popover-region-container-69dff83091d8e69dff8308729310"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label=" Értesítésablak megjelenítése új értesítések nélkül   "
+        title=" Értesítésablak megjelenítése új értesítések nélkül   "
+        tabindex="0"
+        role="button">
+                <i class="icon fa fa-bell fa-fw " aria-hidden="true" ></i>
+        <div
+            class="count-container hidden"
+            data-region="count-container"
+            aria-hidden=true
+        >
+            0
+        </div>
+
+    </div>
+    <div         aria-modal="true"
+        tabindex="-1"
+
+        id="popover-region-container-69dff83091d8e69dff8308729310"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-hidden="true"
+        aria-label="Értesítésablak"
+        role="dialog">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Értesítések</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button btn btn-sm btn-link m-0 py-0 icon-no-margin"
+           href="#"
+           title="Összes megjelölése olvasottként"
+           data-action="mark-all-read"
+           role="button"
+           aria-label="Összes megjelölése olvasottként">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" ></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-spinner fa-spin fa-fw "  title="Betöltés" role="img" aria-label="Betöltés"></i></span>
+            <span aria-live="polite" class="visually-hidden" data-region="notification-read-feedback"></span>
+        </a>
+            <a href="https://moodle.sztj-tech.hu/message/notificationpreferences.php"
+               title="Értesítés beállításai"
+               aria-label="Értesítés beállításai"
+               class="btn btn-sm btn-link m-0 py-0 icon-no-margin" >
+                <i class="icon fa fa-gear fa-fw " aria-hidden="true" ></i></a>
+        <button type="button" class="btn btn-sm btn-link m-0 py-0 icon-no-margin" aria-label="Bezárás" title="Bezárás" data-action="close-notification-popover">
+            <i class="icon fa fa-xmark fa-fw " aria-hidden="true" ></i>
+        </button>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">Nincs értesítés</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-spinner fa-spin fa-fw "  title="Betöltés" role="img" aria-label="Betöltés"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://moodle.sztj-tech.hu/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Az összes megtekintése</div>
+                    </div>
+                </a>
+    </div>
+</div>
+            <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    <div class="usermenu">
+                            <div class="dropdown show">
+                                <a href="#" role="button" id="user-menu-toggle" data-bs-toggle="dropdown" aria-label="Felhasználói menü"
+                                   aria-haspopup="true" aria-controls="user-action-menu" class="btn dropdown-toggle">
+                                    <span class="userbutton">
+                                        <span class="avatars">
+                                                <span class="avatar current">
+                                                    <span class="userinitials size-35" title="Leczki Bettina" aria-label="Leczki Bettina" role="img">LB</span>
+                                                </span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div id="user-action-menu" class="dropdown-menu dropdown-menu-end">
+                                    <div id="usermenu-carousel" class="carousel slide" data-touch="false" data-interval="false" data-keyboard="false">
+                                        <div class="carousel-inner">
+                                            <div id="carousel-item-main" class="carousel-item active" role="menu" tabindex="-1" aria-label="Felhasználó">
+                                                        <a href="https://moodle.sztj-tech.hu/user/profile.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Profil
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.sztj-tech.hu/grade/report/overview/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Értékelések
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.sztj-tech.hu/calendar/view.php?view=month" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Naptár
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.sztj-tech.hu/message/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Üzenetek
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.sztj-tech.hu/user/files.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Saját állományaim
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.sztj-tech.hu/reportbuilder/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Jelentések
+                                                        </a>
+                                                    
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://moodle.sztj-tech.hu/user/preferences.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Beállítások
+                                                        </a>
+                                                    
+                                                        <a href="#" class="carousel-navigation-link dropdown-item" role="menuitem" tabindex="-1" data-carousel-target-id="carousel-item-69dff83090c8e">
+                                                                
+                                                            Nyelv
+                                                        </a>
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://moodle.sztj-tech.hu/login/logout.php?sesskey=HnnQ2bEM6n" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Kilépés
+                                                        </a>
+                                                    
+                                            </div>
+                                                <div id="carousel-item-69dff83090c8e" role="menu" class="carousel-item submenu" tabindex="-1" aria-label="Nyelvválasztó">
+                                                    <div class="d-flex flex-column h-100">
+                                                        <div class="header">
+                                                            <button type="button" class="btn btn-icon carousel-navigation-link text-decoration-none text-body" data-carousel-target-id="carousel-item-main" aria-label="Vissza a felhasználói menühöz">
+                                                                <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="https://moodle.sztj-tech.hu/theme/image.php/academi/core/1765279452/i/arrow-left" /></span>
+                                                                <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="https://moodle.sztj-tech.hu/theme/image.php/academi/core/1765279452/i/arrow-right" /></span>
+                                                            </button>
+                                                            <span class="ps-2" id="carousel-item-title-69dff83090c8e">Nyelvválasztó</span>
+                                                        </div>
+                                                        <div class="dropdown-divider"></div>
+                                                        <div class="items h-100 overflow-auto" role="menu" aria-labelledby="carousel-item-title-69dff83090c8e">
+                                                                    <a href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;lang=de_old" class="dropdown-item ps-5" role="menuitem" tabindex="-1" 
+                                                                        lang="de" >
+                                                                        Deutsch ‎(de_old)‎
+                                                                    </a>
+                                                                    <a href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;lang=en" class="dropdown-item ps-5" role="menuitem" tabindex="-1" 
+                                                                        lang="en" >
+                                                                        English ‎(en)‎
+                                                                    </a>
+                                                                    <a href="#" class="dropdown-item ps-5" role="menuitem" tabindex="-1" aria-current="true"
+                                                                        >
+                                                                        magyar ‎(hu)‎
+                                                                    </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            
+        </div>
+        <!-- search_box -->
+    </div>
+</nav>
+
+<div  class="drawer drawer-left drawer-primary d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-primary" data-preference="" data-state="show-drawer-primary" data-forceopen="0" data-close-on-resize="1">
+    <div class="drawerheader">
+        <button
+            class="btn btn-icon drawertoggle hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-primary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Fiók bezárása"
+        >
+            <i class="icon fa fa-xmark fa-fw " aria-hidden="true" ></i>
+        </button>
+                <a
+            href="https://moodle.sztj-tech.hu/my/courses.php"
+            title="Liska Moodle"
+            data-region="site-home-link"
+            class="aabtn text-reset d-flex align-items-center py-1 h-100"
+        >
+                <img src="https://moodle.sztj-tech.hu/pluginfile.php/1/core_admin/logocompact/300x300/1765279452/SztJ%C3%B3zsef_R%C3%B6vid_Csillaggal.jpg" class="logo py-1 h-100" alt="Liska Moodle">
+        </a>
+
+        <div class="drawerheadercontent hidden">
+            
+        </div>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                <div class="list-group">
+                <a href="https://moodle.sztj-tech.hu/?redirect=0" class="list-group-item list-group-item-action  " >
+                    Kezdőoldal
+                </a>
+                <a href="https://moodle.sztj-tech.hu/my/" class="list-group-item list-group-item-action  " >
+                    Irányítópult
+                </a>
+                <a href="https://moodle.sztj-tech.hu/my/courses.php" class="list-group-item list-group-item-action  " >
+                    Kurzusaim
+                </a>
+        </div>
+
+    </div>
+</div>
+        
+            <div class="header-main">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-light bg-faded navbar-expand">
+                        <a href="https://moodle.sztj-tech.hu/?redirect=0" class="navbar-brand has-logo
+                            ">
+                                <span class="logo">
+                                    <img src="https://moodle.sztj-tech.hu/pluginfile.php/1/core_admin/logocompact/300x300/1765279452/SztJ%C3%B3zsef_R%C3%B6vid_Csillaggal.jpg" alt="Liska Moodle">
+                                </span>
+                        </a>
+        
+                            <div class="primary-navigation">
+                                <nav class="moremenu navigation">
+                                    <ul id="moremenu-69dff8309087a-navbar-nav" role="menubar" class="nav more-nav navbar-nav">
+                                                <li data-key="home" class="nav-item" role="none" data-forceintomoremenu="false">
+                                                            <a role="menuitem" class="nav-link  "
+                                                                href="https://moodle.sztj-tech.hu/?redirect=0"
+                                                                
+                                                                
+                                                                data-disableactive="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                Kezdőoldal
+                                                            </a>
+                                                </li>
+                                                <li data-key="myhome" class="nav-item" role="none" data-forceintomoremenu="false">
+                                                            <a role="menuitem" class="nav-link  "
+                                                                href="https://moodle.sztj-tech.hu/my/"
+                                                                
+                                                                
+                                                                data-disableactive="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                Irányítópult
+                                                            </a>
+                                                </li>
+                                                <li data-key="mycourses" class="nav-item" role="none" data-forceintomoremenu="false">
+                                                            <a role="menuitem" class="nav-link  "
+                                                                href="https://moodle.sztj-tech.hu/my/courses.php"
+                                                                
+                                                                
+                                                                data-disableactive="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                Kurzusaim
+                                                            </a>
+                                                </li>
+                                        <li role="none" class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton">
+                                            <a class="dropdown-toggle nav-link " href="#" id="moremenu-dropdown-69dff8309087a" role="menuitem" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                                Tovább
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-start" data-region="moredropdown" aria-labelledby="moremenu-dropdown-69dff8309087a" role="menu">
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+        
+                        <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+                            <!-- page_heading_menu -->
+                            
+                        </ul>
+        
+                    </nav>
+                </div>
+            </div>
+            <div  class="drawer drawer-left  d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-courseindex" data-preference="drawer-open-index" data-state="show-drawer-left" data-forceopen="0" data-close-on-resize="0">
+    <div class="drawerheader">
+        <button
+            class="btn btn-icon drawertoggle hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-courseindex"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Kurzusmutató  bezárása"
+        >
+            <i class="icon fa fa-xmark fa-fw " aria-hidden="true" ></i>
+        </button>
+        
+        <div class="drawerheadercontent hidden">
+                                <div id="courseindexdrawercontrols" class="dropdown">
+                        <button class="btn btn-icon mx-2"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                title="Kurzusindex opciók"
+                        >
+                            <i class="icon fa fa-ellipsis-v fa-fw m-0" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item"
+                               href="#"
+                               data-action="expandallcourseindexsections"
+                            >
+                                <i class="icon fa fa-angles-down fa-fw " aria-hidden="true" ></i>
+                                Az összes kibontása
+                            </a>
+                            <a class="dropdown-item"
+                               href="#"
+                               data-action="collapseallcourseindexsections"
+                            >
+                                <span class="dir-rtl-hide"><i class="icon fa fa-angles-right fa-fw " aria-hidden="true" ></i></span>
+                                <span class="dir-ltr-hide"><i class="icon fa fa-angles-left fa-fw " aria-hidden="true" ></i></span>
+                                Az összes becsukása
+                            </a>
+                        </div>
+                    </div>
+
+        </div>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                            <nav id="courseindex" class="courseindex">
+    <div id="courseindex-content">
+        <div data-region="loading-placeholder-content" aria-hidden="true" id="course-index-placeholder">
+            <ul class="placeholders list-unstyled px-5">
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle me-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    </div>
+</div>
+            <div  class="drawer drawer-right d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-blocks" data-preference="drawer-open-block" data-state="show-drawer-right" data-forceopen="" data-close-on-resize="1">
+    <div class="drawerheader">
+        <button
+            class="btn btn-icon drawertoggle hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-blocks"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            title="Blokkfiók bezárása"
+        >
+            <i class="icon fa fa-xmark fa-fw " aria-hidden="true" ></i>
+        </button>
+        
+        <div class="drawerheadercontent hidden">
+            
+        </div>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                            <section class="d-print-none" aria-label="Blokkok">
+                        
+                        <aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1" aria-labelledby="side-pre-block-region-heading"><h2 class="visually-hidden" id="side-pre-block-region-heading">Blokkok</h2><a href="#sb-1" class="visually-hidden-focusable">Tesztnavigáció kihagyása</a>
+
+<section id="mod_quiz_navblock"
+     class=" block block_fake  card mb-3"
+     role="navigation"
+     data-block="_fake"
+     data-instance-id="fakeid-69dff83089d0e"
+          aria-labelledby="instance-fakeid-69dff83089d0e-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-fakeid-69dff83089d0e-header" class="h5 card-title d-inline">Tesztnavigáció</h3>
+
+
+        <div class="card-text content mt-3">
+            <div id="quiznojswarning">Vigyázat: a hivatkozásokkal nem menti el válaszait. Használja az oldal alján lévő Következő gombot.</div><div class="qn_buttons clearfix multipages"><a class="qnbutton notyetanswered free btn thispage" id="quiznavbutton1" title="1 kérdés - Még nincs rá válasz" data-quiz-page="0" href="#question-39982-1"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>1.<span class="accesshide"> Ezen az oldalon <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton2" title="2 kérdés - Még nincs rá válasz" data-quiz-page="1" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=1#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>2.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton3" title="3 kérdés - Még nincs rá válasz" data-quiz-page="2" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=2#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>3.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton4" title="4 kérdés - Még nincs rá válasz" data-quiz-page="3" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=3#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>4.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton5" title="5 kérdés - Még nincs rá válasz" data-quiz-page="4" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=4#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>5.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton6" title="6 kérdés - Még nincs rá válasz" data-quiz-page="5" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=5#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>6.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton7" title="7 kérdés - Még nincs rá válasz" data-quiz-page="6" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=6#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>7.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton8" title="8 kérdés - Még nincs rá válasz" data-quiz-page="7" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=7#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>8.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton9" title="9 kérdés - Még nincs rá válasz" data-quiz-page="8" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=8#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>9.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton10" title="10 kérdés - Még nincs rá válasz" data-quiz-page="9" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=9#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>10.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton11" title="11 kérdés - Még nincs rá válasz" data-quiz-page="10" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=10#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>11.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton12" title="12 kérdés - Még nincs rá válasz" data-quiz-page="11" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=11#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>12.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton13" title="13 kérdés - Még nincs rá válasz" data-quiz-page="12" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=12#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>13.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton14" title="14 kérdés - Még nincs rá válasz" data-quiz-page="13" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=13#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>14.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton15" title="15 kérdés - Még nincs rá válasz" data-quiz-page="14" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=14#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>15.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton16" title="16 kérdés - Még nincs rá válasz" data-quiz-page="15" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=15#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>16.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton17" title="17 kérdés - Még nincs rá válasz" data-quiz-page="16" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=16#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>17.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton18" title="18 kérdés - Még nincs rá válasz" data-quiz-page="17" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=17#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>18.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton19" title="19 kérdés - Még nincs rá válasz" data-quiz-page="18" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=18#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>19.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton20" title="20 kérdés - Még nincs rá válasz" data-quiz-page="19" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=19#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>20.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton21" title="21 kérdés - Még nincs rá válasz" data-quiz-page="20" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=20#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>21.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton22" title="22 kérdés - Még nincs rá válasz" data-quiz-page="21" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=21#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>22.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton23" title="23 kérdés - Még nincs rá válasz" data-quiz-page="22" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=22#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>23.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton24" title="24 kérdés - Még nincs rá válasz" data-quiz-page="23" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=23#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>24.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton25" title="25 kérdés - Még nincs rá válasz" data-quiz-page="24" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=24#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>25.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton26" title="26 kérdés - Még nincs rá válasz" data-quiz-page="25" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=25#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>26.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton27" title="27 kérdés - Még nincs rá válasz" data-quiz-page="26" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=26#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>27.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton28" title="28 kérdés - Még nincs rá válasz" data-quiz-page="27" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=27#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>28.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton29" title="29 kérdés - Még nincs rá válasz" data-quiz-page="28" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=28#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>29.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton30" title="30 kérdés - Még nincs rá válasz" data-quiz-page="29" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=29#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>30.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton31" title="31 kérdés - Még nincs rá válasz" data-quiz-page="30" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=30#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>31.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton32" title="32 kérdés - Még nincs rá válasz" data-quiz-page="31" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=31#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>32.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton33" title="33 kérdés - Még nincs rá válasz" data-quiz-page="32" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=32#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>33.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton34" title="34 kérdés - Még nincs rá válasz" data-quiz-page="33" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=33#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>34.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton35" title="35 kérdés - Még nincs rá válasz" data-quiz-page="34" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=34#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>35.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton36" title="36 kérdés - Még nincs rá válasz" data-quiz-page="35" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=35#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>36.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton37" title="37 kérdés - Még nincs rá válasz" data-quiz-page="36" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=36#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>37.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton38" title="38 kérdés - Még nincs rá válasz" data-quiz-page="37" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=37#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>38.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton39" title="39 kérdés - Még nincs rá válasz" data-quiz-page="38" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=38#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>39.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton40" title="40 kérdés - Még nincs rá válasz" data-quiz-page="39" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=39#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>40.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton41" title="41 kérdés - Még nincs rá válasz" data-quiz-page="40" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=40#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>41.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton42" title="42 kérdés - Még nincs rá válasz" data-quiz-page="41" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=41#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>42.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton43" title="43 kérdés - Még nincs rá válasz" data-quiz-page="42" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=42#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>43.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton44" title="44 kérdés - Még nincs rá válasz" data-quiz-page="43" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=43#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>44.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton45" title="45 kérdés - Még nincs rá válasz" data-quiz-page="44" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=44#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>45.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton46" title="46 kérdés - Még nincs rá válasz" data-quiz-page="45" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=45#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>46.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton47" title="47 kérdés - Még nincs rá válasz" data-quiz-page="46" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=46#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>47.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton48" title="48 kérdés - Még nincs rá válasz" data-quiz-page="47" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=47#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>48.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton49" title="49 kérdés - Még nincs rá válasz" data-quiz-page="48" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=48#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>49.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton50" title="50 kérdés - Még nincs rá válasz" data-quiz-page="49" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=49#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>50.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton51" title="51 kérdés - Még nincs rá válasz" data-quiz-page="50" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=50#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>51.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton52" title="52 kérdés - Még nincs rá válasz" data-quiz-page="51" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=51#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>52.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton53" title="53 kérdés - Még nincs rá válasz" data-quiz-page="52" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=52#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>53.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton54" title="54 kérdés - Még nincs rá válasz" data-quiz-page="53" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=53#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>54.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton55" title="55 kérdés - Még nincs rá válasz" data-quiz-page="54" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=54#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>55.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton56" title="56 kérdés - Még nincs rá válasz" data-quiz-page="55" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=55#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>56.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton57" title="57 kérdés - Még nincs rá válasz" data-quiz-page="56" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=56#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>57.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton58" title="58 kérdés - Még nincs rá válasz" data-quiz-page="57" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=57#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>58.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton59" title="59 kérdés - Még nincs rá válasz" data-quiz-page="58" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=58#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>59.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton60" title="60 kérdés - Még nincs rá válasz" data-quiz-page="59" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=59#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>60.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton61" title="61 kérdés - Még nincs rá válasz" data-quiz-page="60" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=60#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>61.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton62" title="62 kérdés - Még nincs rá válasz" data-quiz-page="61" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=61#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>62.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton63" title="63 kérdés - Még nincs rá válasz" data-quiz-page="62" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=62#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>63.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton64" title="64 kérdés - Még nincs rá válasz" data-quiz-page="63" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=63#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>64.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton65" title="65 kérdés - Még nincs rá válasz" data-quiz-page="64" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=64#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>65.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton66" title="66 kérdés - Még nincs rá válasz" data-quiz-page="65" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=65#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>66.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton67" title="67 kérdés - Még nincs rá válasz" data-quiz-page="66" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=66#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>67.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton68" title="68 kérdés - Még nincs rá válasz" data-quiz-page="67" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=67#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>68.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton69" title="69 kérdés - Még nincs rá válasz" data-quiz-page="68" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=68#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>69.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton70" title="70 kérdés - Még nincs rá válasz" data-quiz-page="69" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=69#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>70.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton71" title="71 kérdés - Még nincs rá válasz" data-quiz-page="70" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=70#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>71.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton72" title="72 kérdés - Még nincs rá válasz" data-quiz-page="71" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=71#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>72.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton73" title="73 kérdés - Még nincs rá válasz" data-quiz-page="72" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=72#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>73.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton74" title="74 kérdés - Még nincs rá válasz" data-quiz-page="73" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=73#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>74.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton75" title="75 kérdés - Még nincs rá válasz" data-quiz-page="74" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=74#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>75.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton76" title="76 kérdés - Még nincs rá válasz" data-quiz-page="75" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=75#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>76.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton77" title="77 kérdés - Még nincs rá válasz" data-quiz-page="76" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=76#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>77.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton78" title="78 kérdés - Még nincs rá válasz" data-quiz-page="77" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=77#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>78.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton79" title="79 kérdés - Még nincs rá válasz" data-quiz-page="78" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=78#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>79.<span class="accesshide"> <span class="flagstate"></span></span></a><a class="qnbutton notyetanswered free btn" id="quiznavbutton80" title="80 kérdés - Még nincs rá válasz" data-quiz-page="79" href="https://moodle.sztj-tech.hu/mod/quiz/attempt.php?attempt=31342&amp;cmid=24347&amp;page=79#"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide"></span>80.<span class="accesshide"> <span class="flagstate"></span></span></a></div><div class="othernav"><div class="autosave_info" hidden="hidden">Utoljára mentve: -</div><a class="endtestlink aalink" href="https://moodle.sztj-tech.hu/mod/quiz/summary.php?attempt=31342&amp;cmid=24347">Próbálkozás vége ...</a></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-1"></span></aside>
+                    </section>
+
+    </div>
+</div>
+        <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers   drag-container">
+            <div id="topofscroll" class="main-inner">
+                <div class="drawer-toggles d-flex">
+                        <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
+                            <button
+                                class="btn icon-no-margin"
+                                data-toggler="drawers"
+                                data-action="toggle"
+                                data-target="theme_boost-drawers-courseindex"
+                                data-toggle="tooltip"
+                                data-placement="right"
+                                title="Kurzusmutató megnyitása"
+                            >
+                                <span class="sr-only">Kurzusmutató megnyitása</span>
+                                <i class="icon fa fa-list fa-fw " aria-hidden="true" ></i>
+                            </button>
+                        </div>
+                        <div class="drawer-toggler drawer-right-toggle d-print-none">
+                            <button
+                                class="btn icon-no-margin"
+                                data-toggler="drawers"
+                                data-action="toggle"
+                                data-target="theme_boost-drawers-blocks"
+                                data-toggle="tooltip"
+                                data-placement="right"
+                                title="Blokkfiók nyitása"
+                            >
+                                <span class="sr-only">Blokkfiók nyitása</span>
+                                <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true" ></i></span>
+                                <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true" ></i></span>
+                            </button>
+                        </div>
+                </div>
+                <header id="page-header" class="header-maxwidth d-print-none">
+    <div class="w-100">
+        <div class="d-flex flex-wrap">
+            <div id="page-navbar">
+                <nav aria-label="Navigálási útvonal">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.sztj-tech.hu/course/view.php?id=387"
+                        
+                        title="EKKE"
+                        
+                    >
+                        EKKE
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.sztj-tech.hu/course/section.php?id=14441"
+                        
+                        
+                        data-section-name-for="14441" 
+                    >
+                        Adatbázis kezelés I.
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <span >
+                        20260226 Gyakorló teszt adatbázis tervezésről
+                    </span>
+                </li>
+        </ol>
+</nav>
+            </div>
+            <div class="ms-auto d-flex">
+                
+            </div>
+            <div id="course-header">
+                
+            </div>
+        </div>
+        <div class="d-flex align-items-center">
+                    <div class="me-auto">
+                        <div class="page-context-header d-flex flex-wrap align-items-center mb-2">
+    <div class="page-header-image">
+        <div class="assessment activityiconcontainer icon-size-6 modicon_quiz"><img class="icon activityicon " aria-hidden="true" src="https://moodle.sztj-tech.hu/theme/image.php/academi/quiz/1765279452/monologo?filtericon=1" alt="" /></div>
+    </div>
+    <div class="page-header-headings">
+        <h1 class="h2 mb-0">20260226 Gyakorló teszt adatbázis tervezésről</h1>
+    </div>
+</div>
+                    </div>
+            <div class="header-actions-container ms-auto" data-region="header-actions-container">
+            </div>
+        </div>
+    </div>
+</header>
+                <div id="page-content" class="pb-3 d-print-block">
+                    <div id="region-main-box">
+                        <section id="region-main" aria-label="Tartalom">
+
+                            <span class="notifications" id="user-notifications"></span>
+                                <span id="maincontent"></span>
+                                <div class="activity-header" data-for="page-activity-header"></div>
+                            <div role="main"><div class="tertiary-navigation"><div class="row"><div class="navitem"><a class="btn btn-secondary" href="https://moodle.sztj-tech.hu/mod/quiz/view.php?id=24347">Vissza</a></div></div></div><div id="quiz-timer-wrapper" class="mb-2">
+    <div id="quiz-timer" class="quiz-timer-inner py-1 px-2 ms-auto" role="timer" aria-atomic="true" aria-relevant="text">
+        Hátralévő idő
+        <span id="quiz-time-left"></span>
+    </div>
+    <button type="button" class="btn btn-secondary btn-small ms-1" id="toggle-timer" aria-controls="quiz-timer" aria-describedby="quiz-timer">
+        Elrejtés
+    </button>
+</div><form action="https://moodle.sztj-tech.hu/mod/quiz/processattempt.php?cmid=24347" method="post" enctype="multipart/form-data" accept-charset="utf-8" id="responseform"><div><div id="question-39982-1" class="que essay manualgraded notyetanswered"><div class="info"><h3 class="no"><span class="qno">1</span> kérdés</h3><div class="state">Még nincs rá válasz</div><div class="grade">3,00 pont szerezhető</div><div class="questionflag editable"><input type="hidden" name="q39982:1_:flagged" value="0" /><input type="hidden" value="qaid=888736&amp;qubaid=39982&amp;qid=77584&amp;slot=1&amp;checksum=185369eb7f616ae84a330041040df0eb&amp;sesskey=HnnQ2bEM6n&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q39982:1_:flaggedcheckbox" name="q39982:1_:flagged" value="1" /><label id="q39982:1_:flaggedlabel" for="q39982:1_:flaggedcheckbox"><img src="https://moodle.sztj-tech.hu/theme/image.php/academi/core/1765279452/i/unflagged" alt="" class="questionflagimage" id="q39982:1_:flaggedimg" /><span>A kérdés megjelölése </span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Kérdés szövege</h4><input type="hidden" name="q39982:1_:sequencecheck" value="1" /><div class="qtext"><div class="clearfix"><p>Adja meg a <strong>Teljes függőség </strong>definícióját, értelmezését!</p></div></div><div class="ablock"><div class="answer"><label class="visually-hidden" for="q39982:1_answer_id">Válaszszöveg 1 kérdés</label><div class="qtype_essay_editor qtype_essay_response"><div><textarea id="q39982:1_answer_id" name="q39982:1_answer" rows="20" cols="60" class="form-control"></textarea></div><div><input type="hidden" name="q39982:1_answerformat" value="1" /></div></div></div><div class="attachments"></div></div></div></div></div><div class="submitbtns"><input type="submit" name="next" value="Következő oldal" class="mod_quiz-next-nav btn btn-primary" id="mod_quiz-next-nav" /></div><input type="hidden" name="attempt" value="31342" /><input type="hidden" name="thispage" value="0" id="followingpage" /><input type="hidden" name="nextpage" value="1" /><input type="hidden" name="timeup" value="0" id="timeup" /><input type="hidden" name="sesskey" value="HnnQ2bEM6n" /><input type="hidden" name="mdlscrollto" value="" id="mdlscrollto" /><input type="hidden" name="slots" value="1" /></div></form><div id="connection-error" style="display: none;" role="alert"><p>A hálózati kapcsolat megszűnt (az automatikus mentés nem sikerült).</p>
+
+<p>Jegyezze fel az oldalon megadott esetleges válaszokat, majd próbáljon meg újból kapcsolódni.</p>
+
+<p>Ha sikerül. válaszainak mentése után ez az üzenet eltűnik.</p>
+</div><div id="connection-ok" style="display: none;" role="alert"><p>A hálózati kapcsolat helyreállt. Biztonságosan folytathatja a munkát.</p>
+</div></div>
+                            
+                            
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+            
+                <footer id="page-footer" class="footer-popover footer-dark text-light">
+                    <div id="footer" >
+                            <div class="footer-main">
+                                <div class="container-fluid">
+                                    <div id="course-footer">
+                                        
+                                    </div>
+                                    <div class="row">
+            
+            
+                                                <div class="col-md-6">
+                                                    <div class="contact-info">
+                                                            <h2>Kapcsolat</h2>
+                                                            <p>Szent József Katolikus Elektronikai Technikum, Gimnázium és Kollégium \n 5100 Jászberény, Rákóczi út 13-15.</p>
+                                                            <p><i class="fa fa-phone-square"></i> Telefon : (57) 412-818</p>
+                                                            <p><i class="fa fa-envelope"></i> Email : <a class="mail-link" href="mailto:iskola[kukac]sztj-tech.hu">iskola[kukac]sztj-tech.hu</a></p>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <div class="social-media">
+                                                            <h2>@Kövessen bennünket...</h2>
+                                                        <ul>
+                                                                    <li class="smedia-4">
+                                                                        <a href="https://www.facebook.com/sztjtech" target="_blank" style="background-color: #3598dc">
+                                                                            <span class="media-icon">
+                                                                                <i class="fa fa-facebook-f"></i>
+                                                                            </span>
+                                                                        </a>
+                                                                    </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div data-region="footer-container-popover">
+                            <button class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover" data-action="footer-popover" aria-label="Lábléc megjelenítése">
+                                <i class="icon fa fa-question fa-fw " aria-hidden="true" ></i>
+                            </button>
+                        </div>
+                        <div class="footer-content-popover container" data-region="footer-content-popover">
+                                <div class="footer-section p-3 border-bottom">
+            
+            
+                                        <div><a href="https://moodle.sztj-tech.hu/user/contactsitesupport.php"><i class="icon fa-regular fa-envelope fa-fw " aria-hidden="true" ></i>Portáltámogatás elérése</a></div>
+                                </div>
+            
+                            <div class="footer-section p-3 border-bottom">
+                                <div class="logininfo">
+                                    <div class="logininfo"><a href="https://moodle.sztj-tech.hu/user/profile.php?id=3944" title="Profil megtekintése">Leczki Bettina</a> néven lépett be (<a href="https://moodle.sztj-tech.hu/login/logout.php?sesskey=HnnQ2bEM6n">Kilépés</a>)</div>
+                                </div>
+                                <div class="tool_usertours-resettourcontainer">
+                                </div>
+                                <div class="tool_dataprivacy"><a href="https://moodle.sztj-tech.hu/admin/tool/dataprivacy/summary.php">Adatmegőrzés összegzése</a></div><div><a class="mobilelink" href="https://download.moodle.org/mobile?version=2025041402&amp;lang=hu&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile&amp;siteurl=https%3A%2F%2Fmoodle.sztj-tech.hu">Töltse le a Moodle-t a mobiljára</a></div>
+                                <script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle.sztj-tech.hu/lib/requirejs.php/1765279453/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle.sztj-tech.hu/lib/javascript.php/1765279453/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'https://moodle.sztj-tech.hu/lib/javascript.php/1765279453/lib/jquery/ui-1.14.1/jquery-ui.min',
+        jqueryprivate: 'https://moodle.sztj-tech.hu/lib/javascript.php/1765279453/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://moodle.sztj-tech.hu/lib/javascript.php/1765279453/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.configure({"mathjaxurl":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@3.2.2\/es5\/tex-mml-chtml.js","mathjaxconfig":"","lang":"en"}); M.util.js_complete('filter_mathjaxloader/loader');});;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('hu');
+});;
+M.util.js_pending('core/network'); require(['core/network'], function(amd) {amd.keepalive(180, 0, "sessionerroruser", "error"); M.util.js_complete('core/network');});;
+M.util.js_pending('theme_academi/theme'); require(['theme_academi/theme'], function(amd) {amd.init(); M.util.js_complete('theme_academi/theme');});;
+
+require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+    CustomEvents.define('#single_select69dff830872935', [CustomEvents.events.accessibleChange]);
+    $('#single_select69dff830872935').on(CustomEvents.events.accessibleChange, function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f69dff830872934').submit();
+        }
+    });
+});
+;
+
+require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+    CustomEvents.define('#single_select69dff830872938', [CustomEvents.events.accessibleChange]);
+    $('#single_select69dff830872938').on(CustomEvents.events.accessibleChange, function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f69dff830872937').submit();
+        }
+    });
+});
+;
+M.util.js_pending('core_courseformat/courseeditor'); require(['core_courseformat/courseeditor'], function(amd) {amd.setViewFormat("387", {"editing":false,"supportscomponents":true,"statekey":"1774530756_1776285676","overriddenStrings":[]}); M.util.js_complete('core_courseformat/courseeditor');});;
+
+require(['core_courseformat/local/courseindex/placeholder'], function(component) {
+    component.init('#course-index-placeholder');
+});
+;
+
+require(['core_courseformat/local/courseindex/drawer'], function(component) {
+    component.init('#courseindex');
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+    require(['core/usermenu'], function(UserMenu) {
+        UserMenu.init();
+    });
+;
+
+M.util.js_pending('theme_boost/drawers:load');
+require(['theme_boost/drawers'], function() {
+    M.util.js_complete('theme_boost/drawers:load');
+});
+;
+
+    require(['core/moremenu'], function(moremenu) {
+        moremenu(document.querySelector('#moremenu-69dff8309087a-navbar-nav'));
+    });
+;
+
+    require(['theme_boost/courseindexdrawercontrols'], function(component) {
+    component.init('courseindexdrawercontrols');
+    });
+;
+
+M.util.js_pending('theme_boost/drawers:load');
+require(['theme_boost/drawers'], function() {
+    M.util.js_complete('theme_boost/drawers:load');
+});
+;
+
+M.util.js_pending('theme_boost/drawers:load');
+require(['theme_boost/drawers'], function() {
+    M.util.js_complete('theme_boost/drawers:load');
+});
+;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
+    M.util.js_complete('theme_boost/loader');
+});
+;
+
+require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.typeset(); M.util.js_complete('filter_mathjaxloader/loader');});;
+    M.util.js_pending('editor_tiny/editor:defaultConfiguration');
+    require(['editor_tiny/editor'], (Tiny) => {
+        Tiny.configureDefaultEditor({"css":"https:\/\/moodle.sztj-tech.hu\/theme\/styles.php\/academi\/1765279452_1\/editor","context":51056,"plugins":{"anchor":{"buttons":["anchor"],"menuitems":{"anchor":"insert"}},"charmap":{"buttons":["charmap"],"menuitems":{"charmap":"insert"}},"code":{"buttons":["code"],"menuitems":{"code":"view"}},"codesample":{"buttons":["codesample"],"menutiems":{"codesample":"insert"}},"directionality":{"buttons":["ltr","rtl"]},"emoticons":{"buttons":["emoticons"],"menuitems":{"emoticons":"insert"}},"fullscreen":{"buttons":["fullscreen"],"menuitems":{"fullscreen":"view"}},"help":{"buttons":["help"],"menuitems":{"help":"help"}},"insertdatetime":{"buttons":["insertdatetime"],"menuitems":{"insertdatetime":"insert"}},"lists":{"buttons":["bullist","numlist"]},"nonbreaking":{"buttons":["nonbreaking"],"menuitems":{"nonbreaking":"insert"}},"pagebreak":{"buttons":["pagebreak"],"menuitems":{"pagebreak":"insert"}},"quickbars":{"buttons":["quickimage","quicklink","quicktable"]},"save":{"buttons":["cancel","save"]},"searchreplace":{"buttons":["searchreplace"],"menuitems":{"searchreplace":"edit"}},"table":{"buttons":["table","tablecellprops","tablecopyrow","tablecutrow","tabledelete","tabledeletecol","tabledeleterow","tableinsertdialog","tableinsertcolafter","tableinsertcolbefore","tableinsertrowafter","tableinsertrowbefore","tablemergecells","tablepasterowafter","tablepasterowbefore","tableprops","tablerowprops","tablesplitcells","tableclass","tablecellclass","tablecellvalign","tablecellborderwidth","tablecellborderstyle","tablecaption","tablecellbackgroundcolor","tablecellbordercolor","tablerowheader","tablecolheader"],"menuitems":{"inserttable":"table","tableprops":"table","deletetable":"table","cell":"table","tablemergecells":"table","tablesplitcells":"table","tablecellprops":"table","column":"table","tableinsertcolumnbefore":"table","tableinsertcolumnafter":"table","tablecutcolumn":"table","tablecopycolumn":"table","tablepastecolumnbefore":"table","tablepastecolumnafter":"table","tabledeletecolumn":"table","row":"table","tableinsertrowbefore":"table","tableinsertrowafter":"table","tablecutrow":"table","tablecopyrow":"table","tablepasterowbefore":"table","tablepasterowafter":"table","tablerowprops":"table","tabledeleterow":"table"}},"visualblocks":{"buttons":["visualblocks"],"menuitems":{"visualblocks":"view"}},"visualchars":{"buttons":["visualchars"],"menuitems":{"visualchars":"view"}},"wordcount":{"buttons":["wordcount"],"menuitems":{"wordcount":"tools"}},"tiny_accessibilitychecker\/plugin":{"buttons":["tiny_accessibilitychecker\/tiny_accessibilitychecker_image"],"menuitems":["tiny_accessibilitychecker\/tiny_accessibilitychecker_image"],"config":{"permissions":{"upload":true},"storeinrepo":true}},"tiny_autosave\/plugin":{"config":{"autosave":null}},"tiny_equation\/plugin":{"buttons":["tiny_equation\/equation"],"menuitems":["tiny_equation\/equation"],"config":{"texfilter":true,"contextid":1,"libraries":[{"key":"group1","groupname":"Oper\u00e1torok","elements":["\\cdot\r","\\times\r","\\ast\r","\\div\r","\\diamond\r","\\pm\r","\\mp\r","\\oplus\r","\\ominus\r","\\otimes\r","\\oslash\r","\\odot\r","\\circ\r","\\bullet\r","\\asymp\r","\\equiv\r","\\subseteq\r","\\supseteq\r","\\leq\r","\\geq\r","\\preceq\r","\\succeq\r","\\sim\r","\\simeq\r","\\approx\r","\\subset\r","\\supset\r","\\ll\r","\\gg\r","\\prec\r","\\succ\r","\\infty\r","\\in\r","\\ni\r","\\forall\r","\\exists\r","\\neq"],"active":true},{"key":"group2","groupname":"Nyilak","elements":["\\leftarrow\r","\\rightarrow\r","\\uparrow\r","\\downarrow\r","\\leftrightarrow\r","\\nearrow\r","\\searrow\r","\\swarrow\r","\\nwarrow\r","\\Leftarrow\r","\\Rightarrow\r","\\Uparrow\r","\\Downarrow\r","\\Leftrightarrow"]},{"key":"group3","groupname":"G\u00f6r\u00f6g szimb\u00f3lumok","elements":["\\alpha\r","\\beta\r","\\gamma\r","\\delta\r","\\epsilon\r","\\zeta\r","\\eta\r","\\theta\r","\\iota\r","\\kappa\r","\\lambda\r","\\mu\r","\\nu\r","\\xi\r","\\pi\r","\\rho\r","\\sigma\r","\\tau\r","\\upsilon\r","\\phi\r","\\chi\r","\\psi\r","\\omega\r","\\Gamma\r","\\Delta\r","\\Theta\r","\\Lambda\r","\\Xi\r","\\Pi\r","\\Sigma\r","\\Upsilon\r","\\Phi\r","\\Psi\r","\\Omega"]},{"key":"group4","groupname":"R\u00e9szletes","elements":["\\sum{a,b}\r","\\sqrt[a]{b+c}\r","\\int_{a}^{b}{c}\r","\\iint_{a}^{b}{c}\r","\\iiint_{a}^{b}{c}\r","\\oint{a}\r","(a)\r","[a]\r","\\lbrace{a}\\rbrace\r","\\left| \\begin{matrix} a_1 & a_2 \\\\ a_3 & a_4 \\end{matrix} \\right|\r","\\frac{a}{b+c}\r","\\vec{a}\r","\\binom {a} {b}\r","{a \\brack b}\r","{a \\brace b}"]}],"texdocsurl":"http:\/\/docs.moodle.org\/500\/hu\/Using_TeX_Notation"}},"tiny_html\/plugin":[],"tiny_link\/plugin":{"buttons":["tiny_link\/tiny_link_link","tiny_link\/tiny_link_unlink"],"menuitems":["tiny_link\/tiny_link_link"],"config":{"permissions":{"filepicker":true}}}}});
+        M.util.js_complete('editor_tiny/editor:defaultConfiguration');
+    });;
+    M.util.js_pending('editor_tiny/editor');
+    require(['editor_tiny/editor'], (Tiny) => {
+        Tiny.setupForElementId({
+            elementId: "q39982:1_answer_id",
+            options: {"css":"https:\/\/moodle.sztj-tech.hu\/theme\/styles.php\/academi\/1765279452_1\/editor","context":51056,"filepicker":{"return_types":3},"draftitemid":0,"currentLanguage":"hu","branding":true,"extended_valid_elements":"script[*],p[*],i[*]","language":{"currentlang":"hu","installed":{"de_old":"Deutsch \u200e(de_old)\u200e","en":"English \u200e(en)\u200e","hu":"magyar \u200e(hu)\u200e"},"available":{"aa":"afar","ab":"abh\u00e1z","ae":"aveszt\u00e1n","af":"afrikaans","ak":"akan","am":"amhara","an":"arag\u00f3niai","ar":"arab","as":"assz\u00e1mi","av":"avar","ay":"ajmara","az":"azeri","ba":"bask\u00edr","be":"feh\u00e9rorosz","bg":"bolg\u00e1r","bh":"bih\u00e1ri nyelvek","bi":"biszlama","bm":"bambara","bn":"beng\u00e1li","bo":"tibeti","br":"breton","bs":"bosny\u00e1k","ca":"valenciai katal\u00e1n","ce":"csecsen","ch":"csamorr\u00f3","co":"korzikai","cr":"kr\u00ed","cs":"cseh","cu":"\u00f3szl\u00e1v","cv":"csuvas","cy":"walesi","da":"d\u00e1n","de":"n\u00e9met","dv":"divehi; mald\u00edv","dz":"dzongka","ee":"eve","el":"mai g\u00f6r\u00f6g (1453-)","en":"angol","eo":"eszperant\u00f3","es":"spanyol; kaszt\u00edliai","et":"\u00e9szt","eu":"baszk","fa":"perzsa","ff":"ful","fi":"finn","fj":"fidzsi","fo":"fer\u00f6eri","fr":"francia","fy":"nyugati fr\u00edz","ga":"\u00edr","gd":"kelta","gl":"gal\u00edciai","gn":"guarani","gu":"gudzsar\u00e1ti","gv":"man-szigeti","ha":"hausza","he":"h\u00e9ber","hi":"hindi","ho":"hiri-motu","hr":"horv\u00e1t","ht":"haiti kreol","hu":"magyar","hy":"\u00f6rm\u00e9ny","hz":"herer\u00f3","ia":"interlingva (IALA)","id":"indon\u00e9z","ie":"interlingva","ig":"igb\u00f3","ii":"szecsu\u00e1n ji","ik":"inupiak","io":"id\u00f3","is":"izlandi","it":"olasz","iu":"inuktitut","ja":"jap\u00e1n","jv":"j\u00e1vai","ka":"gr\u00faz","kg":"kong\u00f3","ki":"kikuju","kj":"kvanjama","kk":"kazah","kl":"gr\u00f6nlandi","km":"k\u00f6z\u00e9pkhmer","kn":"kannada","ko":"koreai","kr":"kanuri","ks":"kasm\u00edri","ku":"kurd","kv":"komi","kw":"cornwalli","ky":"kirgiz","la":"latin","lb":"luxemburgi","lg":"ganda","li":"limburgi","ln":"lingala","lo":"laoszi","lt":"litv\u00e1n","lu":"luba-katanga","lv":"lett","mg":"malagaszi","mh":"Marshall-szigeteki","mi":"maori","mk":"maced\u00f3n","ml":"malajalam","mn":"mongol","mr":"marathi","ms":"mal\u00e1j","mt":"m\u00e1ltai","my":"burmai","na":"nauru","nb":"norv\u00e9g bokm\u00e5l","nd":"\u00e9szaki ndebele","ne":"nep\u00e1li","ng":"ndonga","nl":"holland; flamand","nn":"norv\u00e9g nynorsk","no":"norv\u00e9g","nr":"d\u00e9li ndebele","nv":"navah\u00f3","ny":"csicseva","oc":"okcit\u00e1n (1500 ut\u00e1ni); provansz\u00e1l","oj":"odzsibva","om":"orom\u00f3","or":"orija","os":"osz\u00e9t","pa":"pandzs\u00e1bi","pi":"p\u00e1li","pl":"lengyel","ps":"pastu","pt":"portug\u00e1l","qu":"kecsua","rm":"retorom\u00e1n","rn":"rundi","ro":"rom\u00e1n","ru":"orosz","rw":"kinjarvanda","sa":"szanszkrit","sc":"sz\u00e1rd","sd":"szindi","se":"\u00e9szaki lapp","sg":"szang\u00f3","si":"szingal\u00e9z","sk":"szlov\u00e1k","sl":"szlov\u00e9n","sm":"szamoai","sn":"sona","so":"szom\u00e1li","sq":"alb\u00e1n","sr":"szerb","ss":"szv\u00e1zi","st":"d\u00e9li szot\u00f3","su":"szundai","sv":"sv\u00e9d","sw":"szuah\u00e9li","ta":"tamil","te":"telugu","tg":"tadzsik","th":"thai","ti":"tigrinya","tk":"t\u00fcrkm\u00e9n","tl":"tagalog","tn":"cv\u00e1na","to":"tonga (Tonga-szigetek)","tr":"t\u00f6r\u00f6k","ts":"conga","tt":"tat\u00e1r","tw":"tvi","ty":"tahiti","ug":"ujgur","uk":"ukr\u00e1n","ur":"urdu","uz":"\u00fczb\u00e9g","ve":"venda","vi":"vietnami","vo":"volap\u00fck","wa":"vallon","wo":"volof","xh":"hosza","yi":"jiddis","yo":"joruba","za":"csuang","zh":"k\u00ednai","zu":"zulu"}},"placeholderSelectors":[],"plugins":{"anchor":{"buttons":["anchor"],"menuitems":{"anchor":"insert"}},"charmap":{"buttons":["charmap"],"menuitems":{"charmap":"insert"}},"code":{"buttons":["code"],"menuitems":{"code":"view"}},"codesample":{"buttons":["codesample"],"menutiems":{"codesample":"insert"}},"directionality":{"buttons":["ltr","rtl"]},"emoticons":{"buttons":["emoticons"],"menuitems":{"emoticons":"insert"}},"fullscreen":{"buttons":["fullscreen"],"menuitems":{"fullscreen":"view"}},"help":{"buttons":["help"],"menuitems":{"help":"help"}},"insertdatetime":{"buttons":["insertdatetime"],"menuitems":{"insertdatetime":"insert"}},"lists":{"buttons":["bullist","numlist"]},"nonbreaking":{"buttons":["nonbreaking"],"menuitems":{"nonbreaking":"insert"}},"pagebreak":{"buttons":["pagebreak"],"menuitems":{"pagebreak":"insert"}},"quickbars":{"buttons":["quickimage","quicklink","quicktable"]},"save":{"buttons":["cancel","save"]},"searchreplace":{"buttons":["searchreplace"],"menuitems":{"searchreplace":"edit"}},"table":{"buttons":["table","tablecellprops","tablecopyrow","tablecutrow","tabledelete","tabledeletecol","tabledeleterow","tableinsertdialog","tableinsertcolafter","tableinsertcolbefore","tableinsertrowafter","tableinsertrowbefore","tablemergecells","tablepasterowafter","tablepasterowbefore","tableprops","tablerowprops","tablesplitcells","tableclass","tablecellclass","tablecellvalign","tablecellborderwidth","tablecellborderstyle","tablecaption","tablecellbackgroundcolor","tablecellbordercolor","tablerowheader","tablecolheader"],"menuitems":{"inserttable":"table","tableprops":"table","deletetable":"table","cell":"table","tablemergecells":"table","tablesplitcells":"table","tablecellprops":"table","column":"table","tableinsertcolumnbefore":"table","tableinsertcolumnafter":"table","tablecutcolumn":"table","tablecopycolumn":"table","tablepastecolumnbefore":"table","tablepastecolumnafter":"table","tabledeletecolumn":"table","row":"table","tableinsertrowbefore":"table","tableinsertrowafter":"table","tablecutrow":"table","tablecopyrow":"table","tablepasterowbefore":"table","tablepasterowafter":"table","tablerowprops":"table","tabledeleterow":"table"}},"visualblocks":{"buttons":["visualblocks"],"menuitems":{"visualblocks":"view"}},"visualchars":{"buttons":["visualchars"],"menuitems":{"visualchars":"view"}},"wordcount":{"buttons":["wordcount"],"menuitems":{"wordcount":"tools"}},"tiny_accessibilitychecker\/plugin":{"buttons":["tiny_accessibilitychecker\/tiny_accessibilitychecker_image"],"menuitems":["tiny_accessibilitychecker\/tiny_accessibilitychecker_image"],"config":{"permissions":{"upload":true},"storeinrepo":true}},"tiny_autosave\/plugin":{"config":{"autosave":null}},"tiny_equation\/plugin":{"buttons":["tiny_equation\/equation"],"menuitems":["tiny_equation\/equation"],"config":{"texfilter":true,"contextid":51056,"libraries":[{"key":"group1","groupname":"Oper\u00e1torok","elements":["\\cdot\r","\\times\r","\\ast\r","\\div\r","\\diamond\r","\\pm\r","\\mp\r","\\oplus\r","\\ominus\r","\\otimes\r","\\oslash\r","\\odot\r","\\circ\r","\\bullet\r","\\asymp\r","\\equiv\r","\\subseteq\r","\\supseteq\r","\\leq\r","\\geq\r","\\preceq\r","\\succeq\r","\\sim\r","\\simeq\r","\\approx\r","\\subset\r","\\supset\r","\\ll\r","\\gg\r","\\prec\r","\\succ\r","\\infty\r","\\in\r","\\ni\r","\\forall\r","\\exists\r","\\neq"],"active":true},{"key":"group2","groupname":"Nyilak","elements":["\\leftarrow\r","\\rightarrow\r","\\uparrow\r","\\downarrow\r","\\leftrightarrow\r","\\nearrow\r","\\searrow\r","\\swarrow\r","\\nwarrow\r","\\Leftarrow\r","\\Rightarrow\r","\\Uparrow\r","\\Downarrow\r","\\Leftrightarrow"]},{"key":"group3","groupname":"G\u00f6r\u00f6g szimb\u00f3lumok","elements":["\\alpha\r","\\beta\r","\\gamma\r","\\delta\r","\\epsilon\r","\\zeta\r","\\eta\r","\\theta\r","\\iota\r","\\kappa\r","\\lambda\r","\\mu\r","\\nu\r","\\xi\r","\\pi\r","\\rho\r","\\sigma\r","\\tau\r","\\upsilon\r","\\phi\r","\\chi\r","\\psi\r","\\omega\r","\\Gamma\r","\\Delta\r","\\Theta\r","\\Lambda\r","\\Xi\r","\\Pi\r","\\Sigma\r","\\Upsilon\r","\\Phi\r","\\Psi\r","\\Omega"]},{"key":"group4","groupname":"R\u00e9szletes","elements":["\\sum{a,b}\r","\\sqrt[a]{b+c}\r","\\int_{a}^{b}{c}\r","\\iint_{a}^{b}{c}\r","\\iiint_{a}^{b}{c}\r","\\oint{a}\r","(a)\r","[a]\r","\\lbrace{a}\\rbrace\r","\\left| \\begin{matrix} a_1 & a_2 \\\\ a_3 & a_4 \\end{matrix} \\right|\r","\\frac{a}{b+c}\r","\\vec{a}\r","\\binom {a} {b}\r","{a \\brack b}\r","{a \\brace b}"]}],"texdocsurl":"http:\/\/docs.moodle.org\/500\/hu\/Using_TeX_Notation"}},"tiny_html\/plugin":[],"tiny_link\/plugin":{"buttons":["tiny_link\/tiny_link_link","tiny_link\/tiny_link_unlink"],"menuitems":["tiny_link\/tiny_link_link"],"config":{"permissions":{"filepicker":true}}}}},
+        });
+        M.util.js_complete('editor_tiny/editor');
+    });;
+M.util.js_pending('core_form/submit'); require(['core_form/submit'], function(amd) {amd.init("mod_quiz-next-nav"); M.util.js_complete('core_form/submit');});;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(51056, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"trace"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});;
+M.util.js_pending('core/storage_validation'); require(['core/storage_validation'], function(amd) {amd.init(1776285564); M.util.js_complete('core/storage_validation');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Utols\u00f3 m\u00f3dos\u00edt\u00e1s","name":"N\u00e9v","error":"Hiba","info":"Inform\u00e1ci\u00f3","yes":"Igen","no":"Nem","cancel":"M\u00e9gse","show":"Mutat","hide":"Elrejt\u00e9s","confirm":"Meger\u0151s\u00edt\u00e9s","areyousure":"Biztos?","closebuttontitle":"Bez\u00e1r\u00e1s","unknownerror":"Ismeretlen hiba","file":"\u00c1llom\u00e1ny","url":"URL","collapseall":"Az \u00f6sszes becsuk\u00e1sa","expandall":"Az \u00f6sszes kibont\u00e1sa"},"repository":{"type":"T\u00edpus","size":"M\u00e9ret","invalidjson":"\u00c9rv\u00e9nytelen JSON-sz\u00f6veg","nofilesattached":"Nincs csatolva \u00e1llom\u00e1ny","filepicker":"\u00c1llom\u00e1nyv\u00e1laszt\u00f3","logout":"Kil\u00e9p\u00e9s","nofilesavailable":"Nincs el\u00e9rhet\u0151 \u00e1llom\u00e1ny","norepositoriesavailable":"Egyik aktu\u00e1lis adatt\u00e1ra sem szolg\u00e1ltat a k\u00e9rt form\u00e1ban \u00e1llom\u00e1nyokat.","fileexistsdialogheader":"Az \u00e1llom\u00e1ny l\u00e9tezik.","fileexistsdialog_editor":"A szerkesztend\u0151 sz\u00f6veghez m\u00e1r csatoltak ilyen n\u00e9vvel \u00e1llom\u00e1nyt.","fileexistsdialog_filemanager":"Ilyen n\u00e9vvel m\u00e1r csatoltak \u00e1llom\u00e1nyt.","renameto":"\u00c1tnevez\u00e9s erre: \"{$a}\".","referencesexist":"{$a} hivatkoz\u00e1s mutat az \u00e1llom\u00e1nyra","select":"Kiv\u00e1laszt\u00e1s"},"admin":{"confirmdeletecomments":"Biztosan t\u00f6rli a kiv\u00e1lasztott megjegyz\u00e9s(eke)t?","confirmation":"Meger\u0151s\u00edt\u00e9s"},"question":{"flagged":"Megjel\u00f6lve"},"quiz":{"functiondisabledbysecuremode":"Ez a funkci\u00f3 jelenleg ki van kapcsolva","startattempt":"Pr\u00f3b\u00e1lkoz\u00e1s ind\u00edt\u00e1sa","timesup":"Ideje elfogyott"},"debug":{"debuginfo":"Hibaelh\u00e1r\u00edt\u00e1si adatok","line":"Sor","stacktrace":"Veremki\u00edrat\u00e1s"},"langconfig":{"labelsep":":"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() { M.util.js_pending('random69dff830872931'); Y.use('core_question_flags', function(Y) { M.core_question_flags.init(Y, "https:\/\/moodle.sztj-tech.hu\/question\/toggleflag.php", [{"src":"https:\/\/moodle.sztj-tech.hu\/theme\/image.php\/academi\/core\/1765279452\/i\/unflagged","title":"A k\u00e9rd\u00e9s megjel\u00f6l\u00e9se k\u00e9s\u0151bbi hivatkoz\u00e1shoz","alt":"Megjel\u00f6lve","text":"A k\u00e9rd\u00e9s megjel\u00f6l\u00e9se "},{"src":"https:\/\/moodle.sztj-tech.hu\/theme\/image.php\/academi\/core\/1765279452\/i\/flagged","title":"A k\u00e9rd\u00e9s megjel\u00f6l\u00e9s\u00e9nek t\u00f6rl\u00e9se","alt":"Megjel\u00f6lve","text":"A k\u00e9rd\u00e9s megjel\u00f6l\u00e9s\u00e9nek t\u00f6rl\u00e9se"}]);  M.util.js_complete('random69dff830872931'); });
+ M.util.js_pending('random69dff830872932'); Y.use('mod_quiz', function(Y) { M.mod_quiz.init_attempt_form(Y);  M.util.js_complete('random69dff830872932'); });
+ M.util.js_pending('random69dff830872933'); Y.use('mod_quiz', function(Y) { M.mod_quiz.nav.init(Y);  M.util.js_complete('random69dff830872933'); });
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random69dff8308729311'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random69dff8308729311'); });
+})();
+//]]>
+</script>
+
+                            </div>
+            
+                            <div class="footer-section p-3">
+                                <div>Szolgáltatja a <a href="https://moodle.com">Moodle</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            
+                <a id="backToTop" href="#" class="btn btn-primary btn-lg back-to-top " role="button"><span class="fa fa-angle-up"></span></a>
+            
+            
+            
+        </div>
+        
+    </div>
+
+</body></html>
