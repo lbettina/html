@@ -1,561 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 <body>
-  
-  
-  <p><strong>1</strong>&nbsp;</p>
-  <p>T&aacute;bla: csapatverseny</p>
-  <p>Melyik SQL lek&eacute;rdez&eacute;s eredm&eacute;nye lesz egyetlen rekord?</p>
-  <ol>
-  <li>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia IS NOT NULL AND Azerbajdzs&aacute;n IS NULL</li>
-  <li>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia = NULL AND Azerbajdzs&aacute;n = NULL</li>
-  <li><strong>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia IS NULL AND Azerbajdzs&aacute;n IS NULL </strong></li>
-  <li>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia == NULL AND Azerbajdzs&aacute;n == NULL</li>
-  </ol>
-  <p>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik aggreg&aacute;tf&uuml;ggv&eacute;ny seg&iacute;ts&eacute;g&eacute;vel lehet &aacute;tlagot sz&aacute;molni?</p>
-  <ol>
-  <li>SUM ( )</li>
-  <li>AVERAGE ( )</li>
-  <li><strong>AVG() </strong></li>
-  <li>POWER ( )</li>
-  </ol>
-  <p>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL oper&aacute;torral tudjuk ellenőrizni, hogy egy mező kit&ouml;ltetlen?</p>
-  <ol>
-  <li>UNKNOW</li>
-  <li>IS NOT</li>
-  <li><strong>IS NULL </strong></li>
-  <li>IS NOT NULL</li>
-  </ol>
-  <p>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye n&eacute;v szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
-  <ol>
-  <li>ORDER BY n&eacute;v A-Z</li>
-  <li>ORDER BY n&eacute;v DESCENDING</li>
-  <li>ORDER BY n&eacute;v DESC</li>
-  <li><strong>ORDER BY n&eacute;v ASC </strong></li>
-  </ol>
-  <p>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni a Term&eacute;kek t&aacute;bla minden adat&aacute;t?</p>
-  <ol>
-  <li>SELECT *.Term&eacute;kek;</li>
-  <li>SELECT Term&eacute;kek;</li>
-  <li>SELECT FROM Term&eacute;kek;</li>
-  <li><strong>SELECT * FROM Term&eacute;kek; </strong></li>
-  </ol>
-  <p>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok rendez&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>HAVING</li>
-  <li>HAVING BY</li>
-  <li><strong>ORDER BY </strong></li>
-  <li>SORT BY</li>
-  </ol>
-  <p>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE sz&uuml;letett BETWEEN 91 AND 93 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li>WHERE sz&uuml;letett &gt; 91 AND sz&uuml;letett &lt; 93</li>
-  <li>WHERE sz&uuml;letett &gt;= 91 AND sz&uuml;letett &lt; 93</li>
-  <li><strong>WHERE sz&uuml;letett &gt;= 91 AND sz&uuml;letett &lt;= 93 </strong></li>
-  <li>WHERE sz&uuml;letett &gt; 91 AND sz&uuml;letett &lt;= 93</li>
-  </ol>
-  <p>8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kkal tudjuk az eredm&eacute;nysorokat szűrni csoportos&iacute;t&aacute;s ut&aacute;n?</p>
-  <ol>
-  <li>LIST</li>
-  <li>GET</li>
-  <li>WHERE</li>
-  <li><strong>HAVING </strong></li>
-  </ol>
-  <p>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;s nem tartozik a DDL t&iacute;pus&uacute; parancsok k&ouml;z&eacute; a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>ALTER</li>
-  <li><strong>SELECT</strong></li>
-  <li>CREATE</li>
-  <li>DROP</li>
-  </ol>
-  <p>10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik z&aacute;rad&eacute;k nem haszn&aacute;lhat&oacute; SQL utas&iacute;t&aacute;sokban az al&aacute;bbiak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li><strong>INSIDE</strong></li>
-  <li>OUTER</li>
-  <li>INNER</li>
-  <li>JOIN</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T&aacute;bla: csapatverseny</p>
-  <p>Mi lesz az eredm&eacute;nye a k&ouml;vetkező SQL lek&eacute;rdez&eacute;snek?<br /> SELECT MIN(Spanyolorsz&aacute;g) FROM csapatverseny;</p>
-  <ol>
-  <li>NULL</li>
-  <li><strong>2</strong></li>
-  <li>1</li>
-  <li>Hib&aacute;s az utas&iacute;t&aacute;s</li>
-  </ol>
-  <p>12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni azok a rekordok (is), amelyikn&eacute;l a l&eacute;tsz&aacute;m mező&eacute;rt&eacute;k 20 &eacute;s 40 k&ouml;z&ouml;tt van?</p>
-  <ol>
-  <li>WHERE l&eacute;tsz&aacute;m =&gt; 20</li>
-  <li><strong>WHERE l&eacute;tsz&aacute;m BETWEEN 20 AND 40 </strong></li>
-  <li>WHERE l&eacute;tsz&aacute;m IN 20 AND 40</li>
-  <li>WHERE l&eacute;tsz&aacute;m &lt; 100</li>
-  </ol>
-  <p>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL aggreg&aacute;tf&uuml;ggv&eacute;ny a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>SZUM()</li>
-  <li>AVERAGE()</li>
-  <li><strong>AVG() </strong></li>
-  <li>MAXIMUM()</li>
-  </ol>
-  <p>14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik seg&iacute;ts&eacute;g&eacute;vel rendezhetj&uuml;k a rekordokat magass&aacute;g szerint cs&ouml;kkenő sorrendbe, azonoss&aacute;g eset&eacute;n tests&uacute;ly szerint cs&ouml;kkenő sorrendbe?</p>
-  <ol>
-  <li><strong>ORDER BY magass&aacute;g DESC, tests&uacute;ly DESC </strong></li>
-  <li>ORDER BY tests&uacute;ly DESC, magass&aacute;g DESC</li>
-  <li>ORDER BY magass&aacute;g ASC, tests&uacute;ly ASC</li>
-  <li>ORDER BY tests&uacute;ly ASC, magass&aacute;g ASC</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE z&aacute;rad&eacute;kban melyik oper&aacute;tort haszn&aacute;lhatjuk az egyenlőtlens&eacute;g kifejez&eacute;s&eacute;re?</p>
-  <ol>
-  <li>&gt;&lt;&nbsp;</li>
-  <li>+=</li>
-  <li><strong>!= </strong></li>
-  <li>NOT EQUALS</li>
-  </ol>
-  <p>16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni csak azok a rekordok, amelyikn&eacute;l a k&aacute;rtya mező&eacute;rt&eacute;ke a "pikk" sz&oacute;?</p>
-  <ol>
-  <li>WHERE k&aacute;rtya LIKE "%pikk%"</li>
-  <li>WHERE k&aacute;rtya LIKE "%pikk"</li>
-  <li>WHERE k&aacute;rtya LIKE "pikk%"</li>
-  <li><strong>WHERE k&aacute;rtya LIKE "pikk" </strong></li>
-  </ol>
-  <p>17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minek lehet &aacute;lnevet (ALIAS) adni egy SQL lek&eacute;rdez&eacute;sben?</p>
-  <ol>
-  <li>T&aacute;bl&aacute;knak</li>
-  <li>T&aacute;bl&aacute;knak, mezőknek &eacute;s z&aacute;rad&eacute;koknak.</li>
-  <li>Mezőknek</li>
-  <li><strong>T&aacute;bl&aacute;knak &eacute;s mezőknek. </strong></li>
-  </ol>
-  <p>18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;s k&eacute;rdezi le a&nbsp;<em>FirstName</em>&nbsp;mezőt a&nbsp;<em>Persons</em>&nbsp;t&aacute;bl&aacute;b&oacute;l?</p>
-  <ol>
-  <li>SELECT Persons FROM FirstName</li>
-  <li>SELECT Persons.Firstname</li>
-  <li>SELECT FirstName.Persons</li>
-  <li><strong>SELECT FirstName FROM Persons </strong></li>
-  </ol>
-  <p>19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Milyen eredm&eacute;nnyel t&eacute;r vissza a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT MAX (datum) FROM sportesemenyek WHERE helyszin LIKE ' f&uuml;red';</p>
-  <ol start="2018">
-  <li>2018.1 1.30.</li>
-  <li>Hib&aacute;s az utas&iacute;t&aacute;s.</li>
-  <li>2018.05.23.</li>
-  <li><strong>&Uuml;res eredm&eacute;ny </strong></li>
-  </ol>
-  <p>20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk m&oacute;dos&iacute;tani egy rekordot az adatt&aacute;bl&aacute;ban?</p>
-  <ol>
-  <li>Egyikkel sem a felsoroltak k&ouml;z&uuml;l.</li>
-  <li>UPDATE TABLE</li>
-  <li>EDIT TABLE</li>
-  <li><strong>UPDATE </strong></li>
-  <li>EDIT</li>
-  </ol>
-  <p>21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Melyik z&aacute;rad&eacute;kkal tudjuk megadni az alap&eacute;rtelmezett &eacute;rt&eacute;k&eacute;t egy mezőnek a t&aacute;bla I&eacute;trehoz&aacute;sakor?</p>
-  <ol>
-  <li>BASE VALUE</li>
-  <li><strong>DEFAULT </strong></li>
-  <li>DEFAULT VALUE</li>
-  <li>Egyikkel sem a felsoroltak k&ouml;z&uuml;l.</li>
-  <li>BASE</li>
-  </ol>
-  <p>22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik haszn&aacute;lhat&oacute; kiz&aacute;r&oacute;lag azon rekordok megjelen&iacute;t&eacute;s&eacute;re, amelyekn&eacute;I az id mező&eacute;rtek egyenlő 3-mal vagy 4-gyel?</p>
-  <ol>
-  <li><strong>WHERE id IN (3, 4) </strong></li>
-  <li>WHERE id BETWEEN 2 AND 5</li>
-  <li>WHERE id= 3 OR 4</li>
-  <li>WHERE id = 3 AND id = 4</li>
-  </ol>
-  <p>23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE sEvszam &gt;= 2019 AND eEvszam &lt;= 2020 feltetellel melyik z&aacute;radek egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li>WHERE vEvszam BETWEEN 2019 OR 2020</li>
-  <li>WHERE sEvszam BETWEEN 2019 AND 2020</li>
-  <li><strong>Egyik sem a felsoroltak k&ouml;z&uuml;l. </strong></li>
-  <li>WHERE kEvszam AND vEvszam BETWEEN 2019 AND 2020</li>
-  </ol>
-  <p>24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT SZUM (engedmeny) FROM prom&oacute;ci&oacute;k;</p>
-  <ol>
-  <li>0,15</li>
-  <li>0,8</li>
-  <li>0,3</li>
-  <li><strong>Hibajelz&eacute;st kapunk. </strong></li>
-  <li>NULL</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT kezDatum FROM prom&oacute;ci&oacute;k WHERE id = 3;</p>
-  <ol start="2020">
-  <li>01.01</li>
-  <li>11.02</li>
-  <li><strong>12.01 </strong></li>
-  <li>Hibajelz&eacute;st kapunk.</li>
-  <li>06.01</li>
-  </ol>
-  <p>26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT MIN(engedmeny) FROM prom&oacute;ci&oacute;k WHERE nev LIKE '*2019';</p>
-  <ol>
-  <li>0</li>
-  <li><strong>0,3 </strong></li>
-  <li>NULL</li>
-  <li>0,15</li>
-  <li>Hibajelz&eacute;st kapunk.</li>
-  </ol>
-  <p>27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT COUNT(*) FROM prom&oacute;ci&oacute;k WHERE nev LIKE '%2019';</p>
-  <ol>
-  <li>Hibajelz&eacute;st kapunk.</li>
-  <li><strong>1 </strong></li>
-  <li>3</li>
-  <li>0</li>
-  <li>4</li>
-  </ol>
-  <p>28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik z&aacute;rad&eacute;kkal korl&aacute;tozhatjuk a megjelenő adatsorok sz&aacute;m&aacute;t a lek&eacute;rdez&eacute;sekben?</p>
-  <ol>
-  <li><strong>TOP/LIMIT </strong></li>
-  <li>TAKE</li>
-  <li>LAST</li>
-  <li>NUMBER OF</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sportesemenyek</p>
-  <p>H&aacute;ny rekorddal (adatsorral) t&eacute;r vissza a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT * FROM sportesemenyek GROUP BY helysz&iacute;n HAVING COUNT (datum)&nbsp; &gt;&nbsp; 2;</p>
-  <ol>
-  <li>2</li>
-  <li><strong>1 </strong></li>
-  <li>7</li>
-  <li>3</li>
-  </ol>
-  <p>30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik lek&eacute;rdez&eacute;s eredm&eacute;nye lesz egyed&uuml;l a DRAGON Eur&oacute;pa-bajnoks&aacute;g 2018?&nbsp;</p>
-  <ol>
-  <li>SELECT esemeny FROM sportesemenyek WHERE helyszin LIKE ' %f&uuml;red%' &nbsp;AND DAY (datum) = 23;</li>
-  <li>SELECT esemeny FROM sportesemenyek WHERE szervezo LIKE '%Vitorl&aacute;s' AND DAY (datum) &nbsp;= 23;</li>
-  <li>SELECT esemeny FROM sportesemenyek WHERE helyszin LIKE ' %f&uuml;red' &nbsp;AND DAY (datum) = 23;</li>
-  <li><strong>SELECT esemeny FROM sportesemenyek WHERE szervezo LIKE '%Vitorl&aacute;s%' AND DAY (datum) &nbsp;= 23; </strong></li>
-  </ol>
-  <p>31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mi lesz az eredm&eacute;nye a k&ouml;vetkező lek&eacute;rdez&eacute;snek?</p>
-  <p>SELECT COUNT (DISTINCT szervezo) FROM sportesemenyek;</p>
-  <ol>
-  <li>16</li>
-  <li>7</li>
-  <li>Hib&aacute;s az utas&iacute;t&aacute;s.</li>
-  <li><strong>9 </strong></li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell haszn&aacute;lni egy lek&eacute;rdez&eacute;sben a t&aacute;bl&aacute;k &ouml;sszekapcsol&aacute;s&aacute;ra?</p>
-  <ol>
-  <li>CONNECT</li>
-  <li>FROM&nbsp;</li>
-  <li>SWITCH</li>
-  <li><strong>JOIN </strong></li>
-  </ol>
-  <p>33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mi t&ouml;rt&eacute;nhet a k&ouml;vetkező SQL utas&iacute;t&aacute;s futtat&aacute;sa ut&aacute;n? Felt&eacute;telezheti, hogy a t&aacute;bla l&eacute;tezik, nem &aacute;ll kapcsolatban m&aacute;sik t&aacute;bl&aacute;kkal &eacute;s legal&aacute;bb k&eacute;t rekordot tartalmaz!</p>
-  <p>DELETE FROM v&aacute;s&aacute;rl&oacute;k;</p>
-  <ol>
-  <li>A t&aacute;bla &ouml;sszes mezője t&ouml;rlődni fog.</li>
-  <li>Semmi nem t&ouml;rt&eacute;nik, mert hib&aacute;s az utas&iacute;t&aacute;s.</li>
-  <li>A v&aacute;s&aacute;rl&oacute;k t&aacute;bla t&ouml;rlődni fog.</li>
-  <li><strong>A t&aacute;bla &ouml;sszes rekordja t&ouml;rlődni fog. </strong></li>
-  </ol>
-  <p>34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik szűrheti &uacute;gy a rekordokat, hogy a darab mező&eacute;rt&eacute;kei k&ouml;z&ouml;tt ne szerepeljen a 12?</p>
-  <ol>
-  <li>WHERE darab IN (10, 11, 12)</li>
-  <li>WHERE darab NOT IN (10, 13)</li>
-  <li>WHERE darab BETWEEN 12 AND 24</li>
-  <li><strong>WHERE darab &lt;&gt; 12 </strong></li>
-  </ol>
-  <p>35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik seg&iacute;ts&eacute;g&eacute;vel rendezhetj&uuml;k a rekordokat magass&aacute;g szerint cs&ouml;kkenő sorrendbe, azonoss&aacute;g eset&eacute;n tests&uacute;ly szerint cs&ouml;kkenő sorrendbe?</p>
-  <ol>
-  <li>ORDER BY tests&uacute;ly DESC, magass&aacute;g DESC</li>
-  <li>ORDER BY magass&aacute;g ASC, tests&uacute;ly ASC</li>
-  <li>ORDER BY tests&uacute;ly ASC, magass&aacute;g ASC</li>
-  <li><strong>ORDER BY magass&aacute;g DESC, tests&uacute;ly DESC </strong></li>
-  </ol>
-  <p>36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL paranccsal tudunk adatokat lek&eacute;rdezni egy t&aacute;bl&aacute;b&oacute;l?</p>
-  <ol>
-  <li>LIST</li>
-  <li><strong>SELECT </strong></li>
-  <li>WHERE</li>
-  <li>GET</li>
-  </ol>
-  <p>37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye fizet&eacute;s szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
-  <ol>
-  <li>ORDER BY fizetes DESC</li>
-  <li>ORDER BY fizetes UP</li>
-  <li><strong>ORDER BY fizetes ASC </strong></li>
-  <li>ORDER BY fizetes DOWN</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye magass&aacute;g szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
-  <ol>
-  <li><strong>ORDER BY magass&aacute;g </strong></li>
-  <li>ORDER BY magass&aacute;g DESCENDING</li>
-  <li>ORDER BY magass&aacute;g GROW</li>
-  <li>ORDER BY magass&aacute;g DESC</li>
-  </ol>
-  <p>39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni az Iskol&aacute;k t&aacute;bla minden adat&aacute;t?</p>
-  <ol>
-  <li><strong>SELECT * FROM Iskol&aacute;k; </strong></li>
-  <li>SELECT *.Iskol&aacute;k;</li>
-  <li>SELECT Iskol&aacute;k;</li>
-  <li>SELECT FROM Iskol&aacute;k;</li>
-  </ol>
-  <p>40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>LIMIT</li>
-  <li>ORDER BY</li>
-  <li><strong>HAVING </strong></li>
-  <li>WHERE</li>
-  </ol>
-  <p>41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik kulcssz&oacute; seg&iacute;ts&eacute;g&eacute;vel tudunk &aacute;lnevet (ALIAS) megadni egy mezőnek?</p>
-  <ol>
-  <li>IS</li>
-  <li>OF</li>
-  <li><strong>AS </strong></li>
-  <li>IN</li>
-  </ol>
-  <p>42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t l&eacute;trehozni?</p>
-  <ol>
-  <li>NEW TABLE</li>
-  <li><strong>CREATE TABLE </strong></li>
-  <li>ALTER TABLE</li>
-  <li>MAKE TABLE</li>
-  </ol>
-  <p>43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A MYSQL WHERE z&aacute;rad&eacute;k&aacute;ban melyik oper&aacute;tort haszn&aacute;lhatjuk a nem egyenlő kifejez&eacute;s&eacute;re?</p>
-  <ol>
-  <li>=!</li>
-  <li>==!</li>
-  <li><strong>!= </strong></li>
-  <li>!==</li>
-  </ol>
-  <p>44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE sz&uuml;letett BETWEEN 68 AND 70 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li><strong>WHERE sz&uuml;letett &gt;= 68 AND sz&uuml;letett &lt;= 70 </strong></li>
-  <li>WHERE sz&uuml;letett &gt; 68 AND sz&uuml;letett &lt; 70</li>
-  <li>WHERE sz&uuml;letett &gt;= 68 AND sz&uuml;letett &lt; 70</li>
-  <li>WHERE sz&uuml;letett &gt; 68 AND sz&uuml;letett &lt;= 70</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL oper&aacute;torral tudjuk ellenőrizni, hogy egy mező kit&ouml;ltetlen?</p>
-  <ol>
-  <li>IS NOT NULL</li>
-  <li>IS NOT</li>
-  <li>IS</li>
-  <li><strong>IS NULL </strong></li>
-  </ol>
-  <p>46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;s nem tartozik a DDL t&iacute;pus&uacute; parancsok k&ouml;z&eacute; a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>ALTER</li>
-  <li><strong>SELECT </strong></li>
-  <li>DROP</li>
-  <li>CREATE</li>
-  </ol>
-  <p>47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik MYSQL z&aacute;rad&eacute;kkal korl&aacute;tozhatjuk a megjelenő adatsorok sz&aacute;m&aacute;t a lek&eacute;rdez&eacute;sekben?</p>
-  <ol>
-  <li>SKIP</li>
-  <li>LIST OF</li>
-  <li>TAKE</li>
-  <li><strong>LIMIT </strong></li>
-  </ol>
-  <p>48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik jelsorozattal helyezhet&uuml;nk el egysoros megjegyz&eacute;st az SQL k&oacute;dban?</p>
-  <ol>
-  <li>\\</li>
-  <li><strong>-- </strong></li>
-  <li>##</li>
-  <li>//</li>
-  </ol>
-  <p>49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>HATEING</li>
-  <li><strong>HAVING </strong></li>
-  <li>HOMEING</li>
-  <li>HAVEING</li>
-  </ol>
-  <p>50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az alk&eacute;rd&eacute;sek előtt melyik oper&aacute;tort haszn&aacute;lhatjuk a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li><strong>ANY </strong></li>
-  <li>AND</li>
-  <li>ONLY</li>
-  <li>BETWEEN</li>
-  </ol>
-  <p>51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik m&oacute;dos&iacute;t&oacute;sz&oacute;val kell a rendez&eacute;s ir&aacute;ny&aacute;t cs&ouml;kkenőre &aacute;ll&iacute;tani?</p>
-  <ol>
-  <li>ASC</li>
-  <li><strong>DESC </strong></li>
-  <li>DESCENDING</li>
-  <li>ASCENDING</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik a DELETE SQL utas&iacute;t&aacute;s helyes szintaxisa?</p>
-  <ol>
-  <li>DELETE WHERE condition FROM table_name;</li>
-  <li><strong>DELETE FROM table_name WHERE condition; </strong></li>
-  <li>DELETE FORM table_name WHERE condition;</li>
-  <li>DELETE WHERE table_name FROM condition;</li>
-  </ol>
-  <p>53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk &uacute;j rekordokat besz&uacute;rni egy t&aacute;bl&aacute;ba?</p>
-  <ol>
-  <li><strong>INSERT INTO </strong></li>
-  <li>ADD RECORD</li>
-  <li>INSERT NEW</li>
-  <li>ADD NEW</li>
-  </ol>
-  <p>54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik sorrendben kell megadni a SELECT utas&iacute;t&aacute;sban a z&aacute;rad&eacute;kokat?</p>
-  <ol>
-  <li>SELECT - WHERE - FROM - HAVING - ORDER BY - GROUP BY</li>
-  <li><strong>SELECT - FROM - WHERE - GROUP BY - HAVING - ORDER BY </strong></li>
-  <li>SELECT - FROM - ORDER BY - WHERE - ORDER BY - HAVING</li>
-  <li>SELECT - FROM - ORDER BY - WHERE - GROUP BY - HAVING</li>
-  </ol>
-  <p>55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni az Orszagok t&aacute;bla minden adat&aacute;t?</p>
-  <ol>
-  <li>SELECT FROM Orszagok;</li>
-  <li><strong>SELECT * FROM Orszagok; </strong></li>
-  <li>SELECT *.Orszagok;</li>
-  <li>SELECT Orszagok;</li>
-  </ol>
-  <p>56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>WHERE</li>
-  <li><strong>HAVING </strong></li>
-  <li>WERE</li>
-  <li>LIMIT</li>
-  </ol>
-  <p>57&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minek lehet &aacute;lnevet (ALIAS) adni egy SQL lek&eacute;rdez&eacute;sben?</p>
-  <ol>
-  <li>Mezőknek</li>
-  <li><strong>Mezőknek &eacute;s t&aacute;bl&aacute;knak </strong></li>
-  <li>Mezőknek &eacute;s z&aacute;rad&eacute;koknak</li>
-  <li>T&aacute;bl&aacute;knak</li>
-  </ol>
-  <p>58&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t l&eacute;trehozni?</p>
-  <ol>
-  <li>DROP TABLE</li>
-  <li>MAKE TABLE</li>
-  <li>NEW TABLE</li>
-  <li><strong>CREATE TABLE </strong></li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE z&aacute;rad&eacute;kban melyik oper&aacute;tort haszn&aacute;lhatjuk a kisebb/egyenlő kifejez&eacute;s&eacute;re?</p>
-  <ol>
-  <li>&gt;=</li>
-  <li>=&gt;</li>
-  <li>=&lt;</li>
-  <li><strong>&lt;= </strong></li>
-  </ol>
-  <p>60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE belepes BETWEEN 1958 AND 2013 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li>WHERE belepes &gt; 1958 AND belepes &lt; 2013</li>
-  <li>WHERE belepes &gt; 1958 OR belepes &lt; 2013</li>
-  <li><strong>WHERE belepes &gt;= 1958 AND belepes &lt;= 2013 </strong></li>
-  <li>WHERE (belepes &gt; 1958) AND (belepes &lt; 2013)</li>
-  </ol>
-  <p>61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk lek&eacute;rdezni adatokat egy SQL szerverről?</p>
-  <ol>
-  <li><strong>SELECT </strong></li>
-  <li>GET</li>
-  <li>PUT</li>
-  <li>EXTRACT</li>
-  </ol>
-  <p>62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik &aacute;ll&iacute;t&aacute;s igaz a lek&eacute;rdez&eacute;sekben haszn&aacute;lt INNER JOIN z&aacute;rad&eacute;kra?</p>
-  <ol>
-  <li>Alap&eacute;rtelmezetten id mező alapj&aacute;n v&eacute;gzi az &ouml;sszekapcsol&aacute;st.</li>
-  <li><strong>Az INNER JOIN z&aacute;rad&eacute;kok seg&iacute;ts&eacute;g&eacute;vel egyszerre ak&aacute;r &ouml;t t&aacute;bl&aacute;t is &ouml;sszekapcsolhatunk. </strong></li>
-  <li>Az INNER JOIN z&aacute;rad&eacute;kban haszn&aacute;lhatunk csoportos&iacute;t&oacute; f&uuml;ggv&eacute;nyeket.</li>
-  <li>K&ouml;telező az IN z&aacute;rad&eacute;kkal egy&uuml;tt haszn&aacute;lni.</li>
-  </ol>
-  <p>63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t t&ouml;r&ouml;lni?</p>
-  <ol>
-  <li><strong>DROP TABLE </strong></li>
-  <li>ERASE TABLE</li>
-  <li>REMOVE TABLE</li>
-  <li>DELETE TABLE</li>
-  </ol>
-  <p>64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az al&aacute;bbi SQL oper&aacute;torok k&ouml;z&uuml;l melyik tartozik a rel&aacute;ci&oacute;s oper&aacute;torok k&ouml;z&eacute;?</p>
-  <ol>
-  <li>&gt;&lt;&nbsp;</li>
-  <li><strong>&lt;&gt; </strong></li>
-  <li>||</li>
-  <li>/</li>
-  </ol>
-  <p>65&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL parancs lehet alkalmas a 15-&ouml;s azonos&iacute;t&oacute;val rendelkező k&ouml;nyv t&ouml;rl&eacute;s&eacute;re?</p>
-  <ol>
-  <li>TRUNCATE books WHERE bookId = 15</li>
-  <li>DROP books WHERE bookId = 15</li>
-  <li>TRUNCATE TABLE books WHERE bookId = 15</li>
-  <li><strong>DELETE FROM books WHERE bookId = 15 </strong></li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>66&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az al&aacute;bbi oper&aacute;torok k&ouml;z&uuml;l melyik NEM tartozik az SQL nyelv logikai oper&aacute;torai k&ouml;z&eacute;?</p>
-  <ol>
-  <li>AND</li>
-  <li>NOT</li>
-  <li>OR</li>
-  <li><strong>XOR </strong></li>
-  </ol>
-  <p>67&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik z&aacute;rad&eacute;kkal lehet a lek&eacute;rdez&eacute;sekben a csoportos&iacute;tott eredm&eacute;nyeket szűrni?</p>
-  <ol>
-  <li>WHERE</li>
-  <li>GROUP BY</li>
-  <li>ORDER BY</li>
-  <li><strong>HAVING </strong></li>
-  </ol>
-  <p>68&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni csak azok a rekordok, amelyn&eacute;l a k&aacute;rtya mező&eacute;rt&eacute;ke pontosan a &bdquo;pikk&rdquo; sz&oacute;?</p>
-  <ol>
-  <li>WHERE k&aacute;rtya LIKE "pikk%"</li>
-  <li><strong>WHERE k&aacute;rtya = "pikk" </strong></li>
-  <li>WHERE k&aacute;rtya = "%pikk%"</li>
-  <li>WHERE k&aacute;rtya LIKE "%pikk%"</li>
-  </ol>
-  <p>69&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az al&aacute;bbi kulcsszavak k&ouml;z&uuml;l melyikkel lehet a lek&eacute;rdez&eacute;sekben a megjelenő eredm&eacute;nysorok egyedis&eacute;g&eacute;t biztos&iacute;tani?</p>
-  <ol>
-  <li>Egyik sem a felsoroltak k&ouml;z&uuml;l.</li>
-  <li>UNIQUE</li>
-  <li>TOP/LIMIT</li>
-  <li><strong>DISTINCT </strong></li>
-  </ol>
-  <p>70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik nem SQL utas&iacute;t&aacute;s a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>SELECT</li>
-  <li><strong>CREATE QUERY </strong></li>
-  <li>DELETE</li>
-  <li>UPDATE</li>
-  </ol>
-  <p>71&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Szintaktikailag helyes-e a k&ouml;vetkező SQL utas&iacute;t&aacute;s?</p>
-  <p>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate</p>
-  <p>FROM Orders</p>
-  <p>INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;</p>
-  <ul>
-  <li><strong>Igaz&nbsp; </strong></li>
-  <li>Hamis</li>
-  </ul>
-  <p>72&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Szintaktikailag helyes a k&ouml;vetkező SQL utas&iacute;t&aacute;s?</p>
-  <p>SELECT * FROM Customers</p>
-  <p>WHERE City LIKE '[^bsp)]%' ;</p>
-  <ul>
-  <li><strong>Igaz </strong></li>
-  <li>Hamis&nbsp;</li>
-  </ul>
-  <p>&nbsp;</p>
+	<p><strong>OKJ SQL tesztek</strong></p>
+<p>2020.10.</p>
+<p>&nbsp;</p>
+<p>1.1. Melyik utas&iacute;t&aacute;s k&eacute;rdezi le a <em>FirstName</em> mezőt a <em>Persons</em> t&aacute;bl&aacute;b&oacute;l?</p>
+<ol>
+<li>SELECT FirstName.Persons</li>
+<li>SELECT Persons.Firstname</li>
+<li><strong>SELECT FirstName FROM Persons</strong></li>
+<li>SELECT Persons FROM FirstName</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.2. Melyik utas&iacute;t&aacute;ssal tudunk &uacute;j rekordokat besz&uacute;rni egy t&aacute;bl&aacute;ba?</p>
+<ol>
+<li>ADD RECORD</li>
+<li>B<strong>. INSERT INTO</strong></li>
+<li>ADD NEW</li>
+<li>INSERT NEW</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.3. Melyik a DELETE SQL utas&iacute;t&aacute;s helyes szintaxisa?</p>
+<ol>
+<li>DELETE FORM table_name WHERE condition;</li>
+<li>DELETE WHERE condition FROM table_name;</li>
+<li>DELETE WHERE table_name FROM condition;</li>
+<li><strong>DELETE FROM table_name WHERE condition;</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.4. Melyik m&oacute;dos&iacute;t&oacute;sz&oacute;val kell a rendez&eacute;s ir&aacute;ny&aacute;t cs&ouml;kkenőre &aacute;ll&iacute;tani?</p>
+<ol>
+<li>ASC</li>
+<li><strong>DESC</strong></li>
+<li>ASCENDING</li>
+<li>DESCENDING</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.5.&nbsp; Szintaktikailag helyes-e a k&ouml;vetkező SQL utas&iacute;t&aacute;s?</p>
+<p>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate</p>
+<p>FROM Orders</p>
+<p>INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;</p>
+<ol>
+<li><strong>IGEN</strong></li>
+<li>NEM</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.6. Az alk&eacute;rd&eacute;sek előtt melyik oper&aacute;tort haszn&aacute;lhatjuk a felsoroltak k&ouml;z&uuml;l?</p>
+<ol>
+<li>BETWEEN</li>
+<li>AND</li>
+<li><strong>ANY</strong></li>
+<li>ONLY</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.7. A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
+<ol>
+<li>HATEING</li>
+<li>HAVEING</li>
+<li><strong>HAVING</strong></li>
+<li>HOMEING</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.8. Melyik jelsorozattal helyezhet&uuml;nk el egysoros megjegyz&eacute;st az SQL k&oacute;dban?</p>
+<ol>
+<li>//</li>
+<li>\\</li>
+<li>##</li>
+<li><strong>--</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.9. Szintaktikailag helyes a k&ouml;vetkező SQL utas&iacute;t&aacute;s?</p>
+<p>SELECT * FROM Customers</p>
+<p>WHERE City LIKE '[^bsp)]%' ;</p>
+<ol>
+<li><strong>IGEN</strong></li>
+<li>NEM</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.10. Melyik MYSQL z&aacute;rad&eacute;kkal korl&aacute;tozhatjuk a megjelenő adatsorok sz&aacute;m&aacute;t a lek&eacute;rdez&eacute;sekben?</p>
+<ol>
+<li>TAKE</li>
+<li>SKIP</li>
+<li><strong>LIMIT</strong></li>
+<li>LIST OF</li>
+</ol>
+<p>2021.05.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.1. Melyik SQL utas&iacute;t&aacute;s nem tartozik a DDL t&iacute;pus&uacute; parancsok k&ouml;z&eacute; a felsoroltak k&ouml;z&uuml;l?</p>
+<ol>
+<li>ALTER</li>
+<li>CREATE</li>
+<li><strong>SELECT</strong></li>
+<li>DROP</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.2. Melyik SQL paranccsal tudunk adatokat lek&eacute;rdezni egy t&aacute;bl&aacute;b&oacute;l?</p>
+<ol>
+<li>LIST</li>
+<li>WHERE</li>
+<li>GET</li>
+<li><strong>SELECT</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.3. A WHERE sz&uuml;letett BETWEEN 68 AND 70 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
+<ol>
+<li>WHERE sz&uuml;letett &gt; 68 AND sz&uuml;letett &lt; 70</li>
+<li>WHERE sz&uuml;letett &gt; 68 AND sz&uuml;letett &lt;= 70</li>
+<li>WHERE sz&uuml;letett &gt;= 68 AND sz&uuml;letett &lt; 70</li>
+<li><strong>WHERE sz&uuml;letett &gt;= 68 AND sz&uuml;letett &lt;= 70</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.4. A MYSQL WHERE z&aacute;rad&eacute;k&aacute;ban melyik oper&aacute;tort haszn&aacute;lhatjuk a nem egyenlő kifejez&eacute;s&eacute;re?</p>
+<ol>
+<li>=!</li>
+<li><strong>!=</strong></li>
+<li>!==</li>
+<li>==!</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.5. Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t l&eacute;trehozni?</p>
+<ol>
+<li>MAKE TABLE</li>
+<li><strong>CREATE TABLE</strong></li>
+<li>NEW TABLE</li>
+<li>ALTER TABLE</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.6. Melyik kulcssz&oacute; seg&iacute;ts&eacute;g&eacute;vel tudunk &aacute;lnevet (ALIAS) megadni egy mezőnek?</p>
+<ol>
+<li>OF</li>
+<li>IS</li>
+<li><strong>AS</strong></li>
+<li>IN</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.7. A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
+<ol>
+<li>WHERE .</li>
+<li>ORDER BY</li>
+<li><strong>HAVING</strong></li>
+<li>LIMIT</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.8. Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni az Iskol&aacute;k t&aacute;bla minden adat&aacute;t?</p>
+<ol>
+<li>SELECT *.Iskol&aacute;k;</li>
+<li>SELECT Iskol&aacute;k;</li>
+<li>SELECT FROM Iskol&aacute;k;</li>
+<li><strong>SELECT * FROM Iskol&aacute;k;</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.9. Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye magass&aacute;g szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
+<ol>
+<li><strong>ORDER BY magass&aacute;g</strong></li>
+<li>ORDER BY magass&aacute;g DESC</li>
+<li>ORDER BY magass&aacute;g DESCENDING</li>
+<li>ORDER BY magass&aacute;g GROW</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.10. Melyik SQL oper&aacute;torral tudjuk ellenőrizni, hogy egy mező kit&ouml;ltetlen?</p>
+<ol>
+<li>IS</li>
+<li>IS NOT</li>
+<li><strong>IS NULL</strong></li>
+<li>IS NOT NULL</li>
+</ol>
+<p>2021.10.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.1. Melyik nem SQL utas&iacute;t&aacute;s a felsoroltak k&ouml;z&uuml;l?</p>
+<ol>
+<li>SELECT</li>
+<li>UPDATE</li>
+<li><strong>CREATE QUERY</strong></li>
+<li>DELETE</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.2. Melyik sorrendben kell megadni a SELECT utas&iacute;t&aacute;sban a z&aacute;rad&eacute;kokat?</p>
+<ol>
+<li>SELECT - FROM - ORDER BY - WHERE - GROUP BY - HAVING</li>
+<li>SELECT - WHERE - FROM - HAVING - ORDER BY - GROUP BY</li>
+<li>SELECT - FROM - ORDER BY - WHERE - ORDER BY - HAVING</li>
+<li><strong>SELECT - FROM - WHERE - GROUP BY - HAVING - ORDER BY</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.3. Az al&aacute;bbi kulcsszavak k&ouml;z&uuml;l melyikkel lehet a lek&eacute;rdez&eacute;sekben a megjelenő eredm&eacute;nysorok egyedis&eacute;g&eacute;t biztos&iacute;tani?</p>
+<ol>
+<li>UNIQUE</li>
+<li>TOP/LIMIT</li>
+<li><strong>DISTINCT</strong></li>
+<li>Egyik sem a felsoroltak k&ouml;z&uuml;l.</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.4. A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni csak azok a rekordok, amelyn&eacute;l a k&aacute;rtya mező&eacute;rt&eacute;ke pontosan a &bdquo;pikk&rdquo; sz&oacute;?</p>
+<ol>
+<li>WHERE k&aacute;rtya LIKE "pikk%"</li>
+<li>WHERE k&aacute;rtya LIKE "%pikk%"</li>
+<li>WHERE k&aacute;rtya = "%pikk%"</li>
+<li><strong>WHERE k&aacute;rtya = "pikk"</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.5. Melyik z&aacute;rad&eacute;kkal lehet a lek&eacute;rdez&eacute;sekben a csoportos&iacute;tott eredm&eacute;nyeket szűrni?</p>
+<ol>
+<li>WHERE</li>
+<li>GROUP BY</li>
+<li><strong>HAVING</strong></li>
+<li>ORDER BY</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.6. Az al&aacute;bbi oper&aacute;torok k&ouml;z&uuml;l melyik NEM tartozik az SQL nyelv logikai oper&aacute;torai k&ouml;z&eacute;?</p>
+<ol>
+<li>AND</li>
+<li>NOT</li>
+<li><strong>XOR</strong></li>
+<li>OR</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.7. Melyik SQL parancs lehet alkalmas a 15-&ouml;s azonos&iacute;t&oacute;val rendelkező k&ouml;nyv t&ouml;rl&eacute;s&eacute;re?</p>
+<ol>
+<li>TRUNCATE TABLE books WHERE bookId = 15</li>
+<li><strong>DELETE FROM books WHERE bookId = 15</strong></li>
+<li>DROP books WHERE bookId = 15</li>
+<li>TRUNCATE books WHERE bookId = 15</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.8. Az al&aacute;bbi SQL oper&aacute;torok k&ouml;z&uuml;l melyik tartozik a rel&aacute;ci&oacute;s oper&aacute;torok k&ouml;z&eacute;?</p>
+<ol>
+<li><strong>&lt;&gt;</strong></li>
+<li>||</li>
+<li>/</li>
+<li>&gt;&lt;</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.9. Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t t&ouml;r&ouml;lni?</p>
+<ol>
+<li><strong>DROP TABLE</strong></li>
+<li>DELETE TABLE</li>
+<li>REMOVE TABLE</li>
+<li>ERASE TABLE</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.10. Melyik &aacute;ll&iacute;t&aacute;s igaz a lek&eacute;rdez&eacute;sekben haszn&aacute;lt INNER JOIN z&aacute;rad&eacute;kra?</p>
+<ol>
+<li><strong>Az INNER JOIN z&aacute;rad&eacute;kban haszn&aacute;lhatunk csoportos&iacute;t&oacute; f&uuml;ggv&eacute;nyeket.</strong></li>
+<li>Alap&eacute;rtelmezetten id mező alapj&aacute;n v&eacute;gzi az &ouml;sszekapcsol&aacute;st.</li>
+<li>Az INNER JOIN z&aacute;rad&eacute;kok seg&iacute;ts&eacute;g&eacute;vel egyszerre ak&aacute;r &ouml;t t&aacute;bl&aacute;t is &ouml;sszekapcsolhatunk.</li>
+<li>K&ouml;telező az IN z&aacute;rad&eacute;kkal egy&uuml;tt haszn&aacute;lni.</li>
+</ol>
+<p>&nbsp;</p>
+<p>2019.10.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.1. Melyik nem SQL utas&iacute;t&aacute;s a felsoroltak k&ouml;z&uuml;l?</p>
+<ol>
+<li>SELECT</li>
+<li>UPDATE</li>
+<li><strong>CREATE QUERY</strong></li>
+<li>DELETE</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.2. Melyik utas&iacute;t&aacute;ssal tudunk lek&eacute;rdezni adatokat egy SQL szerverről?</p>
+<ol>
+<li>GET</li>
+<li><strong>SELECT</strong></li>
+<li>EXTRACT</li>
+<li>PUT</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.3. A WHERE belepes BETWEEN 1958 AND 2013 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
+<ol>
+<li>WHERE belepes &gt; 1958 AND belepes &lt; 2013</li>
+<li>WHERE (belepes &gt; 1958) AND (belepes &lt; 2013)</li>
+<li>WHERE belepes &gt; 1958 OR belepes &lt; 2013</li>
+<li><strong>WHERE belepes &gt;= 1958 AND belepes &lt;= 2013</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.4. A WHERE z&aacute;rad&eacute;kban melyik oper&aacute;tort haszn&aacute;lhatjuk a kisebb/egyenlő kifejez&eacute;s&eacute;re?</p>
+<ol>
+<li>&gt;=</li>
+<li><strong>&lt;=</strong></li>
+<li>=&gt;</li>
+<li>=&lt;</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.5. Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t l&eacute;trehozni?</p>
+<ol>
+<li>MAKE TABLE</li>
+<li><strong>CREATE TABLE</strong></li>
+<li>NEW TABLE</li>
+<li>DROP TABLE</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.6. Minek lehet &aacute;lnevet (ALIAS) adni egy SQL lek&eacute;rdez&eacute;sben?</p>
+<ol>
+<li>Mezőknek</li>
+<li>T&aacute;bl&aacute;knak</li>
+<li><strong>Mezőknek &eacute;s t&aacute;bl&aacute;knak</strong></li>
+<li>Mezőknek &eacute;s z&aacute;rad&eacute;koknak</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.7. A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
+<ol>
+<li>WHERE</li>
+<li>WERE</li>
+<li><strong>HAVING</strong></li>
+<li>LIMIT</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.8. Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni az Orszagok t&aacute;bla minden adat&aacute;t?</p>
+<ol>
+<li>SELECT *.Orszagok;</li>
+<li>SELECT Orszagok;</li>
+<li>SELECT FROM Orszagok;</li>
+<li><strong>SELECT * FROM Orszagok;</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.9. Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye fizet&eacute;s szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
+<ol>
+<li>ORDER BY fizetes UP</li>
+<li>ORDER BY fizetes DESC</li>
+<li><strong>ORDER BY fizetes ASC</strong></li>
+<li>ORDER BY fizetes DOWN</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.10. Melyik z&aacute;rad&eacute;kkal korl&aacute;tozhatjuk a megjelenő adatsorok sz&aacute;m&aacute;t a lek&eacute;rdez&eacute;sekben?</p>
+<ol>
+<li>LAST</li>
+<li>TAKE</li>
+<li><strong>TOP/LIMIT</strong></li>
+<li>NUMBER OF</li>
+</ol>
+<p>&nbsp;</p>
+<p>2022.05.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.1. Melyik sorrendben kell megadni a SELECT utas&iacute;t&aacute;sban a z&aacute;rad&eacute;kokat?</p>
+<ol>
+<li>SELECT - FROM - ORDER BY - WHERE - GROUP BY - HAVING</li>
+<li>SELECT - WHERE - FROM - HAVING - ORDER BY - GROUP BY</li>
+<li>SELECT - FROM - ORDER BY - WHERE - ORDER BY - HAVING</li>
+<li><strong>SELECT - FROM - WHERE - GROUP BY - ORDER BY - HAVING</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.2. Minek lehet &aacute;lnevet (ALIAS) adni egy SQL lek&eacute;rdez&eacute;sben?</p>
+<ol>
+<li>Mezőknek.</li>
+<li>T&aacute;bl&aacute;knak.</li>
+<li><strong>T&aacute;bl&aacute;knak &eacute;s mezőknek.</strong></li>
+<li>T&aacute;bl&aacute;knak, mezőknek &eacute;s z&aacute;rad&eacute;koknak.</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.3. Melyik utas&iacute;t&aacute;ssal tudunk &uacute;j rekordokat besz&uacute;rni egy t&aacute;bl&aacute;ba?</p>
+<ol>
+<li>ADD RECORD</li>
+<li><strong>INSERT INTO</strong></li>
+<li>ADD NEW</li>
+<li>INSERT NEW</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.4. A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni csak azok a rekordok, amelyikn&eacute;l a k&aacute;rtya mező&eacute;rt&eacute;ke a , pikk" sz&oacute;?</p>
+<ol>
+<li><strong>WHERE k&aacute;rtya LIKE "pikk"</strong></li>
+<li>WHERE k&aacute;rtya LIKE "%pikk%"</li>
+<li>WHERE k&aacute;rtya LIKE "pikk%"</li>
+<li>WHERE k&aacute;rtya LIKE "%pikk"</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.5. A WHERE z&aacute;rad&eacute;kban melyik oper&aacute;tort haszn&aacute;lhatjuk az egyenlőtlens&eacute;g kifejez&eacute;s&eacute;re?</p>
+<ol>
+<li>&gt;&lt;</li>
+<li><strong>!=</strong></li>
+<li>NOT EQUALS</li>
+<li>+=</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.6. A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik seg&iacute;ts&eacute;g&eacute;vel rendezhetj&uuml;k a rekordokat magass&aacute;g szerint cs&ouml;kkenő sorrendbe, azonoss&aacute;g eset&eacute;n tests&uacute;ly szerint cs&ouml;kkenő sorrendbe?</p>
+<ol>
+<li>ORDER BY tests&uacute;ly ASC, magass&aacute;g ASC</li>
+<li>ORDER BY magass&aacute;g ASC, tests&uacute;ly ASC</li>
+<li><strong>ORDER BY magass&aacute;g DESC, tests&uacute;ly DESC</strong></li>
+<li>ORDER BY tests&uacute;ly DESC, magass&aacute;g DESC</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.7. Melyik SQL aggreg&aacute;tf&uuml;ggv&eacute;ny a felsoroltak k&ouml;z&uuml;l?</p>
+<ol>
+<li><strong>AVG()</strong></li>
+<li>MAXIMUM()</li>
+<li>SZUM()</li>
+<li>AVERAGE()</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.8. A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni azok a rekordok (is), amelyikn&eacute;l a l&eacute;tsz&aacute;m mező&eacute;rt&eacute;k 20 &eacute;s 40 k&ouml;z&ouml;tt van?</p>
+<ol>
+<li>WHERE l&eacute;tsz&aacute;m =&gt; 20</li>
+<li><strong>WHERE l&eacute;tsz&aacute;m BETWEEN 20 AND 40</strong></li>
+<li>WHERE l&eacute;tsz&aacute;m IN 20 AND 40</li>
+<li>WHERE l&eacute;tsz&aacute;m &lt; 100</li>
+</ol>
+<p>&nbsp;</p>
+<p>A k&ouml;vetkező feladatok t&aacute;bl&aacute;j&aacute;ban a k&ouml;vetkező adatok tal&aacute;lhat&oacute;k</p>
+<p>T&aacute;bla: csapatverseny</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.9. Mi lesz az eredm&eacute;nye a k&ouml;vetkező SQL lek&eacute;rdez&eacute;snek?</p>
+<p>SELECT MIN(Spanyolorsz&aacute;g) FROM csapatverseny</p>
+<ol>
+<li>2</li>
+<li>null</li>
+<li>1</li>
+<li>Hib&aacute;s az utas&iacute;t&aacute;s</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.10. Melyik SQL lek&eacute;rdez&eacute;s eredm&eacute;nye lesz egyetlen rekord?</p>
+<p>&nbsp;</p>
+<ol>
+<li>SELECT csapat FROM csapatverseny</li>
+</ol>
+<p>WHERE Ausztr&aacute;lia IS NOT NULL AND Azerbajdzs&aacute;n IS NULL</p>
+<ol>
+<li><strong>SELECT csapat FROM csapatverseny</strong></li>
+</ol>
+<p><strong>WHERE Ausztr&aacute;lia IS NULL AND Azerbajdzs&aacute;n IS NULL</strong></p>
+<ol>
+<li>SELECT csapat FROM csapatverseny</li>
+</ol>
+<p>WHERE Ausztr&aacute;lia = NULL AND Azerbajdzs&aacute;n = NULL</p>
+<ol>
+<li>SELECT csapat FROM csapatverseny</li>
+</ol>
+<p>WHERE Ausztr&aacute;lia == NULL AND Azerbajdzs&aacute;n == NULL</p>
+<p>2022.10.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1.1. Melyik SQL utas&iacute;t&aacute;s nem tartozik a DDL t&iacute;pus&uacute; parancsok k&ouml;z&eacute; a felsoroltak k&ouml;z&uuml;l?</p>
+<ol>
+<li>ALTER</li>
+<li>CREATE</li>
+<li><strong>SELECT</strong></li>
+<li>DROP</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.2. Melyik SQL z&aacute;rad&eacute;kkal tudjuk az eredm&eacute;nysorokat szűrni csoportos&iacute;t&aacute;s ut&aacute;n?</p>
+<ol>
+<li>LIST</li>
+<li>WHERE</li>
+<li>GET</li>
+<li><strong>HAVING</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.3.A WHERE sz&uuml;letett BETWEEN 91 AND 93 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
+<ol>
+<li>WHERE sz&uuml;letett &gt; 91 AND sz&uuml;letett &lt; 93</li>
+<li>WHERE sz&uuml;letett &gt; 91 AND sz&uuml;letett &lt;= 93</li>
+<li>WHERE sz&uuml;letett &gt;= 91 AND sz&uuml;letett &lt; 93</li>
+<li><strong>WHERE sz&uuml;letett &gt;= 91 AND sz&uuml;letett &lt;= 93</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.4. A MYSQL WHERE z&aacute;rad&eacute;k&aacute;ban melyik oper&aacute;tort haszn&aacute;lhatjuk a nem egyenlő kifejez&eacute;s&eacute;re?</p>
+<ol>
+<li>=!</li>
+<li><strong>!=</strong></li>
+<li>!==</li>
+<li>==!</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.5. Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t t&ouml;r&ouml;lni?</p>
+<ol>
+<li>ERASE TABLE</li>
+<li><strong>DROP TABLE</strong></li>
+<li>REMOVE TABLE</li>
+<li>DELETE TABLE</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.6. Melyik kulcssz&oacute; seg&iacute;ts&eacute;g&eacute;vel tudunk &aacute;lnevet (ALIAS) megadni egy mezőnek?</p>
+<ol>
+<li>OF</li>
+<li>IS</li>
+<li><strong>AS</strong></li>
+<li>IN</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.7. A m&aacute;r csoportos&iacute;tott adatok rendez&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
+<ol>
+<li>SORT BY</li>
+<li><strong>ORDER BY</strong></li>
+<li>HAVING</li>
+<li>HAVING BY</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.8. Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni a Term&eacute;kek t&aacute;bla minden adat&aacute;t?</p>
+<ol>
+<li>SELECT *.Term&eacute;kek;</li>
+<li>SELECT Term&eacute;kek;</li>
+<li>SELECT FROM Term&eacute;kek;</li>
+<li><strong>SELECT * FROM Term&eacute;kek;</strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>1.9. Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye n&eacute;v szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
+<ol>
+<li><strong>ORDER BY n&eacute;v ASC</strong></li>
+<li>ORDER BY n&eacute;v DESC</li>
+<li>ORDER BY n&eacute;v DESCENDING</li>
+<li>ORDER BY n&eacute;v A-Z</li>
+</ol>
+<p>&nbsp;</p>
+<p>1.10. Melyik SQL oper&aacute;torral tudjuk ellenőrizni, hogy egy mező kit&ouml;ltetlen?</p>
+<ol>
+<li>UNKNOW</li>
+<li>IS NOT</li>
+<li><strong>IS NULL</strong></li>
+<li>IS NOT NULL</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Comments are visible in the HTML source only -->
 </body>
 </html>
