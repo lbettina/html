@@ -1091,556 +1091,185 @@
                                                                         class="form-control">
 Teljes függőség akkor áll fenn, ha egy relációban van egy olyan attribútumhalmaz, amelynek értékét egy másik attribútumhalaz értéke határozza meg, és ez az attribútumhalmaz nem tartalmaz kulcsot.
 
-	
-  <p><strong>1</strong>&nbsp;</p>
-  <p>T&aacute;bla: csapatverseny</p>
-  <p>Melyik SQL lek&eacute;rdez&eacute;s eredm&eacute;nye lesz egyetlen rekord?</p>
-  <ol>
-  <li>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia IS NOT NULL AND Azerbajdzs&aacute;n IS NULL</li>
-  <li>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia = NULL AND Azerbajdzs&aacute;n = NULL</li>
-  <li><strong>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia IS NULL AND Azerbajdzs&aacute;n IS NULL </strong></li>
-  <li>SELECT csapat FROM csapatverseny<br /> WHERE Ausztr&aacute;lia == NULL AND Azerbajdzs&aacute;n == NULL</li>
-  </ol>
-  <p>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik aggreg&aacute;tf&uuml;ggv&eacute;ny seg&iacute;ts&eacute;g&eacute;vel lehet &aacute;tlagot sz&aacute;molni?</p>
-  <ol>
-  <li>SUM ( )</li>
-  <li>AVERAGE ( )</li>
-  <li><strong>AVG() </strong></li>
-  <li>POWER ( )</li>
-  </ol>
-  <p>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL oper&aacute;torral tudjuk ellenőrizni, hogy egy mező kit&ouml;ltetlen?</p>
-  <ol>
-  <li>UNKNOW</li>
-  <li>IS NOT</li>
-  <li><strong>IS NULL </strong></li>
-  <li>IS NOT NULL</li>
-  </ol>
-  <p>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye n&eacute;v szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
-  <ol>
-  <li>ORDER BY n&eacute;v A-Z</li>
-  <li>ORDER BY n&eacute;v DESCENDING</li>
-  <li>ORDER BY n&eacute;v DESC</li>
-  <li><strong>ORDER BY n&eacute;v ASC </strong></li>
-  </ol>
-  <p>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni a Term&eacute;kek t&aacute;bla minden adat&aacute;t?</p>
-  <ol>
-  <li>SELECT *.Term&eacute;kek;</li>
-  <li>SELECT Term&eacute;kek;</li>
-  <li>SELECT FROM Term&eacute;kek;</li>
-  <li><strong>SELECT * FROM Term&eacute;kek; </strong></li>
-  </ol>
-  <p>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok rendez&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>HAVING</li>
-  <li>HAVING BY</li>
-  <li><strong>ORDER BY </strong></li>
-  <li>SORT BY</li>
-  </ol>
-  <p>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE sz&uuml;letett BETWEEN 91 AND 93 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li>WHERE sz&uuml;letett &gt; 91 AND sz&uuml;letett &lt; 93</li>
-  <li>WHERE sz&uuml;letett &gt;= 91 AND sz&uuml;letett &lt; 93</li>
-  <li><strong>WHERE sz&uuml;letett &gt;= 91 AND sz&uuml;letett &lt;= 93 </strong></li>
-  <li>WHERE sz&uuml;letett &gt; 91 AND sz&uuml;letett &lt;= 93</li>
-  </ol>
-  <p>8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kkal tudjuk az eredm&eacute;nysorokat szűrni csoportos&iacute;t&aacute;s ut&aacute;n?</p>
-  <ol>
-  <li>LIST</li>
-  <li>GET</li>
-  <li>WHERE</li>
-  <li><strong>HAVING </strong></li>
-  </ol>
-  <p>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;s nem tartozik a DDL t&iacute;pus&uacute; parancsok k&ouml;z&eacute; a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>ALTER</li>
-  <li><strong>SELECT</strong></li>
-  <li>CREATE</li>
-  <li>DROP</li>
-  </ol>
-  <p>10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik z&aacute;rad&eacute;k nem haszn&aacute;lhat&oacute; SQL utas&iacute;t&aacute;sokban az al&aacute;bbiak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li><strong>INSIDE</strong></li>
-  <li>OUTER</li>
-  <li>INNER</li>
-  <li>JOIN</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T&aacute;bla: csapatverseny</p>
-  <p>Mi lesz az eredm&eacute;nye a k&ouml;vetkező SQL lek&eacute;rdez&eacute;snek?<br /> SELECT MIN(Spanyolorsz&aacute;g) FROM csapatverseny;</p>
-  <ol>
-  <li>NULL</li>
-  <li><strong>2</strong></li>
-  <li>1</li>
-  <li>Hib&aacute;s az utas&iacute;t&aacute;s</li>
-  </ol>
-  <p>12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni azok a rekordok (is), amelyikn&eacute;l a l&eacute;tsz&aacute;m mező&eacute;rt&eacute;k 20 &eacute;s 40 k&ouml;z&ouml;tt van?</p>
-  <ol>
-  <li>WHERE l&eacute;tsz&aacute;m =&gt; 20</li>
-  <li><strong>WHERE l&eacute;tsz&aacute;m BETWEEN 20 AND 40 </strong></li>
-  <li>WHERE l&eacute;tsz&aacute;m IN 20 AND 40</li>
-  <li>WHERE l&eacute;tsz&aacute;m &lt; 100</li>
-  </ol>
-  <p>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL aggreg&aacute;tf&uuml;ggv&eacute;ny a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>SZUM()</li>
-  <li>AVERAGE()</li>
-  <li><strong>AVG() </strong></li>
-  <li>MAXIMUM()</li>
-  </ol>
-  <p>14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik seg&iacute;ts&eacute;g&eacute;vel rendezhetj&uuml;k a rekordokat magass&aacute;g szerint cs&ouml;kkenő sorrendbe, azonoss&aacute;g eset&eacute;n tests&uacute;ly szerint cs&ouml;kkenő sorrendbe?</p>
-  <ol>
-  <li><strong>ORDER BY magass&aacute;g DESC, tests&uacute;ly DESC </strong></li>
-  <li>ORDER BY tests&uacute;ly DESC, magass&aacute;g DESC</li>
-  <li>ORDER BY magass&aacute;g ASC, tests&uacute;ly ASC</li>
-  <li>ORDER BY tests&uacute;ly ASC, magass&aacute;g ASC</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE z&aacute;rad&eacute;kban melyik oper&aacute;tort haszn&aacute;lhatjuk az egyenlőtlens&eacute;g kifejez&eacute;s&eacute;re?</p>
-  <ol>
-  <li>&gt;&lt;&nbsp;</li>
-  <li>+=</li>
-  <li><strong>!= </strong></li>
-  <li>NOT EQUALS</li>
-  </ol>
-  <p>16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni csak azok a rekordok, amelyikn&eacute;l a k&aacute;rtya mező&eacute;rt&eacute;ke a "pikk" sz&oacute;?</p>
-  <ol>
-  <li>WHERE k&aacute;rtya LIKE "%pikk%"</li>
-  <li>WHERE k&aacute;rtya LIKE "%pikk"</li>
-  <li>WHERE k&aacute;rtya LIKE "pikk%"</li>
-  <li><strong>WHERE k&aacute;rtya LIKE "pikk" </strong></li>
-  </ol>
-  <p>17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minek lehet &aacute;lnevet (ALIAS) adni egy SQL lek&eacute;rdez&eacute;sben?</p>
-  <ol>
-  <li>T&aacute;bl&aacute;knak</li>
-  <li>T&aacute;bl&aacute;knak, mezőknek &eacute;s z&aacute;rad&eacute;koknak.</li>
-  <li>Mezőknek</li>
-  <li><strong>T&aacute;bl&aacute;knak &eacute;s mezőknek. </strong></li>
-  </ol>
-  <p>18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;s k&eacute;rdezi le a&nbsp;<em>FirstName</em>&nbsp;mezőt a&nbsp;<em>Persons</em>&nbsp;t&aacute;bl&aacute;b&oacute;l?</p>
-  <ol>
-  <li>SELECT Persons FROM FirstName</li>
-  <li>SELECT Persons.Firstname</li>
-  <li>SELECT FirstName.Persons</li>
-  <li><strong>SELECT FirstName FROM Persons </strong></li>
-  </ol>
-  <p>19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Milyen eredm&eacute;nnyel t&eacute;r vissza a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT MAX (datum) FROM sportesemenyek WHERE helyszin LIKE ' f&uuml;red';</p>
-  <ol start="2018">
-  <li>2018.1 1.30.</li>
-  <li>Hib&aacute;s az utas&iacute;t&aacute;s.</li>
-  <li>2018.05.23.</li>
-  <li><strong>&Uuml;res eredm&eacute;ny </strong></li>
-  </ol>
-  <p>20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk m&oacute;dos&iacute;tani egy rekordot az adatt&aacute;bl&aacute;ban?</p>
-  <ol>
-  <li>Egyikkel sem a felsoroltak k&ouml;z&uuml;l.</li>
-  <li>UPDATE TABLE</li>
-  <li>EDIT TABLE</li>
-  <li><strong>UPDATE </strong></li>
-  <li>EDIT</li>
-  </ol>
-  <p>21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Melyik z&aacute;rad&eacute;kkal tudjuk megadni az alap&eacute;rtelmezett &eacute;rt&eacute;k&eacute;t egy mezőnek a t&aacute;bla I&eacute;trehoz&aacute;sakor?</p>
-  <ol>
-  <li>BASE VALUE</li>
-  <li><strong>DEFAULT </strong></li>
-  <li>DEFAULT VALUE</li>
-  <li>Egyikkel sem a felsoroltak k&ouml;z&uuml;l.</li>
-  <li>BASE</li>
-  </ol>
-  <p>22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik haszn&aacute;lhat&oacute; kiz&aacute;r&oacute;lag azon rekordok megjelen&iacute;t&eacute;s&eacute;re, amelyekn&eacute;I az id mező&eacute;rtek egyenlő 3-mal vagy 4-gyel?</p>
-  <ol>
-  <li><strong>WHERE id IN (3, 4) </strong></li>
-  <li>WHERE id BETWEEN 2 AND 5</li>
-  <li>WHERE id= 3 OR 4</li>
-  <li>WHERE id = 3 AND id = 4</li>
-  </ol>
-  <p>23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE sEvszam &gt;= 2019 AND eEvszam &lt;= 2020 feltetellel melyik z&aacute;radek egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li>WHERE vEvszam BETWEEN 2019 OR 2020</li>
-  <li>WHERE sEvszam BETWEEN 2019 AND 2020</li>
-  <li><strong>Egyik sem a felsoroltak k&ouml;z&uuml;l. </strong></li>
-  <li>WHERE kEvszam AND vEvszam BETWEEN 2019 AND 2020</li>
-  </ol>
-  <p>24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT SZUM (engedmeny) FROM prom&oacute;ci&oacute;k;</p>
-  <ol>
-  <li>0,15</li>
-  <li>0,8</li>
-  <li>0,3</li>
-  <li><strong>Hibajelz&eacute;st kapunk. </strong></li>
-  <li>NULL</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT kezDatum FROM prom&oacute;ci&oacute;k WHERE id = 3;</p>
-  <ol start="2020">
-  <li>01.01</li>
-  <li>11.02</li>
-  <li><strong>12.01 </strong></li>
-  <li>Hibajelz&eacute;st kapunk.</li>
-  <li>06.01</li>
-  </ol>
-  <p>26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT MIN(engedmeny) FROM prom&oacute;ci&oacute;k WHERE nev LIKE '*2019';</p>
-  <ol>
-  <li>0</li>
-  <li><strong>0,3 </strong></li>
-  <li>NULL</li>
-  <li>0,15</li>
-  <li>Hibajelz&eacute;st kapunk.</li>
-  </ol>
-  <p>27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A k&ouml;vetkező feladat az al&aacute;bbi&nbsp;<strong><em>prom&oacute;ci&oacute;k</em></strong>&nbsp;t&aacute;bla adataira vonatkozik.</p>
-  <p>Milyen &eacute;rt&eacute;kkel fog visszat&eacute;rni a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT COUNT(*) FROM prom&oacute;ci&oacute;k WHERE nev LIKE '%2019';</p>
-  <ol>
-  <li>Hibajelz&eacute;st kapunk.</li>
-  <li><strong>1 </strong></li>
-  <li>3</li>
-  <li>0</li>
-  <li>4</li>
-  </ol>
-  <p>28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik z&aacute;rad&eacute;kkal korl&aacute;tozhatjuk a megjelenő adatsorok sz&aacute;m&aacute;t a lek&eacute;rdez&eacute;sekben?</p>
-  <ol>
-  <li><strong>TOP/LIMIT </strong></li>
-  <li>TAKE</li>
-  <li>LAST</li>
-  <li>NUMBER OF</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sportesemenyek</p>
-  <p>H&aacute;ny rekorddal (adatsorral) t&eacute;r vissza a k&ouml;vetkező lek&eacute;rdez&eacute;s?</p>
-  <p>SELECT * FROM sportesemenyek GROUP BY helysz&iacute;n HAVING COUNT (datum)&nbsp; &gt;&nbsp; 2;</p>
-  <ol>
-  <li>2</li>
-  <li><strong>1 </strong></li>
-  <li>7</li>
-  <li>3</li>
-  </ol>
-  <p>30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik lek&eacute;rdez&eacute;s eredm&eacute;nye lesz egyed&uuml;l a DRAGON Eur&oacute;pa-bajnoks&aacute;g 2018?&nbsp;</p>
-  <ol>
-  <li>SELECT esemeny FROM sportesemenyek WHERE helyszin LIKE ' %f&uuml;red%' &nbsp;AND DAY (datum) = 23;</li>
-  <li>SELECT esemeny FROM sportesemenyek WHERE szervezo LIKE '%Vitorl&aacute;s' AND DAY (datum) &nbsp;= 23;</li>
-  <li>SELECT esemeny FROM sportesemenyek WHERE helyszin LIKE ' %f&uuml;red' &nbsp;AND DAY (datum) = 23;</li>
-  <li><strong>SELECT esemeny FROM sportesemenyek WHERE szervezo LIKE '%Vitorl&aacute;s%' AND DAY (datum) &nbsp;= 23; </strong></li>
-  </ol>
-  <p>31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mi lesz az eredm&eacute;nye a k&ouml;vetkező lek&eacute;rdez&eacute;snek?</p>
-  <p>SELECT COUNT (DISTINCT szervezo) FROM sportesemenyek;</p>
-  <ol>
-  <li>16</li>
-  <li>7</li>
-  <li>Hib&aacute;s az utas&iacute;t&aacute;s.</li>
-  <li><strong>9 </strong></li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell haszn&aacute;lni egy lek&eacute;rdez&eacute;sben a t&aacute;bl&aacute;k &ouml;sszekapcsol&aacute;s&aacute;ra?</p>
-  <ol>
-  <li>CONNECT</li>
-  <li>FROM&nbsp;</li>
-  <li>SWITCH</li>
-  <li><strong>JOIN </strong></li>
-  </ol>
-  <p>33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mi t&ouml;rt&eacute;nhet a k&ouml;vetkező SQL utas&iacute;t&aacute;s futtat&aacute;sa ut&aacute;n? Felt&eacute;telezheti, hogy a t&aacute;bla l&eacute;tezik, nem &aacute;ll kapcsolatban m&aacute;sik t&aacute;bl&aacute;kkal &eacute;s legal&aacute;bb k&eacute;t rekordot tartalmaz!</p>
-  <p>DELETE FROM v&aacute;s&aacute;rl&oacute;k;</p>
-  <ol>
-  <li>A t&aacute;bla &ouml;sszes mezője t&ouml;rlődni fog.</li>
-  <li>Semmi nem t&ouml;rt&eacute;nik, mert hib&aacute;s az utas&iacute;t&aacute;s.</li>
-  <li>A v&aacute;s&aacute;rl&oacute;k t&aacute;bla t&ouml;rlődni fog.</li>
-  <li><strong>A t&aacute;bla &ouml;sszes rekordja t&ouml;rlődni fog. </strong></li>
-  </ol>
-  <p>34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik szűrheti &uacute;gy a rekordokat, hogy a darab mező&eacute;rt&eacute;kei k&ouml;z&ouml;tt ne szerepeljen a 12?</p>
-  <ol>
-  <li>WHERE darab IN (10, 11, 12)</li>
-  <li>WHERE darab NOT IN (10, 13)</li>
-  <li>WHERE darab BETWEEN 12 AND 24</li>
-  <li><strong>WHERE darab &lt;&gt; 12 </strong></li>
-  </ol>
-  <p>35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyik seg&iacute;ts&eacute;g&eacute;vel rendezhetj&uuml;k a rekordokat magass&aacute;g szerint cs&ouml;kkenő sorrendbe, azonoss&aacute;g eset&eacute;n tests&uacute;ly szerint cs&ouml;kkenő sorrendbe?</p>
-  <ol>
-  <li>ORDER BY tests&uacute;ly DESC, magass&aacute;g DESC</li>
-  <li>ORDER BY magass&aacute;g ASC, tests&uacute;ly ASC</li>
-  <li>ORDER BY tests&uacute;ly ASC, magass&aacute;g ASC</li>
-  <li><strong>ORDER BY magass&aacute;g DESC, tests&uacute;ly DESC </strong></li>
-  </ol>
-  <p>36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL paranccsal tudunk adatokat lek&eacute;rdezni egy t&aacute;bl&aacute;b&oacute;l?</p>
-  <ol>
-  <li>LIST</li>
-  <li><strong>SELECT </strong></li>
-  <li>WHERE</li>
-  <li>GET</li>
-  </ol>
-  <p>37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye fizet&eacute;s szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
-  <ol>
-  <li>ORDER BY fizetes DESC</li>
-  <li>ORDER BY fizetes UP</li>
-  <li><strong>ORDER BY fizetes ASC </strong></li>
-  <li>ORDER BY fizetes DOWN</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL z&aacute;rad&eacute;kot kell alkalmazni annak &eacute;rdek&eacute;ben, hogy a lek&eacute;rdez&eacute;s eredm&eacute;nye magass&aacute;g szerint n&ouml;vekvő sorrendben jelenjen meg?</p>
-  <ol>
-  <li><strong>ORDER BY magass&aacute;g </strong></li>
-  <li>ORDER BY magass&aacute;g DESCENDING</li>
-  <li>ORDER BY magass&aacute;g GROW</li>
-  <li>ORDER BY magass&aacute;g DESC</li>
-  </ol>
-  <p>39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni az Iskol&aacute;k t&aacute;bla minden adat&aacute;t?</p>
-  <ol>
-  <li><strong>SELECT * FROM Iskol&aacute;k; </strong></li>
-  <li>SELECT *.Iskol&aacute;k;</li>
-  <li>SELECT Iskol&aacute;k;</li>
-  <li>SELECT FROM Iskol&aacute;k;</li>
-  </ol>
-  <p>40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>LIMIT</li>
-  <li>ORDER BY</li>
-  <li><strong>HAVING </strong></li>
-  <li>WHERE</li>
-  </ol>
-  <p>41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik kulcssz&oacute; seg&iacute;ts&eacute;g&eacute;vel tudunk &aacute;lnevet (ALIAS) megadni egy mezőnek?</p>
-  <ol>
-  <li>IS</li>
-  <li>OF</li>
-  <li><strong>AS </strong></li>
-  <li>IN</li>
-  </ol>
-  <p>42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t l&eacute;trehozni?</p>
-  <ol>
-  <li>NEW TABLE</li>
-  <li><strong>CREATE TABLE </strong></li>
-  <li>ALTER TABLE</li>
-  <li>MAKE TABLE</li>
-  </ol>
-  <p>43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A MYSQL WHERE z&aacute;rad&eacute;k&aacute;ban melyik oper&aacute;tort haszn&aacute;lhatjuk a nem egyenlő kifejez&eacute;s&eacute;re?</p>
-  <ol>
-  <li>=!</li>
-  <li>==!</li>
-  <li><strong>!= </strong></li>
-  <li>!==</li>
-  </ol>
-  <p>44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE sz&uuml;letett BETWEEN 68 AND 70 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li><strong>WHERE sz&uuml;letett &gt;= 68 AND sz&uuml;letett &lt;= 70 </strong></li>
-  <li>WHERE sz&uuml;letett &gt; 68 AND sz&uuml;letett &lt; 70</li>
-  <li>WHERE sz&uuml;letett &gt;= 68 AND sz&uuml;letett &lt; 70</li>
-  <li>WHERE sz&uuml;letett &gt; 68 AND sz&uuml;letett &lt;= 70</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL oper&aacute;torral tudjuk ellenőrizni, hogy egy mező kit&ouml;ltetlen?</p>
-  <ol>
-  <li>IS NOT NULL</li>
-  <li>IS NOT</li>
-  <li>IS</li>
-  <li><strong>IS NULL </strong></li>
-  </ol>
-  <p>46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;s nem tartozik a DDL t&iacute;pus&uacute; parancsok k&ouml;z&eacute; a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>ALTER</li>
-  <li><strong>SELECT </strong></li>
-  <li>DROP</li>
-  <li>CREATE</li>
-  </ol>
-  <p>47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik MYSQL z&aacute;rad&eacute;kkal korl&aacute;tozhatjuk a megjelenő adatsorok sz&aacute;m&aacute;t a lek&eacute;rdez&eacute;sekben?</p>
-  <ol>
-  <li>SKIP</li>
-  <li>LIST OF</li>
-  <li>TAKE</li>
-  <li><strong>LIMIT </strong></li>
-  </ol>
-  <p>48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik jelsorozattal helyezhet&uuml;nk el egysoros megjegyz&eacute;st az SQL k&oacute;dban?</p>
-  <ol>
-  <li>\\</li>
-  <li><strong>-- </strong></li>
-  <li>##</li>
-  <li>//</li>
-  </ol>
-  <p>49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>HATEING</li>
-  <li><strong>HAVING </strong></li>
-  <li>HOMEING</li>
-  <li>HAVEING</li>
-  </ol>
-  <p>50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az alk&eacute;rd&eacute;sek előtt melyik oper&aacute;tort haszn&aacute;lhatjuk a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li><strong>ANY </strong></li>
-  <li>AND</li>
-  <li>ONLY</li>
-  <li>BETWEEN</li>
-  </ol>
-  <p>51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik m&oacute;dos&iacute;t&oacute;sz&oacute;val kell a rendez&eacute;s ir&aacute;ny&aacute;t cs&ouml;kkenőre &aacute;ll&iacute;tani?</p>
-  <ol>
-  <li>ASC</li>
-  <li><strong>DESC </strong></li>
-  <li>DESCENDING</li>
-  <li>ASCENDING</li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik a DELETE SQL utas&iacute;t&aacute;s helyes szintaxisa?</p>
-  <ol>
-  <li>DELETE WHERE condition FROM table_name;</li>
-  <li><strong>DELETE FROM table_name WHERE condition; </strong></li>
-  <li>DELETE FORM table_name WHERE condition;</li>
-  <li>DELETE WHERE table_name FROM condition;</li>
-  </ol>
-  <p>53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk &uacute;j rekordokat besz&uacute;rni egy t&aacute;bl&aacute;ba?</p>
-  <ol>
-  <li><strong>INSERT INTO </strong></li>
-  <li>ADD RECORD</li>
-  <li>INSERT NEW</li>
-  <li>ADD NEW</li>
-  </ol>
-  <p>54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik sorrendben kell megadni a SELECT utas&iacute;t&aacute;sban a z&aacute;rad&eacute;kokat?</p>
-  <ol>
-  <li>SELECT - WHERE - FROM - HAVING - ORDER BY - GROUP BY</li>
-  <li><strong>SELECT - FROM - WHERE - GROUP BY - HAVING - ORDER BY </strong></li>
-  <li>SELECT - FROM - ORDER BY - WHERE - ORDER BY - HAVING</li>
-  <li>SELECT - FROM - ORDER BY - WHERE - GROUP BY - HAVING</li>
-  </ol>
-  <p>55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL utas&iacute;t&aacute;ssal tudjuk megjelen&iacute;teni az Orszagok t&aacute;bla minden adat&aacute;t?</p>
-  <ol>
-  <li>SELECT FROM Orszagok;</li>
-  <li><strong>SELECT * FROM Orszagok; </strong></li>
-  <li>SELECT *.Orszagok;</li>
-  <li>SELECT Orszagok;</li>
-  </ol>
-  <p>56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A m&aacute;r csoportos&iacute;tott adatok szűr&eacute;s&eacute;re melyik SQL z&aacute;rad&eacute;k haszn&aacute;lhat&oacute;?</p>
-  <ol>
-  <li>WHERE</li>
-  <li><strong>HAVING </strong></li>
-  <li>WERE</li>
-  <li>LIMIT</li>
-  </ol>
-  <p>57&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minek lehet &aacute;lnevet (ALIAS) adni egy SQL lek&eacute;rdez&eacute;sben?</p>
-  <ol>
-  <li>Mezőknek</li>
-  <li><strong>Mezőknek &eacute;s t&aacute;bl&aacute;knak </strong></li>
-  <li>Mezőknek &eacute;s z&aacute;rad&eacute;koknak</li>
-  <li>T&aacute;bl&aacute;knak</li>
-  </ol>
-  <p>58&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t l&eacute;trehozni?</p>
-  <ol>
-  <li>DROP TABLE</li>
-  <li>MAKE TABLE</li>
-  <li>NEW TABLE</li>
-  <li><strong>CREATE TABLE </strong></li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE z&aacute;rad&eacute;kban melyik oper&aacute;tort haszn&aacute;lhatjuk a kisebb/egyenlő kifejez&eacute;s&eacute;re?</p>
-  <ol>
-  <li>&gt;=</li>
-  <li>=&gt;</li>
-  <li>=&lt;</li>
-  <li><strong>&lt;= </strong></li>
-  </ol>
-  <p>60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A WHERE belepes BETWEEN 1958 AND 2013 z&aacute;rad&eacute;kkal melyik z&aacute;rad&eacute;k egyen&eacute;rt&eacute;kű?</p>
-  <ol>
-  <li>WHERE belepes &gt; 1958 AND belepes &lt; 2013</li>
-  <li>WHERE belepes &gt; 1958 OR belepes &lt; 2013</li>
-  <li><strong>WHERE belepes &gt;= 1958 AND belepes &lt;= 2013 </strong></li>
-  <li>WHERE (belepes &gt; 1958) AND (belepes &lt; 2013)</li>
-  </ol>
-  <p>61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk lek&eacute;rdezni adatokat egy SQL szerverről?</p>
-  <ol>
-  <li><strong>SELECT </strong></li>
-  <li>GET</li>
-  <li>PUT</li>
-  <li>EXTRACT</li>
-  </ol>
-  <p>62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik &aacute;ll&iacute;t&aacute;s igaz a lek&eacute;rdez&eacute;sekben haszn&aacute;lt INNER JOIN z&aacute;rad&eacute;kra?</p>
-  <ol>
-  <li>Alap&eacute;rtelmezetten id mező alapj&aacute;n v&eacute;gzi az &ouml;sszekapcsol&aacute;st.</li>
-  <li><strong>Az INNER JOIN z&aacute;rad&eacute;kok seg&iacute;ts&eacute;g&eacute;vel egyszerre ak&aacute;r &ouml;t t&aacute;bl&aacute;t is &ouml;sszekapcsolhatunk. </strong></li>
-  <li>Az INNER JOIN z&aacute;rad&eacute;kban haszn&aacute;lhatunk csoportos&iacute;t&oacute; f&uuml;ggv&eacute;nyeket.</li>
-  <li>K&ouml;telező az IN z&aacute;rad&eacute;kkal egy&uuml;tt haszn&aacute;lni.</li>
-  </ol>
-  <p>63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik utas&iacute;t&aacute;ssal tudunk SQL adatb&aacute;zisban t&aacute;bl&aacute;t t&ouml;r&ouml;lni?</p>
-  <ol>
-  <li><strong>DROP TABLE </strong></li>
-  <li>ERASE TABLE</li>
-  <li>REMOVE TABLE</li>
-  <li>DELETE TABLE</li>
-  </ol>
-  <p>64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az al&aacute;bbi SQL oper&aacute;torok k&ouml;z&uuml;l melyik tartozik a rel&aacute;ci&oacute;s oper&aacute;torok k&ouml;z&eacute;?</p>
-  <ol>
-  <li>&gt;&lt;&nbsp;</li>
-  <li><strong>&lt;&gt; </strong></li>
-  <li>||</li>
-  <li>/</li>
-  </ol>
-  <p>65&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik SQL parancs lehet alkalmas a 15-&ouml;s azonos&iacute;t&oacute;val rendelkező k&ouml;nyv t&ouml;rl&eacute;s&eacute;re?</p>
-  <ol>
-  <li>TRUNCATE books WHERE bookId = 15</li>
-  <li>DROP books WHERE bookId = 15</li>
-  <li>TRUNCATE TABLE books WHERE bookId = 15</li>
-  <li><strong>DELETE FROM books WHERE bookId = 15 </strong></li>
-  </ol>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>66&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az al&aacute;bbi oper&aacute;torok k&ouml;z&uuml;l melyik NEM tartozik az SQL nyelv logikai oper&aacute;torai k&ouml;z&eacute;?</p>
-  <ol>
-  <li>AND</li>
-  <li>NOT</li>
-  <li>OR</li>
-  <li><strong>XOR </strong></li>
-  </ol>
-  <p>67&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik z&aacute;rad&eacute;kkal lehet a lek&eacute;rdez&eacute;sekben a csoportos&iacute;tott eredm&eacute;nyeket szűrni?</p>
-  <ol>
-  <li>WHERE</li>
-  <li>GROUP BY</li>
-  <li>ORDER BY</li>
-  <li><strong>HAVING </strong></li>
-  </ol>
-  <p>68&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A felsorolt WHERE z&aacute;rad&eacute;kok k&ouml;z&uuml;l melyikn&eacute;l fognak megjelenni csak azok a rekordok, amelyn&eacute;l a k&aacute;rtya mező&eacute;rt&eacute;ke pontosan a &bdquo;pikk&rdquo; sz&oacute;?</p>
-  <ol>
-  <li>WHERE k&aacute;rtya LIKE "pikk%"</li>
-  <li><strong>WHERE k&aacute;rtya = "pikk" </strong></li>
-  <li>WHERE k&aacute;rtya = "%pikk%"</li>
-  <li>WHERE k&aacute;rtya LIKE "%pikk%"</li>
-  </ol>
-  <p>69&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Az al&aacute;bbi kulcsszavak k&ouml;z&uuml;l melyikkel lehet a lek&eacute;rdez&eacute;sekben a megjelenő eredm&eacute;nysorok egyedis&eacute;g&eacute;t biztos&iacute;tani?</p>
-  <ol>
-  <li>Egyik sem a felsoroltak k&ouml;z&uuml;l.</li>
-  <li>UNIQUE</li>
-  <li>TOP/LIMIT</li>
-  <li><strong>DISTINCT </strong></li>
-  </ol>
-  <p>70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Melyik nem SQL utas&iacute;t&aacute;s a felsoroltak k&ouml;z&uuml;l?</p>
-  <ol>
-  <li>SELECT</li>
-  <li><strong>CREATE QUERY </strong></li>
-  <li>DELETE</li>
-  <li>UPDATE</li>
-  </ol>
-  <p>71&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Szintaktikailag helyes-e a k&ouml;vetkező SQL utas&iacute;t&aacute;s?</p>
-  <p>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate</p>
-  <p>FROM Orders</p>
-  <p>INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;</p>
-  <ul>
-  <li><strong>Igaz&nbsp; </strong></li>
-  <li>Hamis</li>
-  </ul>
-  <p>72&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Szintaktikailag helyes a k&ouml;vetkező SQL utas&iacute;t&aacute;s?</p>
-  <p>SELECT * FROM Customers</p>
-  <p>WHERE City LIKE '[^bsp)]%' ;</p>
-  <ul>
-  <li><strong>Igaz </strong></li>
-  <li>Hamis&nbsp;</li>
-  </ul>
-  <p>&nbsp;</p>
+<p><strong>SQL szkriptek</strong>Az űrlap teteje</p>
+<p>&nbsp;</p>
+<p><strong>1</strong>&nbsp;k&eacute;rd&eacute;s:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> H&aacute;ny sora lesz a lek&eacute;rdező parancs eredm&eacute;nyt&aacute;bl&aacute;j&aacute;nak:<br /> SELECT * FROM HALLGAT&Oacute;, VIZSGA, TANT&Aacute;RGY<br /> WHERE HALLGAT&Oacute;.hk&oacute;d=VIZSGA.hk&oacute;d AND TANT&Aacute;RGY.tant=VIZSGA.tant</p>
+<ol>
+	<li>mint a TANT&Aacute;RGY t&aacute;bla sorainak sz&aacute;ma</li>
+	<li>mint a HALLGAT&Oacute; t&aacute;bla sorainak sz&aacute;ma</li>
+	<li>mint a VIZSGA t&aacute;bla sorainak sz&aacute;ma. &nbsp;&nbsp;&nbsp;</li>
+	<li>mint a 3 t&aacute;bla sorai sz&aacute;m&aacute;nak szorzata</li>
+</ol>
+<p><strong>2</strong>&nbsp;k&eacute;rd&eacute;s:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott k&ouml;lcs&ouml;nző &uuml;gyfeleit &eacute;s aut&oacute;it, valamint a t&eacute;nyleges k&ouml;lcs&ouml;nz&eacute;seket tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> &Uuml;GYF&Eacute;L (k&oacute;d, n&eacute;v, c&iacute;m)<br /> AUT&Oacute; (rendsz&aacute;m, m&aacute;rka, t&iacute;pus, sz&iacute;n)<br /> K&Ouml;LCS&Ouml;NZ&Eacute;S (azon, rendsz&aacute;m, mettől, meddig, k&oacute;d)<br /> <br /> A leghosszabb időszakra k&ouml;lcs&ouml;nz&ouml;tt aut&oacute;kat lek&eacute;rdező parancs melyik felt&eacute;tel eset&eacute;n helyes:<br /> SELECT rendsz&aacute;m FROM K&Ouml;LCS&Ouml;NZ&Eacute;S WHERE</p>
+<ol>
+	<li>meddig-mettől=(SELECT MAX(meddig-mettől))</li>
+	<li>meddig-mettől=(SELECT MAX(meddig-mettől) FROM K&Ouml;LCS&Ouml;NZ&Eacute;S). &nbsp;&nbsp;&nbsp;</li>
+	<li>meddig-mettől=MAX(meddig-mettől)</li>
+</ol>
+<p><strong>3</strong>&nbsp;k&eacute;rd&eacute;s:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott k&ouml;lcs&ouml;nző &uuml;gyfeleit &eacute;s aut&oacute;it, valamint a t&eacute;nyleges k&ouml;lcs&ouml;nz&eacute;seket tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> &Uuml;GYF&Eacute;L (k&oacute;d, n&eacute;v, c&iacute;m)<br /> AUT&Oacute; (rendsz&aacute;m, m&aacute;rka, t&iacute;pus, sz&iacute;n)<br /> K&Ouml;LCS&Ouml;NZ&Eacute;S (azon, rendsz&aacute;m, mettől, meddig, k&oacute;d)<br /> <br /> A lek&eacute;rdező parancs melyik felt&eacute;tel eset&eacute;n adja vissza azokat az &uuml;gyfeleket, akik m&eacute;g nem k&ouml;lcs&ouml;n&ouml;ztek:<br /> SELECT * FROM &Uuml;GYF&Eacute;L WHERE</p>
+<ol>
+	<li>n&eacute;v NOT IN (SELECT k&oacute;d FROM K&Ouml;LCS&Ouml;NZ&Eacute;S)</li>
+	<li>k&oacute;d NOT IN (SELECT * FROM K&Ouml;LCS&Ouml;NZ&Eacute;S)</li>
+	<li>k&oacute;d NOT IN (SELECT k&oacute;d FROM K&Ouml;LCS&Ouml;NZ&Eacute;S) .</li>
+</ol>
+<p><strong>4</strong>&nbsp;k&eacute;rd&eacute;s:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott motel vend&eacute;geit &eacute;s fogyaszthat&oacute; term&eacute;keit, valamint a konkr&eacute;t fogyaszt&aacute;sokat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> VEND&Eacute;G (vk&oacute;d, n&eacute;v, c&iacute;m)<br /> TERM&Eacute;K (tk&oacute;d, elnevez&eacute;s, egys&aacute;r)<br /> FOGYASZT&Aacute;S (vk&oacute;d, kelt, sorsz&aacute;m, tk&oacute;d, menny)<br /> <br /> Melyik f&uuml;ggv&eacute;ny eset&eacute;n adja eredm&eacute;ny&uuml;l a parancs, hogy naponta h&aacute;ny vend&eacute;g fogyasztott:<br /> SELECT kelt, FROM FOGYASZT&Aacute;S GROUP BY kelt</p>
+<ol>
+	<li>COUNT(distinct vk&oacute;d) .</li>
+	<li>COUNT(*)</li>
+	<li>COUNT(vk&oacute;d)</li>
+	<li>distinct COUNT(*)</li>
+</ol>
+<p><strong>5</strong>&nbsp;k&eacute;rd&eacute;s:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott motel vend&eacute;geit &eacute;s fogyaszthat&oacute; term&eacute;keit, valamint a konkr&eacute;t fogyaszt&aacute;sokat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> VEND&Eacute;G (vk&oacute;d, n&eacute;v, c&iacute;m)<br /> TERM&Eacute;K (tk&oacute;d, elnevez&eacute;s, egys&aacute;r)<br /> FOGYASZT&Aacute;S (vk&oacute;d, kelt, sorsz&aacute;m, tk&oacute;d, menny)<br /> <br /> A lek&eacute;rdező parancs csoportos&iacute;t&aacute;sa melyik mező szerint t&ouml;rt&eacute;nik:<br /> SELECT tk&oacute;d, SUM(menny) FROM FOGYASZT&Aacute;S GROUP BY</p>
+<ol>
+	<li>menny</li>
+	<li>tk&oacute;d.</li>
+	<li>kelt</li>
+	<li>vk&oacute;d</li>
+</ol>
+<p><strong>6</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> H&aacute;ny sora lesz a lek&eacute;rdező parancs eredm&eacute;nyt&aacute;bl&aacute;j&aacute;nak:<br /> SELECT * FROM HALLGAT&Oacute;, VIZSGA, TANT&Aacute;RGY</p>
+<ol>
+	<li>mint a 3 t&aacute;bla sorai sz&aacute;m&aacute;nak &ouml;sszege</li>
+	<li>mint a 3 t&aacute;bla sorai sz&aacute;m&aacute;nak szorzata.</li>
+</ol>
+<p><strong>7</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott rokons&aacute;g tagjair&oacute;l ismereteink szerint t&aacute;roljuk a nev&eacute;t, nem&eacute;t &eacute;s a sz&uuml;lőket, akik szint&eacute;n szem&eacute;lyek.<br /> SZEM&Eacute;LY (k&oacute;d, n&eacute;v, nem, anya, apa)<br /> <br /> A f&eacute;rfi szem&eacute;lyek lek&eacute;rdez&eacute;s&eacute;hez melyik felt&eacute;tel nem lehet helyes:<br /> SELECT * FROM SZEM&Eacute;LY WHERE</p>
+<ol>
+	<li>nem=false.</li>
+	<li>nem=&rdquo;F&rdquo;</li>
+	<li>nem=0</li>
+	<li>NOT nem</li>
+</ol>
+<p><strong>8</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott rokons&aacute;g tagjair&oacute;l ismereteink szerint t&aacute;roljuk a nev&eacute;t, nem&eacute;t &eacute;s a sz&uuml;lőket, akik szint&eacute;n szem&eacute;lyek.<br /> SZEM&Eacute;LY (k&oacute;d, n&eacute;v, nem, anya, apa)<br /> <br /> A lek&eacute;rdező parancs melyik f&uuml;ggv&eacute;ny eset&eacute;n adja vissza a legnagyobb sz&aacute;mot:<br /> SELECT FROM SZEM&Eacute;LY;</p>
+<ol>
+	<li>COUNT(*).</li>
+	<li>COUNT(distinct anya)</li>
+	<li>COUNT(anya)</li>
+</ol>
+<p><strong>9</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott c&eacute;g dolgoz&oacute;it tartjuk nyilv&aacute;n &eacute;s a nekik kifizetett jutalmakat az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> DOLGOZ&Oacute; (azon, n&eacute;v, beoszt&aacute;s)<br /> JUTALOM (azon, kelt, &ouml;sszeg)<br /> <br /> A lek&eacute;rdező parancs eredm&eacute;nyt&aacute;bl&aacute;j&aacute;nak h&aacute;ny oszlopa lesz:<br /> SELECT * FROM JUTALOM, DOLGOZ&Oacute;</p>
+<ol>
+	<li>mint a 2 t&aacute;bla k&ouml;z&ouml;s oszlopainak sz&aacute;ma, azaz 1</li>
+	<li>mint a 2 t&aacute;bla &ouml;sszes oszlopai sz&aacute;m&aacute;nak &ouml;sszege, azaz 6.</li>
+	<li>mint a 2 t&aacute;bla oszlopai sz&aacute;m&aacute;nak szorzata, azaz 9</li>
+</ol>
+<p><strong>10</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott c&eacute;g dolgoz&oacute;it tartjuk nyilv&aacute;n &eacute;s a nekik kifizetett jutalmakat az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> DOLGOZ&Oacute; (azon, n&eacute;v, beoszt&aacute;s)<br /> JUTALOM (azon, kelt, &ouml;sszeg)<br /> <br /> A 2006-ban kifizetett jutalmak &ouml;sszeg&eacute;t lek&eacute;rdező parancs melyik felt&eacute;tel eset&eacute;n hib&aacute;s:<br /> SELECT SUM(&ouml;sszeg) FROM JUTALOM WHERE&nbsp;</p>
+<ol start="2006">
+	<li>kelt =2006.</li>
+	<li>kelt&gt;=&rsquo;2006.01.01.&rsquo; and kelt&lt;=&rsquo;2006.12.31.&rsquo;</li>
+	<li>kelt between &rsquo;2006.01.01.&rsquo; and &rsquo;2006.12.31.&rsquo;</li>
+</ol>
+<p><strong>11</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT tant, AVG(jegy)<br /> FROM VIZSGA<br /> GROUP BY tant;</p>
+<ol>
+	<li>Megjelen&iacute;ti a vizsgajegyek tant&aacute;rgyank&eacute;nti &aacute;tlag&aacute;t.</li>
+	<li>Megjelen&iacute;ti minden tant&aacute;rgyb&oacute;l a vizsgajegyek &aacute;tlag&aacute;t; amelyikből nem volt vizsga, azok mellett a null&aacute;t</li>
+</ol>
+<p><strong>12</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT d&aacute;tum, COUNT(distinct tant)<br /> FROM VIZSGA<br /> GROUP BY d&aacute;tum;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy naponta h&aacute;ny k&uuml;l&ouml;nb&ouml;ző hallgat&oacute; vizsg&aacute;zott</li>
+	<li>Megjelen&iacute;ti, hogy naponta h&aacute;ny vizsg&aacute;z&oacute; volt</li>
+	<li>Megjelen&iacute;ti, hogy naponta h&aacute;ny tant&aacute;rgyb&oacute;l volt vizsga.</li>
+</ol>
+<p><strong>13</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT hk&oacute;d, n&eacute;v<br /> FROM HALLGAT&Oacute;<br /> WHERE hk&oacute;d NOT IN (SELECT hk&oacute;d FROM VIZSGA v, TANT&Aacute;RGY t<br /> WHERE t.tant=v.tant AND elnevez&eacute;s=&rsquo;Matematika&rsquo;);</p>
+<ol>
+	<li>Megjelen&iacute;ti azokat a hallgat&oacute;kat, akik Matematik&aacute;b&oacute;l csak egyszer vizsg&aacute;ztak</li>
+	<li>Megjelen&iacute;ti azokat a hallgat&oacute;kat, akik Matematik&aacute;b&oacute;l m&eacute;g nem vizsg&aacute;ztak.</li>
+	<li>Megjelen&iacute;ti azokat a hallgat&oacute;kat, akik Matematik&aacute;b&oacute;l m&aacute;r vizsg&aacute;ztak</li>
+</ol>
+<p><strong>14</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT n&eacute;v, elnevez&eacute;s, jegy<br /> FROM VIZSGA v, HALLGAT&Oacute; h, TANTR&Aacute;GY t<br /> WHERE v.tant=t.tant AND h.hk&oacute;d=v.hk&oacute;d AND jegy&gt;1;</p>
+<ol>
+	<li>Megjelen&iacute;ti az el&eacute;gtelenn&eacute;l jobb vizsgajegyeket a hallgat&oacute;k nev&eacute;vel &eacute;s a tant&aacute;rgyak elnevez&eacute;s&eacute;vel.</li>
+	<li>Megjelen&iacute;ti az &ouml;sszes vizsgajegyet a hallgat&oacute; nev&eacute;vel &eacute;s a tant&aacute;rgy elnevez&eacute;s&eacute;vel</li>
+</ol>
+<p><strong>15</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott iskola hallgat&oacute;it &eacute;s tant&aacute;rgyait, valamint a letett vizsg&aacute;kat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> HALLGAT&Oacute; (hk&oacute;d, n&eacute;v, oszt&aacute;ly)<br /> TANT&Aacute;RGY (tant, elnevez&eacute;s)<br /> VIZSGA (hk&oacute;d, d&aacute;tum, tant, jegy)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT hk&oacute;d<br /> FROM VIZSGA<br /> WHERE jegy=5 AND tant IN (SELECT tant FROM TANT&Aacute;RGY<br /> WHERE elnevez&eacute;s = &rsquo;Matematika&rsquo;);</p>
+<ol>
+	<li>Megjelen&iacute;ti azokat a hallgat&oacute;kat, akik jelesre vizsg&aacute;ztak matematik&aacute;b&oacute;l.</li>
+	<li>Megjelen&iacute;ti azokat a hallgat&oacute;kat, akik nem vizsg&aacute;ztak jelesre matematik&aacute;b&oacute;l</li>
+	<li>Megjelen&iacute;ti azokat a hallgat&oacute;kat, akik vizsg&aacute;ztak m&aacute;r matematik&aacute;b&oacute;l</li>
+</ol>
+<p><strong>16</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott k&ouml;lcs&ouml;nző &uuml;gyfeleit &eacute;s aut&oacute;it, valamint a t&eacute;nyleges k&ouml;lcs&ouml;nz&eacute;seket tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> &Uuml;GYF&Eacute;L (k&oacute;d, n&eacute;v, c&iacute;m)<br /> AUT&Oacute; (rendsz&aacute;m, m&aacute;rka, t&iacute;pus, sz&iacute;n)<br /> K&Ouml;LCS&Ouml;NZ&Eacute;S (azon, rendsz&aacute;m, mettől, meddig, k&oacute;d)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT k&oacute;d, n&eacute;v, c&iacute;m<br /> FROM &Uuml;GYF&Eacute;L<br /> WHERE k&oacute;d NOT IN (SELECT k&oacute;d FROM K&Ouml;LCS&Ouml;NZ&Eacute;S);</p>
+<ol>
+	<li>Megjelen&iacute;ti azokat az &uuml;gyfeleket, akik m&aacute;r k&ouml;lcs&ouml;n&ouml;ztek aut&oacute;t</li>
+	<li>Megjelen&iacute;ti azokat az &uuml;gyfeleket, akik soha nem k&ouml;lcs&ouml;n&ouml;ztek Fordot</li>
+	<li>Megjelen&iacute;ti azokat az &uuml;gyfeleket, akik soha nem k&ouml;lcs&ouml;n&ouml;ztek aut&oacute;t.</li>
+</ol>
+<p><strong>17</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott k&ouml;lcs&ouml;nző &uuml;gyfeleit &eacute;s aut&oacute;it, valamint a t&eacute;nyleges k&ouml;lcs&ouml;nz&eacute;seket tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> &Uuml;GYF&Eacute;L (k&oacute;d, n&eacute;v, c&iacute;m)<br /> AUT&Oacute; (rendsz&aacute;m, m&aacute;rka, t&iacute;pus, sz&iacute;n)<br /> K&Ouml;LCS&Ouml;NZ&Eacute;S (azon, rendsz&aacute;m, mettől, meddig, k&oacute;d)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT k&oacute;d, MAX(mettől)<br /> FROM K&Ouml;LCS&Ouml;NZ&Eacute;S<br /> GROUP BY k&oacute;d;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy ki mikor nem k&ouml;lcs&ouml;nz&ouml;tt aut&oacute;t</li>
+	<li>Megjelen&iacute;ti, hogy ki mikor k&ouml;lcs&ouml;nz&ouml;tt ki legelősz&ouml;r aut&oacute;t</li>
+	<li>Megjelen&iacute;ti, hogy ki mikor k&ouml;lcs&ouml;nz&ouml;tt ki utolj&aacute;ra aut&oacute;t.</li>
+</ol>
+<p><strong>18</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott k&ouml;lcs&ouml;nző &uuml;gyfeleit &eacute;s aut&oacute;it, valamint a t&eacute;nyleges k&ouml;lcs&ouml;nz&eacute;seket tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> &Uuml;GYF&Eacute;L (k&oacute;d, n&eacute;v, c&iacute;m)<br /> AUT&Oacute; (rendsz&aacute;m, m&aacute;rka, t&iacute;pus, sz&iacute;n)<br /> K&Ouml;LCS&Ouml;NZ&Eacute;S (azon, rendsz&aacute;m, mettől, meddig, k&oacute;d)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT n&eacute;v, mettől, meddig<br /> FROM K&Ouml;LCS&Ouml;NZ&Eacute;S k, &Uuml;GYF&Eacute;L u, AUT&Oacute; a<br /> WHERE k.rendsz&aacute;m=a.rendsz&aacute;m AND k.k&oacute;d=u.k&oacute;d<br /> AND m&aacute;rka = &rsquo;Skoda&rsquo; AND t&iacute;pus =&rsquo;Octavia&rsquo;<br /> ORDER BY mettől, meddig;</p>
+<ol>
+	<li>Megjelen&iacute;ti az időpontokra rendezve, hogy kin&eacute;l mikor volt Skoda Octavia aut&oacute;.</li>
+	<li>Megjelen&iacute;ti &uuml;gyf&eacute;l szerint sorban, hogy kin&eacute;l mikor volt Skoda Octavia aut&oacute;</li>
+	<li>Megjelen&iacute;ti időpontok szerint minden k&ouml;lcs&ouml;nz&eacute;sről, hogy kin&eacute;l mikor volt aut&oacute;</li>
+</ol>
+<p><strong>19</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott k&ouml;lcs&ouml;nző &uuml;gyfeleit &eacute;s aut&oacute;it, valamint a t&eacute;nyleges k&ouml;lcs&ouml;nz&eacute;seket tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> &Uuml;GYF&Eacute;L (k&oacute;d, n&eacute;v, c&iacute;m)<br /> AUT&Oacute; (rendsz&aacute;m, m&aacute;rka, t&iacute;pus, sz&iacute;n)<br /> K&Ouml;LCS&Ouml;NZ&Eacute;S (azon, rendsz&aacute;m, mettől, meddig, k&oacute;d)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT rendsz&aacute;m, SUM(meddig-mettől)<br /> FROM K&Ouml;LCS&Ouml;NZ&Eacute;S<br /> GROUP BY rendsz&aacute;m;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy melyik aut&oacute;t h&aacute;ny napra k&ouml;lcs&ouml;n&ouml;zt&eacute;k ki eddig &ouml;sszesen.</li>
+	<li>Megjelen&iacute;ti, hogy melyik aut&oacute;t h&aacute;ny napra k&ouml;lcs&ouml;n&ouml;zt&eacute;k ki eddig &aacute;tlagosan</li>
+</ol>
+<p><strong>20</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott motel vend&eacute;geit &eacute;s fogyaszthat&oacute; term&eacute;keit, valamint a konkr&eacute;t v&aacute;s&aacute;rl&aacute;sokat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> VEND&Eacute;G (vk&oacute;d, n&eacute;v, c&iacute;m)<br /> TERM&Eacute;K (tk&oacute;d, elnevez&eacute;s, egys&aacute;r)<br /> FOGYASZT&Aacute;S (vk&oacute;d, kelt, sorsz&aacute;m, tk&oacute;d, menny)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT distinct kelt<br /> FROM FOGYASZT&Aacute;S<br /> WHERE kelt NOT IN (SELECT kelt FROM FOGYASZT&Aacute;S f, TERM&Eacute;K t<br /> WHERE f.tk&oacute;d=t.tk&oacute;d AND elnevez&eacute;s=&rsquo;pezsgő&rsquo;);</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy mikor nem fogyasztottak pezsgőt.</li>
+	<li>Megjelen&iacute;ti, hogy mikor fogyasztottak pezsgőt</li>
+</ol>
+<p><strong>21</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott motel vend&eacute;geit &eacute;s fogyaszthat&oacute; term&eacute;keit, valamint a konkr&eacute;t v&aacute;s&aacute;rl&aacute;sokat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> VEND&Eacute;G (vk&oacute;d, n&eacute;v, c&iacute;m)<br /> TERM&Eacute;K (tk&oacute;d, elnevez&eacute;s, egys&aacute;r)<br /> FOGYASZT&Aacute;S (vk&oacute;d, kelt, sorsz&aacute;m, tk&oacute;d, menny)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT vk&oacute;d, COUNT(distinct tk&oacute;d)<br /> FROM FOGYASZT&Aacute;S<br /> GROUP BY vk&oacute;d;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy ki mennyit fogyasztott b&aacute;rmilyen term&eacute;kből</li>
+	<li>Megjelen&iacute;ti, hogy ki h&aacute;nyszor fogyasztott b&aacute;rmilyen term&eacute;ket</li>
+	<li>Megjelen&iacute;ti, hogy ki h&aacute;nyf&eacute;le term&eacute;kből fogyasztott eddig.</li>
+</ol>
+<p><strong>22</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott motel vend&eacute;geit &eacute;s fogyaszthat&oacute; term&eacute;keit, valamint a konkr&eacute;t v&aacute;s&aacute;rl&aacute;sokat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> VEND&Eacute;G (vk&oacute;d, n&eacute;v, c&iacute;m)<br /> TERM&Eacute;K (tk&oacute;d, elnevez&eacute;s, egys&aacute;r)<br /> FOGYASZT&Aacute;S (vk&oacute;d, kelt, sorsz&aacute;m, tk&oacute;d, menny)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT vk&oacute;d, tk&oacute;d<br /> FROM FOGYASZT&Aacute;S<br /> WHERE menny=(SELECT MAX(menny) FROM FOGYASZT&Aacute;S);</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy melyik vend&eacute;g &eacute;ppen miből fogyasztotta egyszerre a legt&ouml;bbet</li>
+	<li>Megjelen&iacute;ti, hogy melyik vend&eacute;g miből fogyasztotta &ouml;sszesen a legt&ouml;bbet</li>
+	<li>Megjelen&iacute;ti, hogy ki &eacute;s miből fogyasztotta egyszerre a legnagyobb mennyis&eacute;get.</li>
+</ol>
+<p><strong>23</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott motel vend&eacute;geit &eacute;s fogyaszthat&oacute; term&eacute;keit, valamint a konkr&eacute;t v&aacute;s&aacute;rl&aacute;sokat tartjuk nyilv&aacute;n az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> VEND&Eacute;G (vk&oacute;d, n&eacute;v, c&iacute;m)<br /> TERM&Eacute;K (tk&oacute;d, elnevez&eacute;s, egys&aacute;r)<br /> FOGYASZT&Aacute;S (vk&oacute;d, kelt, sorsz&aacute;m, tk&oacute;d, menny)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT MAX(kelt)<br /> FROM FOGYASZT&Aacute;S f, TERM&Eacute;K t<br /> WHERE f.tk&oacute;d=t.tk&oacute;d AND elnevez&eacute;s like &rsquo;*pezsgő*&rsquo;);</p>
+<ol>
+	<li>Megjelen&iacute;ti, mikor fogyasztottak elősz&ouml;r b&aacute;rmilyen pezsgőt</li>
+	<li>Megjelen&iacute;ti, mikor fogyasztottak utolj&aacute;ra b&aacute;rmilyen pezsgőt.</li>
+</ol>
+<p><strong>24</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott rokons&aacute;g tagjair&oacute;l ismereteink szerint t&aacute;roljuk a nev&eacute;t, nem&eacute;t &eacute;s a sz&uuml;lőket, akik szint&eacute;n szem&eacute;lyek.<br /> SZEM&Eacute;LY (k&oacute;d, n&eacute;v, nem, anya, apa)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT n&eacute;v, m.n&eacute;v, p.n&eacute;v<br /> FROM SZEM&Eacute;LY sz, SZEM&Eacute;LY m, SZEM&Eacute;LY p<br /> WHERE sz.anya=m.k&oacute;d AND sz.apa=p.k&oacute;d;</p>
+<ol>
+	<li>Megjelen&iacute;ti az ismert ap&aacute;kat &eacute;s any&aacute;kat a gyerekeik nev&eacute;vel</li>
+	<li>Megjelen&iacute;ti azokat a szem&eacute;lyeket, akiknek adottak a sz&uuml;lei.</li>
+	<li>Megjelen&iacute;ti minden szem&eacute;ly nev&eacute;t a sz&uuml;lei nev&eacute;vel akkor is, ha a sz&uuml;lők ismeretlenek</li>
+</ol>
+<p><strong>25</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott rokons&aacute;g tagjair&oacute;l ismereteink szerint t&aacute;roljuk a nev&eacute;t, nem&eacute;t &eacute;s a sz&uuml;lőket, akik szint&eacute;n szem&eacute;lyek.<br /> SZEM&Eacute;LY (k&oacute;d, n&eacute;v, nem, anya, apa)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT k&oacute;d, n&eacute;v<br /> FROM SZEM&Eacute;LY<br /> WHERE anya IN (SELECT k&oacute;d FROM SZEM&Eacute;LY WHERE n&eacute;v =&rsquo;Zita&rsquo;);</p>
+<ol>
+	<li>Megjelen&iacute;ti a Zit&aacute;k gyerekeit.</li>
+	<li>Megjelen&iacute;ti a Zita nevű szem&eacute;lyeket</li>
+	<li>Megjelen&iacute;ti azokat a szem&eacute;lyeket, akiknek van Zita nevű gyerek&uuml;k</li>
+</ol>
+<p><strong>26</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott rokons&aacute;g tagjair&oacute;l ismereteink szerint t&aacute;roljuk a nev&eacute;t, nem&eacute;t &eacute;s a sz&uuml;lőket, akik szint&eacute;n szem&eacute;lyek.<br /> SZEM&Eacute;LY (k&oacute;d, n&eacute;v, nem, anya, apa)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT k&oacute;d, n&eacute;v<br /> FROM SZEM&Eacute;LY<br /> WHERE k&oacute;d NOT IN (SELECT anya FROM SZEM&Eacute;LY WHERE anya is NOT NULL)<br /> AND k&oacute;d NOT IN (SELECT apa FROM SZEM&Eacute;LY WHERE apa is NOT NULL);</p>
+<ol>
+	<li>Megjelen&iacute;ti azokat, akik apa &eacute;s anyak&eacute;nt is előfordulnak</li>
+	<li>Megjelen&iacute;ti azokat a szem&eacute;lyeket, akik nem sz&uuml;lők.</li>
+</ol>
+<p><strong>27</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott c&eacute;g dolgoz&oacute;it tartjuk nyilv&aacute;n &eacute;s a nekik kifizetett jutalmakat az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> DOLGOZ&Oacute; (azon, n&eacute;v, beoszt&aacute;s)<br /> JUTALOM (azon, kelt, &ouml;sszeg)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT beoszt&aacute;s, COUNT(azon)<br /> FROM DOLGOZ&Oacute;<br /> GROUP BY beoszt&aacute;s;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy melyik beoszt&aacute;shoz mekkora &ouml;sszegű kifizet&eacute;s volt</li>
+	<li>Megjelen&iacute;ti, hogy melyik beoszt&aacute;sban h&aacute;nyan dolgoznak.</li>
+	<li>Megjelen&iacute;ti, hogy melyik beoszt&aacute;shoz h&aacute;ny kifizet&eacute;s volt</li>
+</ol>
+<p><strong>28</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott c&eacute;g dolgoz&oacute;it tartjuk nyilv&aacute;n &eacute;s a nekik kifizetett jutalmakat az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> DOLGOZ&Oacute; (azon, n&eacute;v, beoszt&aacute;s)<br /> JUTALOM (azon, kelt, &ouml;sszeg)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT azon , year(date())-year(kelt)<br /> FROM JUTALOM;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy kik kaptak id&eacute;n jutalmat</li>
+	<li>Megjelen&iacute;ti, hogy ki h&aacute;ny &eacute;ve kapott jutalmat.</li>
+</ol>
+<p><strong>29</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott c&eacute;g dolgoz&oacute;it tartjuk nyilv&aacute;n &eacute;s a nekik kifizetett jutalmakat az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> DOLGOZ&Oacute; (azon, n&eacute;v, beoszt&aacute;s)<br /> JUTALOM (azon, kelt, &ouml;sszeg)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT distinct azon<br /> FROM JUTALOM;</p>
+<ol>
+	<li>Megjelen&iacute;ti azokat a dolgoz&oacute;kat, akik legal&aacute;bb egyszer kaptak jutalmat.</li>
+	<li>Megjelen&iacute;ti azokat annyiszor, akik ah&aacute;nyszor jutalmat kaptak</li>
+	<li>Megjelen&iacute;ti az &ouml;sszes kifizet&eacute;s dolgoz&oacute;j&aacute;t</li>
+</ol>
+<p><strong>30</strong>&nbsp;k&eacute;rd&eacute;s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adott c&eacute;g dolgoz&oacute;it tartjuk nyilv&aacute;n &eacute;s a nekik kifizetett jutalmakat az al&aacute;bbi szerkezetű adatt&aacute;bl&aacute;kban:<br /> DOLGOZ&Oacute; (azon, n&eacute;v, beoszt&aacute;s)<br /> JUTALOM (azon, kelt, &ouml;sszeg)<br /> <br /> Mit csin&aacute;l az al&aacute;bbi lek&eacute;rdez&eacute;s:<br /> SELECT kelt, SUM(&ouml;sszeg)<br /> FROM JUTALOM<br /> GROUP BY kelt;</p>
+<ol>
+	<li>Megjelen&iacute;ti, hogy melyik napon h&aacute;ny kifizet&eacute;s volt.</li>
+	<li>Megjelen&iacute;ti, hogy melyik napon mekkora &ouml;sszegű kifizet&eacute;s volt..</li>
+	<li>Megjelen&iacute;ti, hogy melyik napon mekkora volt a kifizetett &ouml;sszegek &aacute;tlaga.</li>
+</ol>
+  
 <!-- Comments are visible in the HTML source only -->																																
 </div>
                                                                 </div></div>

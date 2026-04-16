@@ -30,6 +30,6 @@ ul li a {
 }
 
 .form-control {
-  max-height: 500px;
+  max-height: 400px;
   overflow-y: scroll;
 }
