@@ -994,8 +994,7 @@
                                                 alt="" /></div>
                                     </div>
                                     <div class="page-header-headings">
-                                        <h1 class="h2 mb-0">
-Adatbázisrendszerek teszt</h1>
+                                        <h1 class="h2 mb-0">20260226 Gyakorló teszt adatbázis tervezésről</h1>
                                     </div>
                                 </div>
                             </div>
@@ -1058,7 +1057,7 @@ Adatbázisrendszerek teszt</h1>
                                                         name="q39982:1_:sequencecheck" value="1" />
                                                     <div class="qtext">
                                                         <div class="clearfix">
-                                                            <p>Adja meg a <strong>Funkcionális függőség </strong>definícióját,
+                                                            <p>Adja meg a <strong>Tranzitív függőség </strong>definícióját,
                                                                 értelmezését!</p>
                                                         </div>
                                                     </div>
@@ -1070,971 +1069,337 @@ Adatbázisrendszerek teszt</h1>
                                                                 <div><textarea id="q39982:1_answer_id"
                                                                         name="q39982:1_answer" rows="20" cols="60" max-height="400px"
                                                                         class="form-control">
-Funkcionális függőség: 
-A relációs adatbázisban egy attribútum vagy attribútumcsoport értéke egyértelműen meghatározza egy másik attribútum vagy attribútumcsoport értékét. 
-Formálisan, ha A és B attribútumok, akkor A funkcionálisan függ B-től (A → B), ha minden lehetséges értékpár esetén, ahol A értéke megegyezik, B értéke is megegyezik. 
-Ez a fogalom kulcsfontosságú az adatbázis tervezésében, különösen a normalizáció során, hogy minimalizáljuk az adatok redundanciáját és biztosítsuk az adatok integritását.
+Tranzitív függőség akkor áll fenn egy relációban, ha egy attribútum értéke meghatározza egy másik attribútum értékét, amely viszont meghatározza egy harmadik attribútum értékét. Ez azt jelenti, hogy az első attribútum közvetetten meghatározza a harmadik attribútum értékét a második attribútumon keresztül. A tranzitív függőség megszüntetése érdekében a relációt általában több kisebb relációra bontják, amelyekben nincsenek tranzitív függőségek.
 
-Párosítsd a tárolandó adatokat a számukra megfelelő ACCESS-beli adattípussal!
-Neme
-Személyi szám
-Születés ideje
-Személyi igazolvány száma
-Fénykép
-Azonosító
-Név	
-Válasza részben helyes.
-Jól választott ki: 6.
-A helyes válasz: Neme → Logikai, Személyi szám → Szöveg, Születés ideje → Hosszú dátum, Személyi igazolvány száma → Szöveg, Fénykép → Melléklet, Azonosító → Számláló, Név → Szöveg
+SQL szkriptek
+1 kérdés:	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-Melyik kapcsolat típus a jellemző egy valós adatbázis megvalósítása során?
-a.1:N
-b.N:M
-c.1:1
-A helyes válasz: 1:N.
+Hány sora lesz a lekérdező parancs eredménytáblájának:
+SELECT * FROM HALLGATÓ, VIZSGA, TANTÁRGY
+WHERE HALLGATÓ.hkód=VIZSGA.hkód AND TANTÁRGY.tant=VIZSGA.tant
+a)	mint a TANTÁRGY tábla sorainak száma
+b)	mint a HALLGATÓ tábla sorainak száma
+c)	mint a VIZSGA tábla sorainak száma   
+d)	mint a 3 tábla sorai számának szorzata
+2 kérdés:	Adott kölcsönző ügyfeleit és autóit, valamint a tényleges kölcsönzéseket tartjuk nyilván az alábbi szerkezetű adattáblákban:
+ÜGYFÉL (kód, név, cím)
+AUTÓ (rendszám, márka, típus, szín)
+KÖLCSÖNZÉS (azon, rendszám, mettől, meddig, kód)
 
-Funkcionális függőségek
-DEF: A funkcionális függőség a reláció attribútumai között lévő szemantikai kapcsolat, vagyis az attribútumok egy csoportja függ az attribútumok egy másik csoportjától.
+A leghosszabb időszakra kölcsönzött autókat lekérdező parancs melyik feltétel esetén helyes:
+SELECT rendszám FROM KÖLCSÖNZÉS WHERE
+a)	meddig-mettől=(SELECT MAX(meddig-mettől))
+b)	meddig-mettől=(SELECT MAX(meddig-mettől) FROM KÖLCSÖNZÉS)   
+c)	meddig-mettől=MAX(meddig-mettől)
+3 kérdés:	Adott kölcsönző ügyfeleit és autóit, valamint a tényleges kölcsönzéseket tartjuk nyilván az alábbi szerkezetű adattáblákban:
+ÜGYFÉL (kód, név, cím)
+AUTÓ (rendszám, márka, típus, szín)
+KÖLCSÖNZÉS (azon, rendszám, mettől, meddig, kód)
 
-Tranzitív függőség DEF: Két funkcionálisan függő attribútumhalmaz között található egy harmadik, amely úgymond „átviszi” a függőséget.
+A lekérdező parancs melyik feltétel esetén adja vissza azokat az ügyfeleket, akik még nem kölcsönöztek:
+SELECT * FROM ÜGYFÉL WHERE
+a.	név NOT IN (SELECT kód FROM KÖLCSÖNZÉS)
+b.	kód NOT IN (SELECT * FROM KÖLCSÖNZÉS)
+c.	kód NOT IN (SELECT kód FROM KÖLCSÖNZÉS)   
+4 kérdés:	Adott motel vendégeit és fogyasztható termékeit, valamint a konkrét fogyasztásokat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+VENDÉG (vkód, név, cím)
+TERMÉK (tkód, elnevezés, egysár)
+FOGYASZTÁS (vkód, kelt, sorszám, tkód, menny)
 
-Teljes függőség DEF: Egy attribútumhalmaz teljesen függ egy másik attribútumhalmaztól, ha nem függ külön az attribútumhalmaz egyik részhalmazától sem.
+Melyik függvény esetén adja eredményül a parancs, hogy naponta hány vendég fogyasztott:
+SELECT kelt, FROM FOGYASZTÁS GROUP BY kelt
+a.	COUNT(distinct vkód)   
+b.	COUNT(*)
+c.	COUNT(vkód)
+d.	distinct COUNT(*)
+5 kérdés:	Adott motel vendégeit és fogyasztható termékeit, valamint a konkrét fogyasztásokat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+VENDÉG (vkód, név, cím)
+TERMÉK (tkód, elnevezés, egysár)
+FOGYASZTÁS (vkód, kelt, sorszám, tkód, menny)
 
-Normalizáció DEF: A normalizáció, vagy normál formára hozás az a folyamat, amellyel a relációs adatbázis struktúrájának hatékonyságát biztosítjuk.
+A lekérdező parancs csoportosítása melyik mező szerint történik:
+SELECT tkód, SUM(menny) FROM FOGYASZTÁS GROUP BY
+a.	menny
+b.	tkód   
+c.	kelt
+d.	vkód
+6 kérdés.	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-Első normál formára (1NF-re) hozás
- 1NF DEF: Egy R relációról azt mondjuk, hogy első normál formában, vagyis 1NF-ben van, ha minden sorában pontosan egy attribútumérték szerepel.
+Hány sora lesz a lekérdező parancs eredménytáblájának:
+SELECT * FROM HALLGATÓ, VIZSGA, TANTÁRGY
+a.	mint a 3 tábla sorai számának összege
+b.	mint a 3 tábla sorai számának szorzata   
+7 kérdés.	Adott rokonság tagjairól ismereteink szerint tároljuk a nevét, nemét és a szülőket, akik szintén személyek.
+SZEMÉLY (kód, név, nem, anya, apa)
 
-Második normál formára (2NF-re) hozás
- 2NF DEF: Egy R relációról azt mondjuk, hogy második normál formában, vagyis 2NF-ben van, ha
-→ 1NF-ben van, és
-→ minden attribútum teljesen függ a kulcstól.
+A férfi személyek lekérdezéséhez melyik feltétel nem lehet helyes:
+SELECT * FROM SZEMÉLY WHERE
+a.	nem=false   
+b.	nem=”F”
+c.	nem=0
+d.	NOT nem
+8 kérdés.	Adott rokonság tagjairól ismereteink szerint tároljuk a nevét, nemét és a szülőket, akik szintén személyek.
+SZEMÉLY (kód, név, nem, anya, apa)
 
-3NF DEF: Egy R relációról azt mondjuk, hogy második normál formában, vagyis 3NF-ben van, ha
-→ 2NF-ben van, és
-→ az attribútumok között nincs tranzitív függőség
-
-
-
-
-
-16 kérdés
-Kérdés szövege
-Melyik hamis állítás?
-Egy relációban szereplő idegen kulcs
-16 kérdésVálasz
-a.egy másik relációhoz való kapcsolódást szolgálja.
-b.a különböző táblákat összekötő attribútum.
-c.egy másik táblában elsődleges kulcs.
-d.egy másik adatbázishoz való kapcsolódást szolgálja.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: egy másik adatbázishoz való kapcsolódást szolgálja..
-
-17 kérdés
-Kérdés szövege
-Mit értünk index és indexelés alatt?
-17 kérdésVálasz
-a.
-Az adatok rendezési irányát meghatározó adatkezelést.
-b.
-A relációs adatbázisok speciális jelzőrendszerét.
-c.
-Az adatsorok közti elsődleges kulcs szerinti sorrendezést.
-d.
-Az adatsorok közti gyors keresést lehetővé tevő rendezési technikát.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Az adatsorok közti gyors keresést lehetővé tevő rendezési technikát..
-
-18 kérdés
-Kérdés szövege
-Mi a kapcsolat adat és információ között?
-18 kérdésVálasz
-a.
-Az információ valamilyen szempont szerint fontos adat.
-b.
-Minden információ adat.
-c.
-Minden adat információ.
-d.
-Az adat valamilyen szempont szerint számunkra fontos információ.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Az információ valamilyen szempont szerint fontos adat..
-
-19 kérdés
-Kérdés szövege
-Melyik NEM fő feladata az adatbázis naplózásnak?
-19 kérdésVálasz
-a.
-Felhasználói tevékenység rögzítése.
-b.
-A korábbi felhasználási adatokat a toábbi műveletek gyorsítására használhatja.
-c.
-A vírusvédelem és adatvédelem.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: A vírusvédelem és adatvédelem..
-
-20 kérdés
-Kérdés szövege
-Mit értünk egy relációban kulcs alatt?
-20 kérdésVálasz
-a.
-A reláció sorait egyértelműen megkülönböztetni képes attribútumot.
-b.
-Az azonos rekordokat megkülönböztető attribútumot.
-c.
-A reláció sorait egyértelműen rendezni képes attribútumot.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: A reláció sorait egyértelműen megkülönböztetni képes attribútumot..
-
-21 kérdés
-Kérdés szövege
-Melyik kapcsolat típus kiváltása az egyik feladatunk egy valós adatbázis megvalósítása során?
-21 kérdésVálasz
-a.
-N:M
-b.
-1:1
-c.
-1:N
-Visszajelzés
-Válasza helyes.
-A helyes válasz: N:M.
-
-22 kérdés
-Kérdés szövege
-Milyen formátumú adatként tároljuk el az adatbázisban a következő adatot?
-Adat: 773626547229847286275272577889862735462654372772726572112
-22 kérdésVálasz
-a.
-Általános dátum
-b.
-Decimális
-c.
-Szöveg
-d.
-Hosszú egész
-e.
-Byte
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Szöveg.
-
-23 kérdés
-Kérdés szövege
-Milyen formátumú adatként tároljuk el az adatbázisban a következő adatot?
-Adat: 17362654AI
-23 kérdésVálasz
-a.
-Decimális
-b.
-Hosszú dátum
-c.
-Szöveg
-d.
-Hosszú egész
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Szöveg.
-
-24 kérdés
-Kérdés szövege
-Arról akarunk információt tárolni, hogy esik az eső/nem esik az eső.
-Melyik a legoptimálisabb adatformátum erre a feladatra?
-24 kérdésVálasz
-a.
-Egész
-b.
-Rövid dátum
-c.
-Logikai
-d.
-Byte
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Logikai.
-
-25 kérdés
-Kérdés szövege
-Melyik dátum formátumnak felel meg a következő adat?
-Adat: 94. jún. 19.
-25 kérdésVálasz
-a.
-Hosszú dátum
-b.
-Egyszerű dátum
-c.
-Rövid dátum
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Egyszerű dátum.
-
-26 kérdés
-Kérdés szövege
-Melyik dátum formátumnak felel meg a következő adat?
-Adat: 5:34 DU
-26 kérdésVálasz
-a.
-Rövid idő
-b.
-Közepes idő
-c.
-Hosszú idő
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Közepes idő.
-
-27 kérdés
-Kérdés szövege
-Egy tábla elsődleges kulcs mezőjében olyan értéket szeretnénk tárolni, ami minden új adatsor felvitelekor automatikusan nővekszik. Melyik legyen az?
-27 kérdésVálasz
-a.
-Byte
-b.
-Egész
-c.
-Decimális
-d.
-Szöveg
-e.
-Számláló
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Számláló.
-
-28 kérdés
-Kérdés szövege
-Mit értünk lekérdezés alatt?
-28 kérdésVálasz
-a.
-Információ továbbítást adatbázisok között.
-b.
-Információ kinyerést az adatbázisból.
-c.
-Adatbázis integritási tesztelését.
-d.
-Adatbázis műveleteket.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Információ kinyerést az adatbázisból..
-
-29 kérdés
-Kérdés szövege
-Mi „fűzi össze” a relációkat egy adatbázisban?
-29 kérdésVálasz
-a.
-Az indexek
-b.
-A rekordok
-c.
-Az attribútumok
-d.
-A kulcsok
-Visszajelzés
-Válasza helyes.
-A helyes válasz: A kulcsok.
-
-30 kérdés
-Kérdés szövege
-Mi az adatbázis-kezelő rendszerek két legfontosabb funkciója?
-30 kérdésVálasz
-a.
-Integritás védelem
-b.
-Adatok lekérdezése
-c.
-Adatbiztonság
-d.
-Adatbázis létrehozása
-e.
-Szinkronizáció
-f.
-Naplózás
-Visszajelzés
-Válasza helyes.
-A helyes válaszok: Adatbázis létrehozása, Adatok lekérdezése
-
-31 kérdés
-Kérdés szövege
-Egy társaságban melyik kapcsolat írja le a barátsági viszonyokat?
-31 kérdésVálasz
-a.
-N:M
-b.
-1:M
-c.
-1:1
-Visszajelzés
-Válasza helyes.
-A helyes válasz: N:M.
-
-32 kérdés
-Kérdés szövege
-Az ACCESS-ben melyik nem feladata egy lekérdezésnek?
-32 kérdésVálasz
-a.
-Adatok szűkítése
-b.
-Adatok ellenőrzése
-c.
-Adatok aggregálása
-d.
-Adatok szűrése
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Adatok ellenőrzése.
-
-33 kérdés
-Kérdés szövege
-Mit NEM tekintünk az adatbázis-kezelők alapfeladatának a következők közül?
-33 kérdésVálasz
-a.
-A tárolt adatokkal különböző műveleteket kell végezni.
-b.
-Nagy mennyiségű adatot tudunk kezelni.
-c.
-Az adatokat kötött szerkezetbe foglalva tudjuk tárolni.
-d.
-Nagy mennyiségű adatot tudunk publikálni.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Nagy mennyiségű adatot tudunk publikálni..
-
-34 kérdés
-Kérdés szövege
-Az ACCESS-ben milyen forrásokból készíthető lekérdezés?
-34 kérdésVálasz
-a.
-Jelentésekről
-b.
-Meglévő lekérdezésről
-c.
-Adattáblákról
-d.
-Űrlapról
-Visszajelzés
-Válasza helyes.
-A helyes válaszok: Adattáblákról, Meglévő lekérdezésről
-
-35 kérdés
-Kérdés szövege
-Adatbázisok normalizálása során a meglévő táblák ______________ folyik.
-35 kérdésVálasz
-a.
-konvertálása
-b.
-összefűzése
-c.
-széttagolása
-d.
-összevonása
-Visszajelzés
-Válasza helyes.
-A helyes válasz: széttagolása.
-
-36 kérdés
-Kérdés szövege
-Ha egy reláció egyszerű elsődleges kulcsot tartalmaz és nincs benne sem ismétlődő, sem tranzitív függésű attribútum, akkor legalább
-36 kérdésVálasz
-a.
-0. normálformában van.
-b.
-2. normálformában van.
-c.
-1. normálformában van.
-d.
-3. normálformában van.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 3. normálformában van..
-
-37 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
-  
-a.0.
-b.3.
-c.1.
-d.2.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 1..
-
-38 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
-  
-38 kérdésVálasz
-a.
-2.
-b.
-3.
-c.
-1.
-d.
-0.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 0..
-
-39 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
-  
-39 kérdésVálasz
-a.
-3.
-b.
-2.
-c.
-1.
-d.
-0.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 3..
-
-40 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
-  
-40 kérdésVálasz
-a.
-2.
-b.
-0.
-c.
-1.
-d.
-3.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 0..
-
-41 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő két relációból álló adatbázis?
-   
-41 kérdésVálasz
-a.
-1.
-b.
-3.
-c.
-0.
-d.
-2.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 3..
-
-42 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Egy adatbázis normalizálási folyamata során az adatbázist alkotó táblák száma leginkább
-42 kérdésVálasz
-a.
-növekszik
-b.
-csökken
-c.
-nem változik
-Visszajelzés
-Válasza helyes.
-A helyes válasz: növekszik.
-
-43 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Mit fejez ki az alábbi relációbeli kapcsolat?
-  
-43 kérdésVálasz
-a.
-Elsődleges függőség
-b.
-Másodlagos függőség
-c.
-Tranzitív függőség
-d.
-Teljes függőség
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Tranzitív függőség.
-
-44 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Egy második normálformában lévő relációban melyik függőségi formát nem engedjük meg?
-44 kérdésVálasz
-a.
-Funkcionális függés
-b.
-Teljes függés
-c.
-Részleges függés
-d.
-Tranzitív függés
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Részleges függés.
-
-
-45 kérdés
-Hibás
-0,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Melyik a hamis állítás?
-Egy relációban nem lehet
-45 kérdésVálasz
-a.
-két azonos oszlop.
-b.
-két azonos kulcs.
-c.
-két azonos típusú adat.
-d.
-két azonos sor.
-Visszajelzés
-Válasza helytelen.
-A helyes válasz: két azonos sor..
-WAT???????
-
-46 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő két relációból álló adatbázis?
+A lekérdező parancs melyik függvény esetén adja vissza a legnagyobb számot:
+SELECT FROM SZEMÉLY;
+a.	COUNT(*)   
+b.	COUNT(distinct anya)
+c.	COUNT(anya)
+9 kérdés.	Adott cég dolgozóit tartjuk nyilván és a nekik kifizetett jutalmakat az alábbi szerkezetű adattáblákban:
 DOLGOZÓ (azon, név, beosztás)
 JUTALOM (azon, kelt, összeg)
-46 kérdésVálasz
-a.
-2.
-b.
-1.
-c.
-3.
-d.
-0.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 3..
 
-47 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Mit jelent az alábbi relációsémában a szaggatott vonal jelölés?
-   
-47 kérdésVálasz
-a.
-Elsődleges kulcs
-b.
-Idegen kulcs
-c.
-Összetett kulcs
-d.
-Tranzitív kulcs
-Visszajelzés
-Válasza helyes.
-A helyes válasz: Idegen kulcs.
+A lekérdező parancs eredménytáblájának hány oszlopa lesz:
+SELECT * FROM JUTALOM, DOLGOZÓ
+a.	mint a 2 tábla közös oszlopainak száma, azaz 1
+b.	mint a 2 tábla összes oszlopai számának összege, azaz 6   
+c.	mint a 2 tábla oszlopai számának szorzata, azaz 9
+10 kérdés.	Adott cég dolgozóit tartjuk nyilván és a nekik kifizetett jutalmakat az alábbi szerkezetű adattáblákban:
+DOLGOZÓ (azon, név, beosztás)
+JUTALOM (azon, kelt, összeg)
 
-48 kérdés
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
- 
-a.0.
-b.1.
-c.2.
-d.3.
-Visszajelzés
-Válasza helytelen.
-A helyes válasz: 2..
+A 2006-ban kifizetett jutalmak összegét lekérdező parancs melyik feltétel esetén hibás:
+SELECT SUM(összeg) FROM JUTALOM WHERE 
+a.	kelt =2006   
+b.	kelt>=’2006.01.01.’ and kelt<=’2006.12.31.’
+c.	kelt between ’2006.01.01.’ and ’2006.12.31.’
+11 kérdés.	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-49 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
- 
-49 kérdésVálasz
-a.
-0.
-b.
-1.
-c.
-2.
-d.
-3.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 3..
+Mit csinál az alábbi lekérdezés:
+SELECT tant, AVG(jegy)
+FROM VIZSGA
+GROUP BY tant;
+a.	Megjeleníti a vizsgajegyek tantárgyankénti átlagát   
+b.	Megjeleníti minden tantárgyból a vizsgajegyek átlagát; amelyikből nem volt vizsga, azok mellett a nullát
+12 kérdés.	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-50 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Legfeljebb hányadik normálformának felel meg a következő reláció?
- 
-50 kérdésVálasz
-a.
-3.
-b.
-1.
-c.
-0.
-d.
-2.
-Visszajelzés
-Válasza helyes.
-A helyes válasz: 1..
+Mit csinál az alábbi lekérdezés:
+SELECT dátum, COUNT(distinct tant)
+FROM VIZSGA
+GROUP BY dátum;
+a.	Megjeleníti, hogy naponta hány különböző hallgató vizsgázott
+b.	Megjeleníti, hogy naponta hány vizsgázó volt
+c.	Megjeleníti, hogy naponta hány tantárgyból volt vizsga   
+13 kérdés.	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-51 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A reláció számossága alatt a relációban előforduló …….. számát értjük.
-Visszajelzés
-A helyes válasz: sorok.
+Mit csinál az alábbi lekérdezés:
+SELECT hkód, név
+FROM HALLGATÓ
+WHERE hkód NOT IN (SELECT hkód FROM VIZSGA v, TANTÁRGY t
+WHERE t.tant=v.tant AND elnevezés=’Matematika’);
+a.	Megjeleníti azokat a hallgatókat, akik Matematikából csak egyszer vizsgáztak
+b.	Megjeleníti azokat a hallgatókat, akik Matematikából még nem vizsgáztak   
+c.	Megjeleníti azokat a hallgatókat, akik Matematikából már vizsgáztak
+14 kérdés.	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-52 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Az ACCESS-ben csak az idő tárolásának  …… különböző alakja lehetséges.
-Visszajelzés
-A helyes válasz: három.
+Mit csinál az alábbi lekérdezés:
+SELECT név, elnevezés, jegy
+FROM VIZSGA v, HALLGATÓ h, TANTRÁGY t
+WHERE v.tant=t.tant AND h.hkód=v.hkód AND jegy>1;
+a.	Megjeleníti az elégtelennél jobb vizsgajegyeket a hallgatók nevével és a tantárgyak elnevezésével   
+b.	Megjeleníti az összes vizsgajegyet a hallgató nevével és a tantárgy elnevezésével
+15 kérdés.	Adott iskola hallgatóit és tantárgyait, valamint a letett vizsgákat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+HALLGATÓ (hkód, név, osztály)
+TANTÁRGY (tant, elnevezés)
+VIZSGA (hkód, dátum, tant, jegy)
 
-53 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A logikai típusú adatok csak Válasz ………. értéket tartalmazhatnak.
-Visszajelzés
-A helyes válasz: kétféle.
+Mit csinál az alábbi lekérdezés:
+SELECT hkód
+FROM VIZSGA
+WHERE jegy=5 AND tant IN (SELECT tant FROM TANTÁRGY
+WHERE elnevezés = ’Matematika’);
+a.	Megjeleníti azokat a hallgatókat, akik jelesre vizsgáztak matematikából   
+b.	Megjeleníti azokat a hallgatókat, akik nem vizsgáztak jelesre matematikából
+c.	Megjeleníti azokat a hallgatókat, akik vizsgáztak már matematikából
+16 kérdés.	Adott kölcsönző ügyfeleit és autóit, valamint a tényleges kölcsönzéseket tartjuk nyilván az alábbi szerkezetű adattáblákban:
+ÜGYFÉL (kód, név, cím)
+AUTÓ (rendszám, márka, típus, szín)
+KÖLCSÖNZÉS (azon, rendszám, mettől, meddig, kód)
 
-54 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Azt a kulcsot, amelyet egy relációban a rekordok egyértelmű megkülönböztetésére használunk …….. kulcsnak nevezzük.
-Visszajelzés
-A helyes válasz: elsődleges.
+Mit csinál az alábbi lekérdezés:
+SELECT kód, név, cím
+FROM ÜGYFÉL
+WHERE kód NOT IN (SELECT kód FROM KÖLCSÖNZÉS);
+a.	Megjeleníti azokat az ügyfeleket, akik már kölcsönöztek autót
+b.	Megjeleníti azokat az ügyfeleket, akik soha nem kölcsönöztek Fordot
+c.	Megjeleníti azokat az ügyfeleket, akik soha nem kölcsönöztek autót   
+17 kérdés.	Adott kölcsönző ügyfeleit és autóit, valamint a tényleges kölcsönzéseket tartjuk nyilván az alábbi szerkezetű adattáblákban:
+ÜGYFÉL (kód, név, cím)
+AUTÓ (rendszám, márka, típus, szín)
+KÖLCSÖNZÉS (azon, rendszám, mettől, meddig, kód)
 
-55 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Egy reláció fokának a relációban előforduló ……… számát értjük.
-Visszajelzés
-A helyes válasz: tulajdonságok.
+Mit csinál az alábbi lekérdezés:
+SELECT kód, MAX(mettől)
+FROM KÖLCSÖNZÉS
+GROUP BY kód;
+a.	Megjeleníti, hogy ki mikor nem kölcsönzött autót
+b.	Megjeleníti, hogy ki mikor kölcsönzött ki legelőször autót
+c.	Megjeleníti, hogy ki mikor kölcsönzött ki utoljára autót   
+18 kérdés.	Adott kölcsönző ügyfeleit és autóit, valamint a tényleges kölcsönzéseket tartjuk nyilván az alábbi szerkezetű adattáblákban:
+ÜGYFÉL (kód, név, cím)
+AUTÓ (rendszám, márka, típus, szín)
+KÖLCSÖNZÉS (azon, rendszám, mettől, meddig, kód)
 
-56 kérdés
-Hibás
-0,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Ahhoz, hogy egy adatbázist a minimális adatszerkezeti követelmények szerint meg tudjunk valósítani, a relációknak legalább ……. normálformában kell lennie
-Visszajelzés
-A helyes válasz: harmadik.
+Mit csinál az alábbi lekérdezés:
+SELECT név, mettől, meddig
+FROM KÖLCSÖNZÉS k, ÜGYFÉL u, AUTÓ a
+WHERE k.rendszám=a.rendszám AND k.kód=u.kód
+AND márka = ’Skoda’ AND típus =’Octavia’
+ORDER BY mettől, meddig;
+a.	Megjeleníti az időpontokra rendezve, hogy kinél mikor volt Skoda Octavia autó   
+b.	Megjeleníti ügyfél szerint sorban, hogy kinél mikor volt Skoda Octavia autó
+c.	Megjeleníti időpontok szerint minden kölcsönzésről, hogy kinél mikor volt autó
+19 kérdés.	Adott kölcsönző ügyfeleit és autóit, valamint a tényleges kölcsönzéseket tartjuk nyilván az alábbi szerkezetű adattáblákban:
+ÜGYFÉL (kód, név, cím)
+AUTÓ (rendszám, márka, típus, szín)
+KÖLCSÖNZÉS (azon, rendszám, mettől, meddig, kód)
 
-57 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Egy relációsémában az elsődleges kulcs jelölése …….. vonallal való aláhúzás.
-Visszajelzés
-A helyes válasz: folytonos.
+Mit csinál az alábbi lekérdezés:
+SELECT rendszám, SUM(meddig-mettől)
+FROM KÖLCSÖNZÉS
+GROUP BY rendszám;
+a.	Megjeleníti, hogy melyik autót hány napra kölcsönözték ki eddig összesen   
+b.	Megjeleníti, hogy melyik autót hány napra kölcsönözték ki eddig átlagosan
+20 kérdés.	Adott motel vendégeit és fogyasztható termékeit, valamint a konkrét vásárlásokat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+VENDÉG (vkód, név, cím)
+TERMÉK (tkód, elnevezés, egysár)
+FOGYASZTÁS (vkód, kelt, sorszám, tkód, menny)
 
+Mit csinál az alábbi lekérdezés:
+SELECT distinct kelt
+FROM FOGYASZTÁS
+WHERE kelt NOT IN (SELECT kelt FROM FOGYASZTÁS f, TERMÉK t
+WHERE f.tkód=t.tkód AND elnevezés=’pezsgő’);
+a.	Megjeleníti, hogy mikor nem fogyasztottak pezsgőt   
+b.	Megjeleníti, hogy mikor fogyasztottak pezsgőt
+21 kérdés.	Adott motel vendégeit és fogyasztható termékeit, valamint a konkrét vásárlásokat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+VENDÉG (vkód, név, cím)
+TERMÉK (tkód, elnevezés, egysár)
+FOGYASZTÁS (vkód, kelt, sorszám, tkód, menny)
 
-58 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Ha egy reláció 3. normálformában van, akkor legalább ____ normálformában is van.
-Visszajelzés
-A helyes válasz: második.
+Mit csinál az alábbi lekérdezés:
+SELECT vkód, COUNT(distinct tkód)
+FROM FOGYASZTÁS
+GROUP BY vkód;
+a.	Megjeleníti, hogy ki mennyit fogyasztott bármilyen termékből
+b.	Megjeleníti, hogy ki hányszor fogyasztott bármilyen terméket
+c.	Megjeleníti, hogy ki hányféle termékből fogyasztott eddig   
+22 kérdés.	Adott motel vendégeit és fogyasztható termékeit, valamint a konkrét vásárlásokat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+VENDÉG (vkód, név, cím)
+TERMÉK (tkód, elnevezés, egysár)
+FOGYASZTÁS (vkód, kelt, sorszám, tkód, menny)
 
-59 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Ha egy relációt táblázat helyett relációsémával adnak meg, akkor legalább ____ normálformában van.
-Visszajelzés
-A helyes válasz: első.
+Mit csinál az alábbi lekérdezés:
+SELECT vkód, tkód
+FROM FOGYASZTÁS
+WHERE menny=(SELECT MAX(menny) FROM FOGYASZTÁS);
+a.	Megjeleníti, hogy melyik vendég éppen miből fogyasztotta egyszerre a legtöbbet
+b.	Megjeleníti, hogy melyik vendég miből fogyasztotta összesen a legtöbbet
+c.	Megjeleníti, hogy ki és miből fogyasztotta egyszerre a legnagyobb mennyiséget   
+23 kérdés.	Adott motel vendégeit és fogyasztható termékeit, valamint a konkrét vásárlásokat tartjuk nyilván az alábbi szerkezetű adattáblákban:
+VENDÉG (vkód, név, cím)
+TERMÉK (tkód, elnevezés, egysár)
+FOGYASZTÁS (vkód, kelt, sorszám, tkód, menny)
 
-60 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Ha egy relációséma minden attribútuma része a kulcsnak, akkor legalább ___ normálformában van.
-Visszajelzés
-A helyes válasz: második.
+Mit csinál az alábbi lekérdezés:
+SELECT MAX(kelt)
+FROM FOGYASZTÁS f, TERMÉK t
+WHERE f.tkód=t.tkód AND elnevezés like ’*pezsgő*’);
+a.	Megjeleníti, mikor fogyasztottak először bármilyen pezsgőt
+b.	Megjeleníti, mikor fogyasztottak utoljára bármilyen pezsgőt   
+24 kérdés.	Adott rokonság tagjairól ismereteink szerint tároljuk a nevét, nemét és a szülőket, akik szintén személyek.
+SZEMÉLY (kód, név, nem, anya, apa)
 
-61 kérdés
- A kérdés megjelölése
-Kérdés szövege
-Dátum és idő adatokat csak kizárólag különböző adattípusban lehet tárolni.
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
+Mit csinál az alábbi lekérdezés:
+SELECT név, m.név, p.név
+FROM SZEMÉLY sz, SZEMÉLY m, SZEMÉLY p
+WHERE sz.anya=m.kód AND sz.apa=p.kód;
+a.	Megjeleníti az ismert apákat és anyákat a gyerekeik nevével
+b.	Megjeleníti azokat a személyeket, akiknek adottak a szülei   
+c.	Megjeleníti minden személy nevét a szülei nevével akkor is, ha a szülők ismeretlenek
+25 kérdés.	Adott rokonság tagjairól ismereteink szerint tároljuk a nevét, nemét és a szülőket, akik szintén személyek.
+SZEMÉLY (kód, név, nem, anya, apa)
 
-62 kérdés
-Hibás
-0,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Az adatbázis-kezelő rendszer biztosítja a tárolt adatok biztonságát.
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz az 'Igaz'.
+Mit csinál az alábbi lekérdezés:
+SELECT kód, név
+FROM SZEMÉLY
+WHERE anya IN (SELECT kód FROM SZEMÉLY WHERE név =’Zita’);
+a.	Megjeleníti a Ziták gyerekeit   
+b.	Megjeleníti a Zita nevű személyeket
+c.	Megjeleníti azokat a személyeket, akiknek van Zita nevű gyerekük
+26 kérdés.	Adott rokonság tagjairól ismereteink szerint tároljuk a nevét, nemét és a szülőket, akik szintén személyek.
+SZEMÉLY (kód, név, nem, anya, apa)
 
-63 kérdés
-Kérdés szövege
-Az adatbázis tervezés azért fontos, hogy a felhasználók számára elegendő információ álljon rendelkezésre az adatbázis felhasználhatóságáról.
-63 kérdésVálasszon ki egyet:
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
+Mit csinál az alábbi lekérdezés:
+SELECT kód, név
+FROM SZEMÉLY
+WHERE kód NOT IN (SELECT anya FROM SZEMÉLY WHERE anya is NOT NULL)
+AND kód NOT IN (SELECT apa FROM SZEMÉLY WHERE apa is NOT NULL);
+a.	Megjeleníti azokat, akik apa és anyaként is előfordulnak
+b.	Megjeleníti azokat a személyeket, akik nem szülők   
+27 kérdés.	Adott cég dolgozóit tartjuk nyilván és a nekik kifizetett jutalmakat az alábbi szerkezetű adattáblákban:
+DOLGOZÓ (azon, név, beosztás)
+JUTALOM (azon, kelt, összeg)
 
-64 kérdés
-Kérdés szövege
-Egy relációs adatbázis egymással laza kapcsolatban álló táblázatok halmaza.
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz a 'Hamis'.
+Mit csinál az alábbi lekérdezés:
+SELECT beosztás, COUNT(azon)
+FROM DOLGOZÓ
+GROUP BY beosztás;
+a.	Megjeleníti, hogy melyik beosztáshoz mekkora összegű kifizetés volt
+b.	Megjeleníti, hogy melyik beosztásban hányan dolgoznak   
+c.	Megjeleníti, hogy melyik beosztáshoz hány kifizetés volt
+28 kérdés.	Adott cég dolgozóit tartjuk nyilván és a nekik kifizetett jutalmakat az alábbi szerkezetű adattáblákban:
+DOLGOZÓ (azon, név, beosztás)
+JUTALOM (azon, kelt, összeg)
 
-65 kérdés
-Kérdés szövege
-Az adatbázisokhoz való hozzáférés biztonsága megköveteli, hogy nagy teljesítményű számítógépeket használjunk. 
-65 kérdésVálasz
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
+Mit csinál az alábbi lekérdezés:
+SELECT azon , year(date())-year(kelt)
+FROM JUTALOM;
+a.	Megjeleníti, hogy kik kaptak idén jutalmat
+b.	Megjeleníti, hogy ki hány éve kapott jutalmat   
+29 kérdés.	Adott cég dolgozóit tartjuk nyilván és a nekik kifizetett jutalmakat az alábbi szerkezetű adattáblákban:
+DOLGOZÓ (azon, név, beosztás)
+JUTALOM (azon, kelt, összeg)
 
-66 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Egy adatbázis-kezelő rendszertől elvárjuk, hogy egyszerre csak egy felhasználót szolgáljon ki.
-66 kérdésVálasz
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
+Mit csinál az alábbi lekérdezés:
+SELECT distinct azon
+FROM JUTALOM;
+a.	Megjeleníti azokat a dolgozókat, akik legalább egyszer kaptak jutalmat   
+b.	Megjeleníti azokat annyiszor, akik ahányszor jutalmat kaptak
+c.	Megjeleníti az összes kifizetés dolgozóját
+30 kérdés.	Adott cég dolgozóit tartjuk nyilván és a nekik kifizetett jutalmakat az alábbi szerkezetű adattáblákban:
+DOLGOZÓ (azon, név, beosztás)
+JUTALOM (azon, kelt, összeg)
 
-67 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A tárolt adataink biztonságát csak az szavatolja, ha egyszerre csak egy gépről érhetők el.
-67 kérdésVálasz
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
-
-68 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A reláció matematikai modellen alapuló fogalom, mely egymással kapcsolatban lévő, kötött sorrendben megadott tulajdonság értékekkel meghatározott adatsorokból felépülő táblázattal adható meg. A reláció szerkezetét megadó formulát relációsémának nevezzük.
-68 kérdésVálasz
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-69 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A szinkronizáció biztosítja, hogy az adabázison egysezerre többen többféle műveletet is végre tudjanak hajtani hiba nélkül.
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-70 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Integritás sértésről beszélünk, ha például olyan adatot akarunk rögzíteni az adatbázisba, amelyik nem illeszkednek a meglévőkkel.
-70 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-71 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Az egyed azon tulajdonságát vagy tulajdonságait mely(ek) már egyértelműen
-meghatározzá(k), hogy mely egyedről van szó, kulcsnak nevezzük.
-71 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
+Mit csinál az alábbi lekérdezés:
+SELECT kelt, SUM(összeg)
+FROM JUTALOM
+GROUP BY kelt;
+a.	Megjeleníti, hogy melyik napon hány kifizetés volt.
+b.	Megjeleníti, hogy melyik napon mekkora összegű kifizetés volt.   
+c.	Megjeleníti, hogy melyik napon mekkora volt a kifizetett összegek átlaga.
 
 
 
-72 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A számláló típusú mezőben tetszőleges egész számokat is tudunk tárolni.
-72 kérdésVálasszon ki egyet:
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
-
-73 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A decimális adattípus kis pontosságú tizedes törtek tárolásához optimális.
-73 kérdésVálasszon ki egyet:
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
-
-74 kérdés
-Kérdés szövege
-Egy adatbázis normalizálási folyamata során megszabadulunk a fölösleges relációktól.
-74 kérdésVálasz
-Igaz
-Hamis 
-Visszajelzés
-A helyes válasz a 'Hamis'.
-
-75 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A Módosítási anomália káros rendundancia esetén fordul elő, amikor minden rekordot végig kell vizsgálni
-ahhoz, hogy hibamentesen lehessen az adatbázist módosítani.
-75 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-76 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A Törlési anomália akkor lép fel, amikor csak egyéb adatvesztés árán lehet kitörölni valamit az adatbázisból.
-76 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-77 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A Bővítési anomália olyankor fordul elő, amikor valamilyen szerkezeti, adatkapcsolati okból nem engedélyezett az adatfelvitel.
-77 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-78 kérdés
-Hibás
-0,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-A Redundancia az adatbázisok kerülendő káros jelensége.
-78 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz a 'Hamis'.
-
-79 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Az adatbázis megfelelő működésének egyik szükséges összetevője az Optimális redundancia.
-79 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
-
-80 kérdés
-Helyes
-1,00/1,00 pont
- A kérdés megjelölése
-Kérdés szövege
-Ellenőrzött redundancia gyorsabbá teheti az adatbázison belüli műveletvégzést.
-80 kérdésVálasszon ki egyet:
-Igaz 
-Hamis
-Visszajelzés
-A helyes válasz az 'Igaz'.
 
 </textarea>
                                                                 </div></div>
